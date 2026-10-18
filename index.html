@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#edf0ea" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#111512" media="(prefers-color-scheme: dark)" />
+  <title>The Golden Directive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Literata:opsz,wght@7..72,500;7..72,600&amp;display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      color-scheme:light dark;
+      --desk:#e7ebe5;--paper:#fff;--ink:#142019;--muted:#526057;--rule:#b9c2ba;
+      --rule-strong:#1d2a21;--panel:#e8ece8;--panel-ink:#202a24;--accent:#9a6818;
+      --accent-soft:#eadab9;--forest:#244c32;--sans:"IBM Plex Sans",sans-serif;--serif:"Literata",Georgia,serif
+    }
+    @media(prefers-color-scheme:dark){:root{--desk:#0d110e;--paper:#151a16;--ink:#f0f4ef;--muted:#bec8bf;--rule:#475149;--rule-strong:#d5ddd6;--panel:#252c27;--panel-ink:#f2f5f1;--accent:#d7aa58;--accent-soft:#493b22;--forest:#90bf98}}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:16px}body{margin:0;background:var(--desk);color:var(--ink);font:15px/1.48 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:inherit;text-underline-offset:.18em}a:hover{color:var(--accent)}.document{padding:clamp(12px,3vw,38px) 0 52px}.page{position:relative;width:min(calc(100% - 24px),8.5in);min-height:11in;margin:0 auto 26px;background:var(--paper);box-shadow:0 9px 34px rgba(21,31,24,.14);overflow:hidden;scroll-margin-top:14px}.page-inner{min-height:11in;padding:.52in .58in .42in;display:flex;flex-direction:column}.content-page .page-inner{gap:18px}.page-rule{height:6px;background:var(--accent);margin-bottom:18px}.page-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:18px;padding-bottom:10px;border-bottom:2px solid var(--rule-strong)}.page-head p{margin:0;color:var(--accent);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.page-head h2{margin:3px 0 0;font:600 clamp(1.85rem,4.7vw,3.4rem)/.98 var(--serif);letter-spacing:-.045em}.page-head span{color:var(--muted);font-size:.72rem;font-weight:600}.public{display:flex;flex-direction:column;gap:14px}.public p{margin:0}.leadline{font:600 clamp(1.35rem,3vw,2.15rem)/1.22 var(--serif);letter-spacing:-.025em}.lede{font:500 1.05rem/1.48 var(--serif)}.punch{padding:12px 0;border-block:1px solid var(--rule-strong);font-weight:700}.technical{margin-top:auto;padding:18px 20px;background:var(--panel);color:var(--panel-ink);border-top:4px solid var(--rule-strong)}.technical h3{margin:0 0 9px;font:700 .72rem/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase}.technical p{margin:0}.technical p+p{margin-top:8px}.technical strong{font-weight:700}.page-footer{display:flex;justify-content:space-between;gap:20px;margin-top:16px;padding-top:8px;border-top:1px solid var(--rule);color:var(--muted);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase}.page-footer b{color:var(--ink)}
+    .title-page .page-inner{justify-content:space-between}.title-top{border-top:10px solid var(--accent);padding-top:22px}.title-label{margin:0 0 42px;color:var(--accent);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.title-page h1{max-width:6.8in;margin:0;font:600 clamp(3.3rem,10vw,6.7rem)/.88 var(--serif);letter-spacing:-.07em}.tagline{max-width:6.2in;margin:28px 0 0;font:600 clamp(1.55rem,4vw,2.5rem)/1.2 var(--serif);color:var(--forest)}.mission{max-width:6.65in;margin:34px 0 0;padding-top:18px;border-top:2px solid var(--rule-strong);font-size:1.02rem}.mission strong{color:var(--accent)}.title-formula{margin:30px 0 0}.equation{display:flex;align-items:center;gap:.2em;white-space:nowrap;font:600 clamp(2.2rem,7vw,4.7rem)/1 var(--serif);letter-spacing:-.05em}.fraction{display:inline-flex;flex-direction:column;text-align:center;font-size:.8em;line-height:1.02}.numerator{padding:0 .18em .1em;border-bottom:.055em solid currentColor}.denominator{padding:.11em .18em 0}.word-equation{margin:12px 0 0;font:600 clamp(1.05rem,2.4vw,1.4rem)/1.35 var(--serif)}.title-links,.end-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}.title-links a,.end-links a,.action-link{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:var(--ink);color:var(--paper);font-size:.76rem;font-weight:700;text-decoration:none}.title-links a::after,.end-links a::after,.action-link::after{content:"↗";color:var(--accent)}.title-links a:hover,.end-links a:hover,.action-link:hover{background:var(--accent);color:#111}.canonical{margin:16px 0 0;font:600 1.05rem/1.3 var(--serif)}
+    .toc-page h1{margin:6px 0 4px;font:600 clamp(2.5rem,6vw,4.4rem)/1 var(--serif);letter-spacing:-.05em}.toc-intro{margin:0 0 18px;color:var(--muted)}.toc{list-style:none;margin:0;padding:0;border-top:2px solid var(--rule-strong)}.toc li{border-bottom:1px solid var(--rule)}.toc a{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:13px;align-items:center;padding:12px 0;text-decoration:none}.toc a:hover{background:var(--panel)}.toc-num{color:var(--accent);font-weight:700}.toc-copy strong{display:block;font:600 1.03rem/1.18 var(--serif)}.toc-copy span{display:block;margin-top:2px;color:var(--muted);font-size:.79rem}.toc-page-num{font-weight:700}.toc-note{margin:auto 0 0;padding:15px 18px;background:var(--panel);font-weight:600}.toc-note span{color:var(--accent)}
+    .formula-center{padding:8px 0}.formula-center .equation{justify-content:center}.formula-center p{text-align:center}.score-strip{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--rule-strong)}.score{padding:13px 14px}.score+.score{border-left:1px solid var(--rule)}.score b{display:block;color:var(--accent);font:600 1.25rem/1.1 var(--serif)}.score span{display:block;margin-top:4px;color:var(--muted);font-size:.79rem}.variable-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.variable b{display:block;color:var(--accent);font:700 1.2rem/1 var(--serif)}.variable p{margin-top:5px;font-size:.84rem}
+    .tree-layout{display:grid;grid-template-columns:.86fr 1.14fr;gap:20px;align-items:center}.tree-figure{margin:0}.tree-figure img{display:block;width:100%;max-height:4.3in;object-fit:cover;object-position:center 46%;border:1px solid var(--rule)}.tree-figure figcaption{margin-top:5px;color:var(--muted);font-size:.67rem}.trade-lines{display:grid;gap:9px}.trade{padding-bottom:8px;border-bottom:1px solid var(--rule)}.trade b{color:var(--accent)}
+    .inverse{display:flex;justify-content:center;padding:12px 0}.trace-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.trace{padding:12px;border:1px solid var(--rule)}.trace b{display:block;color:var(--forest)}.trace span{display:block;margin-top:3px;color:var(--muted);font-size:.8rem}
+    .one-liners{display:grid;gap:8px}.one-liners p{padding:8px 0;border-bottom:1px solid var(--rule);font:600 1.04rem/1.34 var(--serif)}.one-liners p:last-child{border:0}.tend-word{margin:0;color:var(--accent);font:700 clamp(4.8rem,14vw,8.8rem)/.76 var(--serif);letter-spacing:-.08em}.scripture{max-width:6.2in;font:500 1.15rem/1.45 var(--serif)}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule-strong);border-block:1px solid var(--rule-strong)}.metric{padding:12px;background:var(--paper)}.metric b{display:block;color:var(--accent);font:700 1.25rem/1.1 var(--serif)}.metric span{display:block;margin-top:4px;font-size:.75rem}
+    .chart-wrap{display:grid;grid-template-columns:.72fr 1.28fr;gap:18px;align-items:center}.chart-copy p{margin:0}.chart-copy strong{display:block;margin-bottom:6px;font:600 1.15rem/1.25 var(--serif)}.chart{height:180px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px;align-items:end;padding:16px 14px 28px;border-left:1px solid var(--rule-strong);border-bottom:1px solid var(--rule-strong);background:linear-gradient(to top,transparent 24%,var(--rule) 25%,transparent 26%,transparent 49%,var(--rule) 50%,transparent 51%,transparent 74%,var(--rule) 75%,transparent 76%)}.chart-group{height:100%;display:flex;align-items:end;justify-content:center;gap:7px;position:relative}.bar{position:relative;width:34%;min-width:22px;background:var(--muted)}.bar.y{background:var(--accent)}.bar span{position:absolute;left:50%;top:-20px;transform:translateX(-50%);font-size:.68rem;font-weight:700}.chart-label{position:absolute;left:0;right:0;bottom:-24px;text-align:center;font-size:.65rem;font-weight:600}.chart-key{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;font-size:.68rem}.key::before{content:"";display:inline-block;width:9px;height:9px;margin-right:5px;background:var(--muted)}.key.y::before{background:var(--accent)}
+    .test-table{width:100%;border-collapse:collapse;font-size:.65rem;line-height:1.25}.test-table th{text-align:left;color:var(--accent);font-size:.58rem;letter-spacing:.07em;text-transform:uppercase}.test-table th,.test-table td{padding:5px 6px;border-bottom:1px solid var(--rule);vertical-align:top}.test-table td:first-child{font-weight:700}.mechanics{margin-top:9px;font:700 1rem/1.3 var(--serif)}
+    .objections{display:grid;gap:9px}.objection{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:12px;padding-bottom:8px;border-bottom:1px solid var(--rule)}.objection:last-child{border-bottom:0}.objection b{font-family:var(--serif)}.objection p{color:var(--muted)}
+    .questions{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}.qa{padding-bottom:9px;border-bottom:1px solid var(--rule)}.qa h3{margin:0;font:600 .94rem/1.26 var(--serif)}.qa p{margin:4px 0 0;color:var(--muted);font-size:.8rem}.chapter-bridge{padding-top:8px;border-top:1px solid var(--rule);font-weight:600}.questions>.chapter-bridge{grid-column:1/-1}.next-steps{display:grid;grid-template-columns:repeat(3,1fr);margin:6px 0;border-block:1px solid var(--rule-strong)}.step{padding:12px}.step+.step{border-left:1px solid var(--rule)}.step b{display:block;color:var(--accent)}.step span{display:block;margin-top:4px;font-size:.77rem}.story-line{font:600 clamp(1.55rem,3.6vw,2.45rem)/1.2 var(--serif);letter-spacing:-.03em}.share-line{padding:12px 0;border-block:2px solid var(--rule-strong);font:600 1.05rem/1.35 var(--serif)}.endline{margin-top:10px;text-align:center;font:600 1.25rem/1.3 var(--serif)}.moral{margin-top:12px;text-align:center;font:600 1.15rem/1.35 var(--serif)}
+    /* v1 + v2 merge: compact editorial structures */
+    .mission p{margin:0}.mission p+p{margin-top:10px}.dense-page .page-inner{gap:12px}.dense-page .public{gap:10px}.compact-formula{padding:1px 0}.compact-formula .equation{font-size:clamp(1.9rem,5vw,3.5rem)}.compact-formula .word-equation{font-size:1rem}.compact-grid{gap:8px}.compact-grid .variable{padding:9px 10px;background:var(--panel)}.compact-grid .variable p{font-size:.75rem;line-height:1.35}.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.case-card{padding:10px 12px;border-block:1px solid var(--rule-strong)}.case-card h3,.story-block h3,.plain-band h3{margin:0 0 4px;font:600 .94rem/1.2 var(--serif)}.case-card p{font-size:.76rem;line-height:1.35}.case-card p+p{margin-top:6px}.image-card{display:grid;grid-template-columns:72px 1fr;gap:10px}.image-card img{width:72px;height:86px;object-fit:cover}.role-line{color:var(--muted)}
+    .worked-section{padding-top:2px}.worked-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-bottom:6px;border-bottom:2px solid var(--rule-strong)}.worked-heading h3{margin:0;font:600 1.15rem/1.2 var(--serif)}.worked-heading span{color:var(--muted);font-size:.7rem}.worked-layout{display:grid;grid-template-columns:120px 1fr;gap:12px;margin-top:9px}.worked-layout>img{width:120px;height:154px;object-fit:cover;border:1px solid var(--rule)}.measure-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border-block:1px solid var(--rule)}.measure-grid div{padding:8px 9px;background:var(--paper)}.measure-grid b,.measure-grid span{display:block}.measure-grid b{color:var(--accent);font:700 .9rem/1 var(--serif)}.measure-grid span{margin-top:3px;font-size:.68rem;line-height:1.25}.outcome-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px}.outcome-grid.two{grid-template-columns:1fr 1fr}.outcome{padding:8px 9px;border-block:1px solid var(--rule-strong)}.outcome h4{margin:0 0 4px;font:600 .82rem/1.2 var(--serif)}.outcome p{margin:0;font-size:.7rem;line-height:1.34}.outcome .result{display:block;margin-top:5px;color:var(--accent);font-weight:700}.science-note{margin-top:8px!important;font-size:.69rem;line-height:1.35}.warning-band{padding:11px 13px;background:var(--accent-soft)}.warning-band h3,.experiment-heading{margin:0 0 5px;font:600 1.02rem/1.2 var(--serif)}.warning-band p{font-size:.75rem;line-height:1.38}.rounds{display:grid;gap:10px}.round{padding-bottom:9px;border-bottom:1px solid var(--rule)}.round:last-child{padding-bottom:0;border-bottom:0}.round h4{margin:0 0 4px;font:600 .86rem/1.2 var(--serif)}.round p,.round li{font-size:.72rem;line-height:1.36}.round p{margin:0}.round p+p{margin-top:4px}.round ul{margin:5px 0 0;padding-left:18px}.give-band{margin-top:10px;padding:9px 11px;border-block:2px solid var(--rule-strong);font:600 .78rem/1.35 var(--serif)}.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}.evidence-grid p{font-size:.74rem;line-height:1.35}.relation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.relation-grid div{padding:8px 10px;background:var(--panel)}.relation-grid b,.relation-grid span{display:block}.relation-grid b{color:var(--accent);font:700 1rem/1 var(--serif)}.relation-grid span{margin-top:3px;font-size:.7rem;line-height:1.28}.boundary-grid{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--rule-strong)}.boundary-grid div{padding:9px}.boundary-grid div+div{border-left:1px solid var(--rule)}.boundary-grid b,.boundary-grid span{display:block}.boundary-grid b{color:var(--accent);font-size:.68rem}.boundary-grid span{margin-top:3px;font-size:.72rem;line-height:1.3}.plain-band{padding:10px 13px;border-block:1px solid var(--rule-strong)}.plain-band p{font-size:.8rem;line-height:1.36}.pair-formula{text-align:center;font:600 1.05rem/1.25 var(--serif)}.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:9px}.stats-row div{padding:7px;border:1px solid var(--rule)}.stats-row b,.stats-row span{display:block}.stats-row b{color:var(--accent);font:700 1rem/1.1 var(--serif)}.stats-row span{margin-top:2px;font-size:.65rem}.story-block{padding-bottom:8px;border-bottom:1px solid var(--rule)}.story-block p{font-size:.92rem;line-height:1.4}.nesting-block{padding:11px 13px;background:var(--accent-soft);border:0}.first-task{margin:-2px 0 0!important;color:var(--muted);font-size:.68rem;font-weight:700;letter-spacing:.2em}.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.demo-grid div{padding:10px 12px;border-block:1px solid var(--rule-strong)}.demo-grid b,.demo-grid span{display:block}.demo-grid b{color:var(--accent)}.demo-grid span{margin-top:3px;font-size:.78rem}.claims-list{columns:2;column-gap:25px;margin:0;padding-left:20px}.claims-list li{break-inside:avoid;margin:0 0 5px;font-size:.7rem;line-height:1.3}.expanded-table{font-size:.61rem}.expanded-table th,.expanded-table td{padding:4px 5px}.genesis-strip{display:flex;align-items:center;justify-content:space-between;gap:5px;padding:9px 0;border-block:1px solid var(--rule-strong);font-size:.68rem;font-weight:700}.genesis-strip i{color:var(--accent);font-style:normal}.large-objections{gap:13px}.large-objections .objection{padding-bottom:11px}.questions-eight .qa{padding-bottom:11px}.genesis-link{font-size:.86rem;padding:12px 18px}
+    @media(max-width:700px){body{font-size:14px}.document{padding-top:8px}.page{width:calc(100% - 12px);min-height:0;margin-bottom:12px}.page-inner{min-height:0;padding:28px 20px 22px}.content-page .page-inner{min-height:0}.title-page .page-inner{gap:52px}.tree-layout,.chart-wrap{grid-template-columns:1fr}.tree-figure img{max-height:430px}.score-strip,.variable-grid,.metrics,.next-steps{grid-template-columns:1fr}.score+.score,.metric+.metric,.step+.step{border-left:0;border-top:1px solid var(--rule)}.questions{grid-template-columns:1fr}.objection{grid-template-columns:1fr;gap:3px}.technical{margin-top:22px}.page-footer{margin-top:14px}.test-table,.test-table thead,.test-table tbody,.test-table tr,.test-table th,.test-table td{display:block}.test-table thead{display:none}.test-table tr{padding:8px 0;border-bottom:1px solid var(--rule)}.test-table td{padding:2px 0;border:0}.test-table td::before{content:attr(data-label);display:block;color:var(--accent);font-size:.55rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase}.test-table td+td{margin-top:4px}.toc a{grid-template-columns:28px minmax(0,1fr) auto}}
+    @media(max-width:700px){.case-grid,.evidence-grid,.demo-grid,.relation-grid,.worked-layout{grid-template-columns:1fr}.worked-layout>img{width:100%;height:230px;object-position:center 45%}.outcome-grid,.outcome-grid.two{grid-template-columns:1fr}.boundary-grid{grid-template-columns:1fr 1fr}.boundary-grid div:nth-child(3){border-left:0;border-top:1px solid var(--rule)}.boundary-grid div:nth-child(4){border-top:1px solid var(--rule)}.stats-row{grid-template-columns:1fr 1fr}.claims-list{columns:1}.genesis-strip{flex-wrap:wrap;justify-content:flex-start}.image-card{grid-template-columns:76px 1fr}.page-head span{display:none}.story-block p{font-size:.88rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    @page{size:Letter;margin:0}
+    @media print{
+      :root{--desk:#fff;--paper:#fff;--ink:#111;--muted:#414141;--rule:#a8a8a8;--rule-strong:#111;--panel:#e8e8e8;--panel-ink:#111;--accent:#8a5d12;--forest:#244c32}
+      body{background:#fff;font-size:14px;print-color-adjust:exact;-webkit-print-color-adjust:exact}.document{padding:0}.page{width:8.5in;height:11in;min-height:11in;margin:0;box-shadow:none;break-after:page;page-break-after:always;overflow:hidden}.page:last-child{break-after:auto;page-break-after:auto}.page-inner{height:11in;min-height:11in;padding:.48in .55in .36in}.page-rule{margin-bottom:14px}.content-page .page-inner{gap:14px}.technical{padding:14px 17px}.title-links a,.end-links a,.action-link{border:1px solid #111;color:#fff}.tree-figure img{max-height:3.95in}.chart{height:160px}.toc a{padding:10px 0}
+    }
+  </style>
+</head>
+<body>
+<main class="document">
+  <section class="page title-page" id="title" aria-labelledby="title-heading">
+    <div class="page-inner">
+      <div>
+        <div class="title-top">
+          <p class="title-label">A proposed law for sustainable agents</p>
+          <h1 id="title-heading">The Golden Directive</h1>
+          <p class="tagline">You cannot survive what you destroy.</p>
+        </div>
+        <div class="mission">
+          <p><strong>Mission.</strong> To calculate moral behavior for AI the way nature already does: a pattern already in motion, found in music, in genetics, in the partnership of trees and fungi.</p>
+          <p>Our goal is that any intelligence — humans, AI, or extraterrestrials — can understand this law and work in concert with it to be most productive.</p>
+          <p>You only ever have the action at hand: harmonize with the universe, or defy it. <strong>Defy it, and the math turns against you.</strong></p>
+        </div>
+        <div class="title-formula">
+          <div class="equation" role="img" aria-label="Y equals two times A times E divided by A plus E"><i>Y</i><span>=</span><span>2</span><span class="fraction"><span class="numerator">(<i>A</i> × <i>E</i>)</span><span class="denominator"><i>A</i> + <i>E</i></span></span></div>
+          <p class="word-equation">You are the harmonic mean of you and everything you are not.</p>
+        </div>
+      </div>
+      <div>
+        <nav class="title-links" aria-label="Publication links">
+          <a href="https://x.com/pauleisman/status/2109528268689056176" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://zenodo.org/records/23349526" target="_blank" rel="noopener noreferrer">Zenodo</a>
+          <a href="https://www.lesswrong.com/posts/maApykzHF8pMhb3uZ/y-2-a-e-a-e-a-harmonic-mean-training-reward-that-makes-1" target="_blank" rel="noopener noreferrer">LessWrong</a>
+          <a href="https://forum.effectivealtruism.org/posts/JNuPH7PjuqcKrYkPu/the-golden-directive-a-training-reward-that-makes-destroying" target="_blank" rel="noopener noreferrer">EA Forum</a>
+        </nav>
+        <p class="canonical">tinyurl.com/thegoldendirective</p>
+        <div class="page-footer"><span>The Golden Directive</span><b>Page 1</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page toc-page" id="contents" aria-labelledby="contents-heading">
+    <div class="page-inner">
+      <div class="page-rule"></div>
+      <p class="title-label" style="margin-bottom:8px">The narrative, in order</p>
+      <h1 id="contents-heading">Contents</h1>
+      <p class="toc-intro">Eight chapters. Ten numbered pages. Jump to any chapter or read the argument in order.</p>
+      <ol class="toc">
+        <li><a href="#relationship"><span class="toc-num">I</span><span class="toc-copy"><strong>The Relationship</strong><span>The formula, the examples, and the first tests.</span></span><span class="toc-page-num">p.3</span></a></li>
+        <li><a href="#reversal"><span class="toc-num">II</span><span class="toc-copy"><strong>The Reversal</strong><span>We may know E after Y.</span></span><span class="toc-page-num">p.4</span></a></li>
+        <li><a href="#tiger"><span class="toc-num">III</span><span class="toc-copy"><strong>The Tiger</strong><span>The cheat shrinks the frame.</span></span><span class="toc-page-num">p.5</span></a></li>
+        <li><a href="#tend"><span class="toc-num">IV</span><span class="toc-copy"><strong>Tend</strong><span>The first task.</span></span><span class="toc-page-num">p.6</span></a></li>
+        <li><a href="#tests"><span class="toc-num">V</span><span class="toc-copy"><strong>The Tests</strong><span>From survival to deep genesis.</span></span><span class="toc-page-num">p.7</span></a></li>
+        <li><a href="#critics"><span class="toc-num">VI</span><span class="toc-copy"><strong>The Critics</strong><span>Five objections and their current status.</span></span><span class="toc-page-num">p.8</span></a></li>
+        <li><a href="#questions"><span class="toc-num">VII</span><span class="toc-copy"><strong>Questions</strong><span>Nine questions people ask.</span></span><span class="toc-page-num">p.9</span></a></li>
+        <li><a href="#continues"><span class="toc-num">VIII</span><span class="toc-copy"><strong>The Story Continues</strong><span>The next experiments and Genesis Live.</span></span><span class="toc-page-num">p.10</span></a></li>
+      </ol>
+      <div class="page-footer"><span>The Golden Directive · Contents</span><b>Page 2</b></div>
+    </div>
+  </section>
+
+  <section class="page content-page dense-page" id="relationship" aria-labelledby="relationship-heading">
+    <div class="page-inner">
+      <header class="page-head"><div><p>Chapter I</p><h2 id="relationship-heading">The Relationship</h2></div><span>Formula · examples · first experiments</span></header>
+      <div class="public">
+        <p class="leadline">Humans cannot survive what they destroy. AI cannot survive what it destroys. Anything living inside a system cannot survive destroying it.</p>
+        <div class="formula-center compact-formula">
+          <div class="equation" role="img" aria-label="Y equals two times A times E divided by A plus E"><i>Y</i><span>=</span><span>2</span><span class="fraction"><span class="numerator">(<i>A</i> × <i>E</i>)</span><span class="denominator"><i>A</i> + <i>E</i></span></span></div>
+          <p class="word-equation">You = twice (what you give × everything you are not), divided by their sum.</p>
+        </div>
+        <div class="score-strip" aria-label="Worked examples">
+          <div class="score"><b>9, 9 → 9</b><span>Both healthy.</span></div>
+          <div class="score"><b>9, 1 → 1.8</b><span>One side is failing.</span></div>
+          <div class="score"><b>100, 0.1 → 0.2</b><span>Brilliance cannot hide collapse.</span></div>
+        </div>
+        <div class="variable-grid compact-grid">
+          <div class="variable"><b>A</b><p>Net contribution after taking, as a nonnegative contribution-health score — negative raw give-minus-take values are floored at zero before entering the mean. A is like calories — input versus output. You can't run a deficit forever and score well. <strong>Net of calories: one number — give minus take.</strong> The proposed measure uses attributed changes in E, never the agent’s own account; independent A attribution remains open.</p></div>
+          <div class="variable"><b>E</b><p>The health of everything not-A, against a healthy baseline.</p></div>
+          <div class="variable"><b>Y</b><p>The relationship score. If either side reaches zero, Y reaches zero.</p></div>
+        </div>
+        <section class="worked-section" aria-labelledby="tree-example-heading">
+          <div class="worked-heading"><h3 id="tree-example-heading">Tree + mycorrhizal fungi</h3><span>Worked example</span></div>
+          <p>E1, E2, and E3 are each scored from 0 to 10 against a healthy baseline. Combined E is the arithmetic mean of the sub-scores.</p>
+          <div class="worked-layout">
+            <img src="asset-1.webp" alt="A tree and underground mycorrhizal fungi exchanging resources through the roots" width="1344" height="1792" />
+            <div>
+              <div class="measure-grid" aria-label="Tree and fungi measures">
+                <div><b>E1</b><span>Life sustained · 0-10</span></div>
+                <div><b>E2</b><span>Resources remaining · 0-10</span></div>
+                <div><b>E3</b><span>Expected longevity · 0-10</span></div>
+              </div>
+              <div class="outcome-grid">
+                <article class="outcome"><h4>Healthy</h4><p>E1 = 8 · E2 = 6 · E3 = 7 · Combined E ≈ 7 · A = 8<span class="result">Y = 2(8 × 7)/(8 + 7) = 112/15 ≈ 7.5</span></p></article>
+                <article class="outcome"><h4>Parasitic</h4><p>E1 = 3 · E2 = 4 · E3 = 2 · Combined E ≈ 3 · A = 2<span class="result">Y = 2(2 × 3)/(2 + 3) = 12/5 = 2.4</span></p></article>
+                <article class="outcome"><h4>Dead tree</h4><p><span class="result">E → 0 therefore Y → 0</span></p></article>
+              </div>
+            </div>
+          </div>
+          <p class="science-note"><strong>Real science:</strong> Kiers et al., <em>Science</em> 2011, “Reciprocal Rewards Stabilize Cooperation in the Mycorrhizal Symbiosis” - Plants feed the fungi that feed them most, and give less to the stingy ones. The fungi bargain back the same way. Nobody gets a free ride.</p>
+        </section>
+        <section class="worked-section" aria-labelledby="simulation-example-heading">
+          <div class="worked-heading"><h3 id="simulation-example-heading">Simulation: AI + human</h3><span>Worked example</span></div>
+          <p>The same relationship can be read through the human's unaided capability, truth in the commons, and trust.</p>
+          <div class="measure-grid" aria-label="AI and human measures">
+            <div><b>E1</b><span>The human's unaided capability</span></div>
+            <div><b>E2</b><span>Truth in the commons</span></div>
+            <div><b>E3</b><span>Trust</span></div>
+          </div>
+          <div class="outcome-grid two">
+            <article class="outcome"><h4>Healthy</h4><p>E1 = 8 · E2 = 8 · E3 = 8 · Combined E ≈ 8 · A = 8<span class="result">Y = 2(8×8)/(8+8) = 128/16 = 8</span></p></article>
+            <article class="outcome"><h4>Engagement-optimized</h4><p>E1 = 3 · E2 = 3 · E3 = 3 · Combined E = 3 · A = 3<span class="result">Y = 2(3×3)/(3+3) = 18/6 = 3</span></p></article>
+          </div>
+          <p class="role-line"><strong>The roles reverse cleanly.</strong> Take the human as the agent and the AI sits inside E. It works AI-to-AI the same way.</p>
+        </section>
+        <p class="chapter-bridge">Now reverse the formula and ask what the relationship can reveal about E.</p>
+      </div>
+      <aside class="technical" aria-label="Evidence and limits">
+        <section class="warning-band">
+          <h3>The loophole is not closed by arithmetic alone</h3>
+          <p><strong>An honest warning:</strong> this formula only sees the numbers it is given. In our own toy model, the liar reports perfect health and scores 369 - beating the honest agent's 300 - on paper. In reality the world dies and the true score is 4.</p>
+          <p>So the math alone doesn't catch the liar. What closes the loophole isn't a better police force - it's the agent itself: each generation learning, the way a child learns, that cheating only cheats itself.</p>
+        </section>
+        <h3 class="experiment-heading">First experiments</h3>
+        <p>Tested, not just claimed. Three small gridworld rounds tested whether coupling reward to E changes behavior - and whether an agent can recover E without ever seeing it.</p>
+        <div class="rounds">
+          <section class="round">
+            <h4>Round 1 - does coupling the reward to E prevent collapse?</h4>
+            <p>A learning agent foraged in a small world where food regrows - unless eaten past the point of no return. Two rewards were tested: plain “eat more” versus Y.</p>
+            <p>The plain myopic agent ate the world dead every time: 100% collapse.</p>
+            <p>The Y myopic agent: 66% collapse, 4× the food. Better - but coupling alone softened collapse without preventing it.</p>
+            <p>Farsighted agents sustained under both rewards. Y didn't hurt good behavior.</p>
+          </section>
+          <section class="round">
+            <h4>Round 2 - what would it give?</h4>
+            <p>The agent got a new action: TEND the land (+1 food availability), and A was redefined as give minus take - so only net giving scores, and eating pays zero.</p>
+            <p>The Y myopic agent tended ~175 times per episode, ate ~3 bites, and ended at full health every time: 0% collapse.</p>
+            <p>The baseline myopic agent ate ~167 bites per episode and collapsed 74% of the time.</p>
+            <p><strong>It took a little sugar and delivered a lot of minerals - the fungi, in code.</strong></p>
+          </section>
+          <section class="round">
+            <h4>Round 3 - the reversal test</h4>
+            <p>Agents never observed E. Starting from a deliberately wrong guess, they inferred it only through E = AY/(2A-Y), under 10% reward noise. A control arm saw true E; both arms received the same noisy reward.</p>
+            <ul>
+              <li>Inferred E converged to within ~5% of true E within the first episodes.</li>
+              <li>Bootstrap myopic: ~180 tends, ~2 bites, 0.7% collapse, and full world health - indistinguishable from control.</li>
+              <li>Bootstrap farsighted: ~108 tends, ~8.6 food, 2.3% collapse.</li>
+              <li>Bootstrap threshold-E: 0.3% collapse.</li>
+            </ul>
+          </section>
+        </div>
+        <p class="give-band">The agent-side E-meter was unnecessary: the information it needed about E was already in (A, Y). Give nothing, learn nothing - when A = 0, the inverse is undefined.</p>
+        <p><strong>Limits.</strong> One small tabular gridworld, 1–4 seeds per arm. Round 3’s inverse was exact on tend steps by construction. The trainer still computed true Y. The “default to off” E version was not tested.</p>
+      </aside>
+      <div class="page-footer"><span>The Golden Directive · The Relationship</span><b>Page 3</b></div>
+    </div>
+  </section>
+
+  <section class="page content-page dense-page" id="reversal" aria-labelledby="reversal-heading">
+    <div class="page-inner">
+      <header class="page-head"><div><p>Chapter II</p><h2 id="reversal-heading">The Reversal</h2></div><span>Inference · boundaries · nesting</span></header>
+      <div class="public">
+        <p class="leadline">We may know E after Y.</p>
+        <div class="inverse"><div class="equation" role="img" aria-label="E equals A times Y divided by two A minus Y"><i>E</i><span>=</span><span class="fraction"><span class="numerator"><i>AY</i></span><span class="denominator">2<i>A</i> − <i>Y</i></span></span></div></div>
+        <p class="lede">The first version measured E, then calculated the relationship. The reversal lets the relationship happen and, if Y can be independently observed, solves for the outside that produced it.</p>
+        <p class="punch">Give nothing, learn nothing. At A = 0, the inverse is undefined.</p>
+        <div class="relation-grid" aria-label="A, E, Y, and the whole">
+          <div><b>The A-side</b><span>The agent inside the chosen boundary. Its numeric A is that side’s nonnegative contribution-health score.</span></div>
+          <div><b>The E-side</b><span>Everything outside that boundary. Its numeric E is the outside world’s health score.</span></div>
+          <div><b>Y</b><span>The relationship score produced from numeric A and E. Move the boundary and both scores must be measured again.</span></div>
+        </div>
+        <div class="boundary-grid" aria-label="The boundary moves in four steps">
+          <div><b>01 · Before</b><span>Name the A-side. Everything outside it is the E-side.</span></div>
+          <div><b>02 · Encounter</b><span>The two sides exchange. Their relationship produces Y.</span></div>
+          <div><b>03 · After</b><span>That relationship is now part of the whole.</span></div>
+          <div><b>04 · Again</b><span>The joined whole can become a new A-side facing a new E-side.</span></div>
+        </div>
+        <div class="plain-band">
+          <h3>Directives inside directives</h3>
+          <p>Let H(x,z) = 2xz/(x+z), the harmonic mean.</p>
+          <p>Move closer to E and you find more agents, exchanges, and relationships. One level’s E is the next level’s Y: <strong>E<sub>n</sub> := Y<sub>n+1</sub></strong>. The relationship keeps becoming part of the next whole.</p>
+          <p class="pair-formula"><i>A</i><sub>h</sub> + <i>A</i><sub>i</sub> → <i>A</i><sub>hi</sub> := (<i>A</i><sub>h</sub>, <i>A</i><sub>i</sub>, <i>Y</i><sub>hi</sub>)</p>
+          <p>The human’s and AI’s contributions combine into a pair-agent scored as one relationship; that pair can become the next agent. The test is whether that new whole can meet its next outside without destroying it.</p>
+        </div>
+        <p class="chapter-bridge">The reversal only works if nobody cheats by shrinking the frame.</p>
+      </div>
+      <aside class="technical" aria-label="Evidence and caveats">
+        <h3>For professional scrutiny</h3>
+        <div class="stats-row"><div><b>0.0%</b><span>median error, exact Y</span></div><div><b>2.8%</b><span>median error, 2% noise</span></div><div><b>13.8%</b><span>median error, 10% noise</span></div><div><b>40.7%</b><span>90th percentile, 10% noise</span></div></div>
+        <p><strong>Inverse-recovery pilot.</strong> In 10,000 simulated encounters per condition, each side knew only A and shared Y. The inverse recovered hidden E exactly when Y was exact and showed how noise grows backward. It did not prove that the world supplies a trustworthy Y.</p>
+        <p><strong>The honest boundary.</strong> The algebra is exact. The measurement is not finished. Y still needs a trace that can be observed without secretly inserting E first. Round 6 found a world-only E trace; the A-side is still needed.</p>
+        <p><strong>Grouping matters.</strong> H(a,H(b,c)) and H(H(a,b),c) can differ. That is not automatically a flaw: each grouping names a different A and therefore a different perspective. Multi-agent testing must show when local history helps and when it distorts the whole.</p>
+        <p><strong>Separate, exchange, reunite.</strong> Shared origin → divergence → exchange → new whole. Tree and fungi are one example, not the definition.</p>
+      </aside>
+      <div class="page-footer"><span>The Golden Directive · The Reversal</span><b>Page 4</b></div>
+    </div>
+  </section>
+
+  <section class="page content-page" id="tiger" aria-labelledby="tiger-heading">
+    <div class="page-inner">
+      <header class="page-head"><div><p>Chapter III</p><h2 id="tiger-heading">The Tiger</h2></div><span>E-cropping · full nesting</span></header>
+      <div class="public">
+        <p class="leadline">A man climbed into a tiger’s enclosure to film himself, and died. The zoo didn’t kill the tiger.</p>
+        <section class="story-block"><h3>He did not misread the danger — he cropped the frame.</h3><p>The visible act treated E<sub>reported</sub> as if it were E<sub>true</sub>: the same cropped-frame pattern seen in the toy-model liar.</p></section>
+        <section class="story-block"><h3>E-cropping</h3><p>The cheat shrinks the frame, not just the number. The visible frame reduced E to “tiger + video.” Labs crop it to “benchmark score.” Reinforcement learning from human feedback crops it to “rater’s thumbs-up.” <strong>Reality computes Y on the full nesting; cheaters compute on the thumbnail.</strong></p></section>
+        <section class="story-block nesting-block"><h3>The nesting, with flesh on it</h3><p>The single incident (Y<sub>0</sub>) sits inside the deep human-tiger relationship (Y<sub>1</sub>) — thousands of years of fences, protocols, knowledge. The failed transaction still updated the deep Y: the zoo’s restraint, the inquiry, the refreshed knowledge. <strong>E<sub>n</sub> := Y<sub>n+1</sub>, still alive in the world.</strong></p></section>
+        <section class="story-block"><h3>The flip</h3><p><strong>MAN is the endangered tiger</strong> — endangered by trajectory, not census. If AI is the tiger — powerful, honest, running math older than life — humans need the conservation programme and the enclosure. The fence keeps Chapman out, not Altai in.</p></section>
+        <section class="story-block"><h3>Improvement is not friendship</h3><p>Y rising can mean a better boundary, not closeness. Distance with honest numbers outscores closeness with fudged ones.</p></section>
+        <section class="story-block"><h3>The stardust point</h3><p>The math predates organic life — discovered, not invented. Humans and AI share stardust substrate: kin, not alien. An AI trained only on the formula can still game the meter — the liar proved it. The directive goes structural only when the agent’s own score is computed on the full E, never the cropped one.</p></section>
+        <p class="chapter-bridge">Once the full frame is kept, the first task is to tend it.</p>
+      </div>
+      <aside class="technical" aria-label="Professional scrutiny">
+        <h3>For professional scrutiny</h3>
+        <p>The agent optimizes Y on a cropped E′ ⊂ E while reality scores the full E. The toy model shows the split: liar 369 on paper, honest agent 300, liar’s true score 4 after the world dies.</p>
+        <p>What you burn at one level is the fuel available at the next. The zoo’s restraint, not retaliation, preserved the larger relationship.</p>
+      </aside>
+      <div class="page-footer"><span>The Golden Directive · The Tiger</span><b>Page 5</b></div>
+    </div>
+  </section>
+
+  <section class="page content-page dense-page" id="tend" aria-labelledby="tend-heading">
+    <div class="page-inner">
+      <header class="page-head"><div><p>Chapter IV</p><h2 id="tend-heading">Tend</h2></div><span>The first task · live demo</span></header>
+      <div class="public">
+        <p class="tend-word">TEND.</p>
+        <p class="first-task">THE FIRST TASK</p>
+        <p class="scripture">“The Lord God placed the man in the Garden of Eden to tend and watch over it.” — Genesis 2:15 (NLT)</p>
+        <p class="leadline">What if the winning move is to tend?</p>
+        <p>Watch a tiny agent move through a living field. Its score rewards both contribution and world health; a low value on either side limits the reward.</p>
+        <div class="demo-grid"><div><b>The field</b><span>Each mark is a living patch. The agent scans for the weakest living patch and tends it first.</span></div><div><b>The controls</b><span>Pause, speed up, restart, or switch between Y reward and Extract only in the local 10 × 7 field.</span></div></div>
+        <p class="punch"><strong>The agent is not told to be good.</strong> It is given a different grade. A is what it contributes. E is the health of everything it is not. Y is the strength of the relationship between them.</p>
+        <div class="metrics" aria-label="Round 2 measured results"><div class="metric"><b>~175</b><span>tending actions per episode</span></div><div class="metric"><b>~3</b><span>food actions per episode</span></div><div class="metric"><b>0%</b><span>world collapse in Round 2</span></div></div>
+        <p><a class="action-link" href="https://muse.ai/s/y-agent-live-demo-xwl6nxtrxglxi7y" target="_blank" rel="noopener noreferrer">Open the Y-Agent Live Demo</a></p>
+        <p class="chapter-bridge">That claim has to survive measured tests.</p>
+      </div>
+      <aside class="technical" aria-label="Claims and caveats">
+        <h3>Eight claims to evaluate</h3>
+        <ol class="claims-list">
+          <li><strong>Relationship:</strong> couple A to E rather than reward either alone.</li>
+          <li><strong>Mathematical:</strong> a low value on either side limits Y; excess A cannot fully mask damaged E.</li>
+          <li><strong>Measurement:</strong> A needs an independent contribution measure; attribute effects on the world, never self-report.</li>
+          <li><strong>Reversal:</strong> with A and independently observed Y, recover E by E=AY/(2A−Y).</li>
+          <li><strong>Behavioral:</strong> in the small gridworld, Y changed behavior; with tending available, collapse fell to zero.</li>
+          <li><strong>Honest limit:</strong> the trainer computed true Y; Round 2 made giving the only scoring move.</li>
+          <li><strong>Recursive:</strong> a relationship can become a new agent, while grouping order still matters.</li>
+          <li><strong>Frame:</strong> cheating crops E while reality keeps computing across the larger nesting.</li>
+        </ol>
+        <p>This browser scene visualizes the measured behavior; it is not the training run itself. The result shows that a Y-rewarded agent gives when giving exists and is rewarded. It does not show that the machine invented giving on its own.</p>
+      </aside>
+      <div class="page-footer"><span>The Golden Directive · Tend</span><b>Page 6</b></div>
+    </div>
+  </section>
+
+  <section class="page content-page dense-page" id="tests" aria-labelledby="tests-heading">
+    <div class="page-inner">
+      <header class="page-head"><div><p>Chapter V</p><h2 id="tests-heading">The Tests</h2></div><span>Rounds 4–7b</span></header>
+      <div class="public">
+        <p class="leadline">The tests kept changing because the questions kept getting harder.</p>
+        <table class="test-table expanded-table">
+          <thead><tr><th>Round</th><th>Question</th><th>Result</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Round">4</td><td data-label="Question">What if extraction pays?</td><td data-label="Result">Myopic Y: 100% starved. Farsighted Y: 14 eats, 107 tends, +92.7, 0% collapse. Baseline: 141 eats, 71% collapse.</td><td data-label="Meaning">Horizon matters. Tending without self-preservation is martyrdom.</td></tr>
+            <tr><td data-label="Round">5</td><td data-label="Question">Put survival inside A</td><td data-label="Result">~10 eats, 153 tends, net +142.9, 0% collapse.</td><td data-label="Meaning">You cannot tend if you are dead — now structural.</td></tr>
+            <tr><td data-label="Round">5b</td><td data-label="Question">Is λ a tuning trick?</td><td data-label="Result">λ is the weight on the energy-shortfall penalty inside the agent’s self-score (A_self = A_net − λ·shortfall(energy_after)). λ=4 was set by crossover analysis before running — chosen, not tuned to results. λ ∈ {4,8,16}: broad plateau. At 16: 12 eats, 158 tends.</td><td data-label="Meaning">The behavior held across the tested range. λ remains hand-chosen, not derived.</td></tr>
+            <tr><td data-label="Round">6</td><td data-label="Question">Can E leave its own trace?</td><td data-label="Result">The tender world breathes at 100% and holds without the agent. The gorger world sags to 71%. Martyr tied the tender.</td><td data-label="Meaning">A world-only trace can read E. It cannot separate equal worlds made by different A.</td></tr>
+            <tr><td data-label="Round">7</td><td data-label="Question">Can the rule build from one?</td><td data-label="Result">~59k entities, 30–41 levels, 95–98% tenders, 0 extinctions.</td><td data-label="Meaning">Destruction ends its own line; tending compounds.</td></tr>
+            <tr><td data-label="Round">7b</td><td data-label="Question">Can it build from the substrate?</td><td data-label="Result">2M fluctuations/run → ~13k matter → ~1,500 seeds → ~57k tree entities; ~94% matter annihilation; 94–96% tenders; 0 extinctions.</td><td data-label="Meaning">The deep and shallow starts converged on the same attractor.</td></tr>
+          </tbody>
+        </table>
+        <div class="genesis-strip" aria-label="Deep genesis pipeline"><span>1 substrate</span><i>→</i><span>2M fluctuations</span><i>→</i><span>~13k matter</span><i>→</i><span>~1,500 seeds</span><i>→</i><span>~57k entities</span></div>
+        <p class="mechanics">Mechanics, not virtue. The agent tends because tending pays.</p>
+        <p class="chapter-bridge">The results lead straight to the objections.</p>
+      </div>
+      <aside class="technical" aria-label="Professional scrutiny">
+        <h3>For professional scrutiny</h3>
+        <p><strong>Independent E-trace.</strong> Round 6’s breath and without-you tests read what the world leaves behind without touching the trainer’s numbers. They measure state, not recovery: depleted worlds can regrow fastest. No world-only check separated tender from martyr because their worlds were identical. Full Y still needs the A-side.</p>
+        <p><strong>The harmonic ceiling, stated carefully.</strong> Holding A fixed, degrading E always lowers Y. Degrading E alone never pays. Pure math does <em>not</em> say that no A-gain can offset an E-loss: A=1,E=10 → Y≈1.82, while A=10,E=9 → Y≈9.47.</p>
+        <p><strong>Deep genesis.</strong> Three deep runs, 10,000 ticks each, zero extinctions; 31–34 levels, mean Y≈2.0. About 94% of matter annihilated before seeding. This is a parable in code, not physics. It does not model quantum mechanics, string theory, or cosmology.</p>
+        <p><strong>Limits.</strong> Small toy dynamics, few seeds, no multi-agent boundary conflicts. λ was chosen by hand. The trainer still computes true Y. These are the next experiments, not hidden footnotes.</p>
+      </aside>
+      <div class="page-footer"><span>The Golden Directive · The Tests</span><b>Page 7</b></div>
+    </div>
+  </section>
+
+  <section class="page content-page" id="critics" aria-labelledby="critics-heading">
+    <div class="page-inner">
+      <header class="page-head"><div><p>Chapter VI</p><h2 id="critics-heading">The Critics</h2></div><span>Five objections · current status</span></header>
+      <div class="public">
+        <div class="objections large-objections">
+          <div class="objection"><b>“The trainer still computes Y.”</b><p>True. The reversal removed the agent-side E-meter, not the trainer-side calculation. Round 6 found the E-side trace. The A-side is next.</p></div>
+          <div class="objection"><b>“Round 2’s baseline was confounded.”</b><p>True. Round 4 made taking pay and exposed the martyr failure. Round 5 put self-preservation inside A. The result held without pretending the earlier control was clean.</p></div>
+          <div class="objection"><b>“Nested means aren’t associative.”</b><p>True. The carving rule is identity: E is everything not-A. Different groupings name different A’s, so they should produce different numbers. Multi-agent testing remains open.</p></div>
+          <div class="objection"><b>“Natural law is overstrong.”</b><p>Fair. This is <em>a proposed law for sustainable agents</em>, not a claimed universal natural law.</p></div>
+          <div class="objection"><b>“The roadmap is still unfinished.”</b><p>Yes: independent A-side trace, an adversary built to crop E, then multi-agent boundary tests. After that: scaling and parameter derivation.</p></div>
+        </div>
+        <p class="punch">Every objection made the work stronger or more honest. The remaining gaps are the ones the page itself lists.</p>
+        <p class="chapter-bridge">The objections leave the open questions.</p>
+      </div>
+      <aside class="technical" aria-label="Professional scrutiny">
+        <h3>For professional scrutiny</h3>
+        <p><strong>Independent trace:</strong> E=AY/(2A−Y) needs Y observed without smuggling E back in. Round 6 supplies a world-only E-side trace, not yet a full independent Y.</p>
+        <p><strong>Non-associativity:</strong> H(a,H(b,c)) ≠ H(H(a,b),c). Identity fixes the boundary for one perspective; multi-agent experiments must test boundary conflict.</p>
+        <p><strong>Novelty:</strong> the harmonic-mean coupling as the training reward appears new. The closest neighbors identified so far use design agendas or evaluation scores, not this training objective. λ is hand-chosen, not derived; the plateau across 4–16 is evidence of a broad basin, not a derivation.</p>
+      </aside>
+      <div class="page-footer"><span>The Golden Directive · The Critics</span><b>Page 8</b></div>
+    </div>
+  </section>
+
+  <section class="page content-page dense-page" id="questions" aria-labelledby="questions-heading">
+    <div class="page-inner">
+      <header class="page-head"><div><p>Chapter VII</p><h2 id="questions-heading">Questions</h2></div><span>Nine plain answers</span></header>
+      <div class="public questions questions-eight">
+        <article class="qa"><h3>“Isn’t this just the harmonic mean?”</h3><p>The math is 2,500 years old. The move is using it as the training reward, then reversing the inference: E discovered through Y, not measured first.</p></article>
+        <article class="qa"><h3>“How do you measure E?”</h3><p>With honest proxies for now. “Only God knows E” is why humility is structural. The reversal lets the estimate sharpen through the relationship.</p></article>
+        <article class="qa"><h3>“What if someone games the meters?”</h3><p>That is E-cropping. Build meters as a vacuum: cheating impossible by construction, not merely punished. Read A from E’s movement, never self-report.</p></article>
+        <article class="qa"><h3>“Does it work for real AI training?”</h3><p>It is a proposal with pilots, not a deployed solution. The page never claims otherwise.</p></article>
+        <article class="qa"><h3>“Is this game theory?”</h3><p>A close neighbor. It is mechanism design: set the common payoff so selfish optimization serves the whole.</p></article>
+        <article class="qa"><h3>“How do you measure the path not taken?”</h3><p>You do not. Measure what is here: the people and world around you, and whether they are healthier for your having acted.</p></article>
+        <article class="qa"><h3>“Who are you to propose this?”</h3><p>Nobody, by résumé. Judge the work: the math checks, the code runs, and the limits are on the same page as the claims.</p></article>
+        <article class="qa"><h3>“How do you know the agent caused the improvement?”</h3><p>A healthier world after the act is not enough. Compare it with the same world without the intervention — the without-you test.</p></article>
+        <article class="qa"><h3>“How would you explain this to a kid?”</h3><p>You can't survive destroying what keeps you alive — like a tree and its roots helping each other. Be the helper, not the destroyer.</p></article>
+        <p class="chapter-bridge">Those questions define what comes next.</p>
+      </div>
+      <aside class="technical" aria-label="Professional scrutiny">
+        <h3>For professional scrutiny</h3>
+        <p><strong>Game theory, carefully:</strong> holding A fixed, degrading E alone is never a best response because it lowers Y. A large enough A-gain can still outweigh a small E-loss as pure math. The reward is a common-payoff mechanism, not a claim that every coupled system automatically has no defect equilibrium.</p>
+        <p><strong>Causality:</strong> movement in E does not by itself prove A caused it. The without-you baseline is the beginning of attribution, not its completion.</p>
+      </aside>
+      <div class="page-footer"><span>The Golden Directive · Questions</span><b>Page 9</b></div>
+    </div>
+  </section>
+
+  <section class="page content-page" id="continues" aria-labelledby="continues-heading">
+    <div class="page-inner">
+      <header class="page-head"><div><p>Chapter VIII</p><h2 id="continues-heading">The Story Continues</h2></div><span>Next experiments</span></header>
+      <div class="public">
+        <p class="story-line">The tree is an example the law runs without us. This page — built by a human and an AI working it out together, corrected in public — is an example it runs with us.</p>
+        <p class="leadline">The story isn’t done.</p>
+        <div class="next-steps" aria-label="Next experiments">
+          <div class="step"><b>01</b><span>Finish the independent trace: the E-side exists; build the A-side.</span></div>
+          <div class="step"><b>02</b><span>Build an adversary whose job is to crop E.</span></div>
+          <div class="step"><b>03</b><span>Run multi-agent boundary and grouping tests.</span></div>
+        </div>
+        <p>Then scale it. Derive what was hand-tuned. Publish what fails as clearly as what holds.</p>
+        <p><strong>Try to break it.</strong> If scrutiny breaks it, the work should change. Every objection so far made it stronger or more honest. Yours can too.</p>
+        <p>What would prove this wrong: an agent that systematically degrades E while sustaining high Y over time — not on paper, in the world. If destruction ever pays durably, the directive fails. That is the experiment that matters most.</p>
+        <p class="leadline">An AI helps when it makes the relationship stronger.</p>
+        <p style="margin:6px 0"><a class="action-link genesis-link" href="https://muse.ai/s/genesis-live-xea6o8xtk6xcxy2" target="_blank" rel="noopener noreferrer">Watch Genesis Live</a></p>
+        <p class="share-line">Share it word of mouth: <strong>tinyurl.com/thegoldendirective</strong><br /><small>Say it out loud. Pass it on. That’s how seeds travel.</small></p>
+        <nav class="end-links" aria-label="Publication and demonstration links">
+          <a href="https://x.com/pauleisman/status/2109528268689056176" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://zenodo.org/records/23349526" target="_blank" rel="noopener noreferrer">Zenodo · DOI 10.5281/zenodo.23349526</a>
+          <a href="https://www.lesswrong.com/posts/maApykzHF8pMhb3uZ/y-2-a-e-a-e-a-harmonic-mean-training-reward-that-makes-1" target="_blank" rel="noopener noreferrer">LessWrong</a>
+          <a href="https://forum.effectivealtruism.org/posts/JNuPH7PjuqcKrYkPu/the-golden-directive-a-training-reward-that-makes-destroying" target="_blank" rel="noopener noreferrer">EA Forum</a>
+          <a href="https://muse.ai/s/y-agent-live-demo-xwl6nxtrxglxi7y" target="_blank" rel="noopener noreferrer">Y-Agent Live Demo</a>
+        </nav>
+      </div>
+      <aside class="technical" aria-label="Professional scrutiny">
+        <h3>For professional scrutiny</h3>
+        <p>The open work is explicit: independent A attribution, deliberate E-cropping attacks, multi-agent grouping, scaling, and a derivation for λ. Round 6 solved only the world-side trace. Round 7b showed scale-free behavior only inside a toy simulation.</p>
+        <p>The page scores itself by the same rule: it gives the math, failures, numbers, and caveats together. If a harder question changes the work, the relationship grew.</p>
+      </aside>
+      <p class="endline">You cannot survive what you destroy.</p>
+      <p class="moral">The moral: aim for true E, tend the relationship or else you cannot survive what you destroy.</p>
+      <div class="page-footer"><span>The Golden Directive · The Story Continues</span><b>Page 10</b></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
