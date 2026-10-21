@@ -121,3 +121,6 @@ The third tender that never ate was a harness artifact, not competition. Agents 
 
 Low-E matched preserver (Oct 21)
 Low-E matched preserver: the preserver wins at matched low E. A tender held at low E by a gorger-drained world still outscores the gorger in all nine low-E band comparisons, all seeds. The signed meter's shrinkage compresses the gap about 60-fold as E falls but never flips it. That closes rider-quirk caveat 1: the quirk is harmless at matched low E. Validation passes the established tolerance; the prereg's stricter clause fails on one seed, disclosed. Softplus inverts below E=0.2, another reason it stays rejected. Genesis untouched, log 711,500 to 712,500.
+
+Harness fix validated (Oct 21)
+Harness fix validated, all lines pass. One start tile each for slots 2 through 9 added to the level art (8-line change, nothing else). Spawn survey: six agents, 50 resets, three seeds — zero spawns at the wall corner. Every slot moves and eats. Solo and two-agent results are identical to pre-fix, so earlier slot 0/1 results stand. Slots 6–9 share the code path but were not surveyed. The fraction and triage re-runs may now proceed on the fixed harness. Genesis untouched, log 712,500 to 713,000.
