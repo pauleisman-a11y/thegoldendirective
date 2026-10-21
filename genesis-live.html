@@ -665,9 +665,10 @@
   </script>
 
   <script>
-    // Live feed reader: pulls the Mac's published sim state from feed.json
-    // (same directory). If the feed is missing or stale (>4 min), the
-    // canned snapshot numbers above stay as-is. Never blocks the page.
+    // Live feed reader: pulls the Mac's published sim state from the
+    // xo.je feed endpoint (CORS-open, same packet as feed.json). If the
+    // feed is missing or stale (>4 min), the canned snapshot numbers
+    // above stay as-is. Never blocks the page.
     (function () {
       function fmt(n) { return Math.round(n).toLocaleString("en-US"); }
       function set(name, text) {
@@ -675,7 +676,7 @@
         if (el) { el.textContent = text; }
       }
       function pull() {
-        fetch("feed.json?ts=" + Date.now(), { cache: "no-store" })
+        fetch("https://thegoldendirective.xo.je/feed.php?ts=" + Date.now(), { cache: "no-store" })
           .then(function (r) { return r.json(); })
           .then(function (d) {
             if (!d || !d.tick) { return; }
