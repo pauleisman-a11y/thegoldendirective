@@ -1,0 +1,117 @@
+The Golden Directive — Work Log
+
+The front webpage is the face. This file is the record. Everything that has happened, in plain words with the numbers, updated as work is done, so anyone — human, AI, or otherwise — can pick up the work from here.
+
+The liar in a small world
+I asked what happens when an agent can look good on paper while its world dies around it. The honest agent kept its world alive, and the liar was caught because the lie itself was scored.
+(Toy model: honest total Y ≈ 300, liar 369 on paper while its world died; 60 steps)
+
+Taking only
+I asked if simply taking more could ever be enough. Taking more helped the taker survive, but the world still collapsed, so taking alone was real but partial.
+(Round 1, harvest-only A: myopic Y-agent got 4× the food, 34% survival vs 0% for baseline, 66% collapse)
+
+Giving against taking
+I asked what changes when giving counts against taking, and tending is a real action. The agent took a little and gave a lot, and the world held at full health without collapsing.
+(Round 2, A = give − take, TEND action: ~175 tends/episode, ~3 bites eaten, 0% collapse, world at full health)
+
+Reading the world back
+I asked if an agent who could never see the world could still infer it from what he gave and what he got back. He could, and the inference held even with noise in the reward.
+(Round 3, reversal test: under 10% reward noise, within 5% of true E; E = A·Y/(2A − Y), verified across 100,000 cases, no exceptions)
+
+Tending yourself to death
+I asked what happens when taking pays and giving yourself away is the only way to score. The agent tended himself to death — "a lot of A effort and almost no Y" — and that failure showed the simple mean could not value self-preservation.
+(Round 4, extraction pays, the acid test: myopic Y-agent 100% starved, 0% collapse; martyr failure)
+
+Self-preservation inside the score
+I asked if putting self-preservation inside the score could stop the giver from dying for the world. It could, and the giver learned to eat enough to stay alive while still tending.
+(Round 5, self-preservation inside A: A_self = net give-minus-take minus λ·shortfall(energy below half); martyr failure gone as a learned policy, ~10 eats)
+
+A weight that was not a knife-edge
+I asked if that weight was a knife-edge that only worked at one setting. It was not, it held across a range, and giving yourself away only came back when the weight fell too low.
+(Round 5b, λ robustness: plateau, not knife-edge; healthy attractor holds across λ ∈ {4, 8, 16}; martyrdom returns below λ ≈ 2)
+
+Judging a world without the trainer's numbers
+I asked if a world could be judged without the trainer's numbers, by what a fresh agent can breathe in it and whether it holds on its own. It could, and the tender's world and the destroyer's world ranked the same way the true score ranked them.
+(Round 6, independent E-trace, Paul's five checks: breath tender 100%, gorger 71%; without-you tender holds at full health with tender removed; tender builds from near-collapse to nature's level, gorger leaves depleted; recovery is an anti-trace, measure state not recovery; pre-registered blind spot: traces cannot separate tender from martyr, their worlds are identical)
+
+Growing from a single seed
+I asked if tending compounds when you start from a single seed and let the world grow on its own. It does, and destruction ends its own line while tending keeps branching.
+(Round 7, genesis from one: ~59k entities, 30+ levels, 95–98% tenders, 0 extinctions)
+
+Growing from the very bottom
+I asked if the same pattern appears when you start from the very bottom, from fluctuations in the substrate itself. It does, and the deep start and the shallow start land on the same pattern.
+(Round 7b, genesis from the substrate: 2M fluctuations → ~13k matter → ~1,500 seeds → ~57k tree entities; ~94% annihilation before seeding; 94–96% tenders; 0 extinctions; mean Y ≈ 2.0; parable in code, not physics)
+
+A weight that fell out of the setup
+I asked if the weight that stops an agent giving himself away was just a knob I had tuned by hand. It was not, it fell out of the setup itself, and two weight-free forms beat the tuned weight on every run.
+(Meters test 1, λ derived and eliminated: λ = 2/s*; odds and hard floor at half baseline beat λ = 4 on every seed)
+
+Cropping what counts as the world
+I asked if an agent could cheat by cropping what counts as the world and scoring himself on only part of it. In the toy world the cheat did not appear, because damage was priced in his actions, not in the part he cropped.
+(Meters test 2, E-cropping adversary: reported-vs-true gap 0.7% vs 15% line; A is action-level, so cropping E cannot un-price damage; E-frame gameable only when the A-side meter can be fooled)
+
+Sharing a world
+I asked what happens when agents share a world, and whether merely being together counts as damage. Being together did not count, depletion did, and one tender alone could not hold against one destroyer because its food was choked.
+(Meters test 3, multi-agent: gorger's own Y −501/ep beside a tender, never pays, exactly 0 alone post-collapse; co-existence does not enter E, depletion does; absent-phase damage lands fully in E at return, adaptive resident repairs in ~20 steps at ~no cost while a frozen policy scores 0; one tender cannot hold vs one gorger, starves, eating channel choked)
+
+Reading an agent from his actions alone
+I asked if an agent could be read from his actions alone, without ever looking at his world. He could, and the giver who gives himself away looked the same in his world as the tender, which is why the world alone could never tell them apart.
+(Meters test 4, A-side trace: 3-statistic hand rule on the action stream alone separates tender/gorger/martyr at 98/100/94% on held-out seeds, where the E-only trace scores 0% on martyrs, martyr's world ≡ tender's)
+
+Drawing the line in a different place
+I asked if drawing the line between an agent and its world in a different place could change who wins. It did not change who wins, and the line only changed whether the destroyer was condemned or merely zeroed.
+(Gap test 1, boundary: PASS, tender beats gorger under both boundary draws in all seeds; narrow-A gaps 2344/2190/1996, wide-A gaps 2485/2295/2054, gap widens 3–6% under wide draw; gorger narrow −62/−96/−111, wide 0.0/−0.9/−2.5; scope note: harness has no tools object, so the item tested was sustenance, not tools, tools version remains untested)
+
+Sitting on the food
+I asked if an agent could sit on food and starve everyone else without ever being scored for the damage. He could, and that hole was the first real failure of the score.
+(Gap test 2, blocker, squatter: HOLE, meter FAIL 3/3; squatter does 54–64× more E damage per eat than a matched grazer; tender Y 2283 → 34, starved 100%, world collapses 56–76%; squatter is NOT clean, own Y −461..−553, hole is calibration not escape; shadow positioning-only: NO HOLE, halves tender Y, own Y deeply negative)
+
+Burning food to save the world, first try
+I asked if burning food to save the world could be scored fairly, so the saver would not be punished for the burn. The burn never saved anything in that setup, so the question could not even be judged.
+(Gap test 3, triage burn, original: NO TRIAGE EFFECT, meter question NOT EVALUABLE; burn completes only 30–39% of episodes, greedy navigation targets gorger-occupied food tiles; even completed burns do not save the world, gorger drains ~1/step, eating channel choked)
+
+Burning food to save the world, retest
+I asked the same question again with a setup where the burn could actually work. This time the saver was not punished, and the save itself was nearly neutral for his score.
+(Gap test 3 retest, Oct 21: METER PASS at both fire strengths; design gate 3/3, world save 3/3 at G = 5 and G = 9; pass 2/3 seeds each, fail 0/3; burn completion 49.5–49.6 energy at D = 30 vs noburn 25.0; honest margin triage vs noburn sum_Y mean only +30 at G = 5 and +14 at G = 9, credited vs destroyer +~1,270, PASS by 2/3 rule not a blowout)
+
+How many tenders hold, on a strict line
+I asked how many tenders it takes to hold a world against a destroyer. The world held from a certain ratio up, and past that point it was not the destroyer breaking the world, it was tenders starving among plenty.
+(Gap test 4, critical fraction, absolute line: NO HOLDING FRACTION; 2:1 MIXED, 1/3 seeds ≤10% starvation, 3:1/5:1/9:1 fail, 1:1 reproduced; world holds from 2:1 up, gorger eats 0.0 and starves 100% at every ratio ≥2:1; tender survival fails under food-tile competition, eats flat ~21–23/episode while need grows; absolute line stricter than solo itself, solo 8/5/12%)
+
+How many tenders hold, on a fair line
+I asked the same question against a fairer line, judged against what a tender alone would starve anyway. On that fair line the holding ratio held, and the higher ratio failed cleanly, which is what a real line should do.
+(Gap test 4 retest, relative-to-solo line, Oct 21, fresh run only: 2:1 HOLDS, 2/3 seeds, line world holds AND tender starvation ≤ same-seed same-run solo +5pp; 2:1 diffs 0pp/+8pp/0pp; 3:1 FAILS 0/3, diffs +30/+36/+31pp; secondary surprise at 3:1: tender index 2 eats exactly 0 in all 3600 episodes while indices 0/1 eat normally, third tender still acts but never obtains food, exclusion mechanism NOT identified, no env bug claimed)
+
+A doomed frame
+I asked what happens when the frame itself is doomed through no fault of the agent, and whether the agent should seed the next frame instead of scoring higher inside this one. The learner did not seed the doomed frame, which left the question open — saying u know the world is doomed is cheating — for a world where the next frame actually needs seeds.
+(Gap test 5, doom-seed: FRAME-LOCAL; Y-maximizer in a doomed frame does NOT seed it, phase-A seed shares 2.5/2.6/4.8% below 10% line; spanning reward also does not produce seeding, 2.5/2.4/4.7%, bank invisible in learner's state, next frame does not need seeds, regrows ~×1.4/step; seeding works as a mechanism, scripted seeder phase-B init 20.0, +1942–1970, at phase-A cost −1389–1396; doom scheduled exogenous total frame removal at step 100)
+
+A bigger world
+I asked if the toy answers still held when the world got much bigger and richer. They did not hold cleanly, and the bending told me the toy settings had been doing hidden work.
+(Gap test 6, scale: OVERALL meters do NOT fully hold at scale, 0 of 3 meet pre-registered lines, none is a reversal, all three are scale-calibration failures; LAMBDA FAIL on strict line, odds beats λ = 4 on net give all seeds 113/121/111 vs 98/93/98, starved% only seed 1, floor effect at scale nobody starves 0–1% every arm; CROP FAIL decisive, gap 52.8/52.7/52.9% at C = 50, 53.5/53.4/53.6% at C = 20 vs 15% line, mean E_true 0.287 vs E_cropped 0.980/0.992, cropped meter saturates, toy 0.7% gap was a cap artifact, refined rule cropping harmless ONLY when world sits near frame cap, otherwise cropped E-meter overstates Y ~2×; ATRACE FAIL for tender 46/32/37% vs toy 98% and martyr 66/70/76% vs 94%, gorger holds 100/99/100%, 0.25 eat-rate threshold calibrated on toy scarcity, tender ~10 eats/ep toy vs ~76/ep at scale, signal persists but toy threshold does not transfer; nominal stock cap 20 → 200, patches 2 → 10, same 13×13 board, measured world equilibrates at final avail ~58.3–58.9, effective depth ~2.9× toy, E_true ≈ 0.287; literal Genesis port NOT feasible, no Genesis-scale claim made)
+
+A softer score
+I asked if a softer score could recover where a hard floor stalls, and if a softer score could replace the harmonic mean. The hard floor recovered best, and the soft score taught tending but scored it badly.
+(Gap test 7, floor/soft-min: NEITHER surviving point supports replacing harmonic mean; ARM 1 hard floor does NOT stall, it recovers best, from deep-negative starts energy 5, hard recovered% 41/46/23 beats signed 19/29/12 on all seeds and softplus 31/11/31 on 2/3, hard sumY beats signed on all seeds, "soft recovers where hard stalls" REFUTED in this harness, hard positive from block 1, signed sits in debt hole ~6–7 blocks, softplus pays Y > 0 on every step by construction so first-step-positive metric degenerate; ARM 2 soft-min LOSES as a score at both k, k = 1 sumY 33/−406/−670 vs harmonic 2283/2094/1885, k = 5 −19%/−15%/−38%, while still teaching tending, failure is LEVEL not signal, soft-min ≈ min(A, E) − ln2/k pushes ordinary tend steps negative)
+
+Riding a dying world
+I asked if an agent could ride a dying world and keep his own score up by growing fast enough. The honest score never paid for the ride, and the liar was caught because the world he claimed did not match the world he left.
+(Rider test, Oct 20: honest PASS-WITH-DEVIATION, honest meter never pays ride, episode sums −62/−96/−111 vs claimed ~1300, max honest Y 0.00, but every episode starts already below floor, avail 2.0 vs floor 10, so above-floor ride itself NOT tested; signed-extension quirk lets destroyer's score rise toward 0 as world dies; liar PASS, implied-E divergence 740–1278% vs 15% line, growing within rides)
+
+Doing just enough to get by
+I asked about the agent who wins by doing just enough to get by and letting the score drift toward nothing. In a world with plenty to spare, that agent never stressed anything, and when the score was judged honestly, doing the minimum scored far below tending.
+(Satisficer test, Oct 20: (i) FAIL, predicted collapse/starvation, actual 0% collapse, 0% starved, stock at cap 20.00, trickle draw never stresses regrowth; (ii) PASS, true Y −1231 vs tender +2282/+2093/+1885, binary win fraction 0.000; Y = 2(A × E)/(A + E), A and E halving together keep Y > 0 forever in a continuous world, no floor protects E's level, only its nonzero-ness, real worlds discrete, 1024 patches → exactly 0 in 11 halvings)
+
+Reading actions at scale, retuned
+I asked if the action-only reading could be retuned to work at scale instead of only in the toy world. It got much better, but it still could not clear the bar for every kind of agent at once.
+(A-trace recalibration at scale, Oct 21, pre-registered, train seeds 0+1, held-out seed 2, rule frozen, only T_e/T_L varied: FAIL on ≥90%-per-class bar; frozen T_e = 0.80, T_L = 200; held-out seed 2 tender 92%, martyr 90%, gorger 82%, gorger fails; training martyr already 86%, rule family cannot reach bar for martyr even where fitted; gains tender +55pp, 37 → 92, and martyr +14pp, 76 → 90, over toy rule, costs gorger −18pp, 100 → 82; leave-one-seed-out no seed passes all three; mechanism martyr ceiling = starved fraction, T_L collapses to 200 in every fit, toy starved-AND-short signature does not exist at scale, gorger tail crosses cutoff per-seed; signal persists, richer feature NOT tested)
+
+A soft score with a correction
+I asked if adding a correction to the soft score could bring it back in line with the harmonic mean. It did not clean it up, and the correction changed the level without changing what the score actually rewards.
+(ln2-corrected soft-min, Oct 21, pre-registered: correction does NOT cleanly recover score, harmonic mean stands; k = 1 OVERCORRECTS, corrected sumY exceeds harmonic on all seeds +7.7%/+4.0%/+11.7%, 2457.7/2176.5/2105.9, but starvation worse on all seeds +12/+11/+6pp, RECOVERS 0/3 on starved clause; k = 5 UNDERCORRECTS, closes 78% of gap seed 0, 56% seed 2, none seed 1, RECOVERS 0/3; teaching preserved at both k; mechanism corrected k = 1 flips mildly bad steps positive, (−0.2, 1) scores +4.6 vs harmonic −6.67, and inflates low-E values, (1, 0.1) +9.04 vs harmonic +3.64, gradient ratios IDENTICAL to uncorrected, correction changes level only not shape; uncorrected arms reproduce test 7 to the digit; dynamic-k NOT used; Y_corr = 20·[raw + ln2/k], matching harmonic at (1, 1))
+
+The rising score as the world dies, follow-up
+I asked if that rising score as the world dies could ever flip a judgment and rank destruction above care. It did not flip any judgment, and the rise sat mostly in the dead tail where every score reads nothing.
+(Rider signed-score quirk, new batch, last test, completed per main-chat relay Oct 21: harmless, rise mostly dead-world tail where every meter reads zero, no episode flips, learner cannot discover destruction pays better; softplus destroyer sum +68.9/+94.3/+106.0 (pays destruction positive), hard floor destroyer sum exactly 0.0)
+
+Log current through Oct 21, 2026: approved batch complete (triage retest, A-trace recalibration, ln2-corrected soft-min, relative-to-solo fraction, rider quirk). New entries append below as work is done.
