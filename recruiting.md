@@ -20,6 +20,12 @@ Four meters tests, complete October 2026, pre-registered, 3 seeds each:
 3. Multi-agent: a gorger beside a tender scores -501 per episode, exactly 0 alone post-collapse.
 4. A-side trace: tender/gorger/martyr separated at 98/100/94% on held-out seeds, where an E-only trace scores 0% on martyrs.
 
+Rider and satisficer tests, complete October 2026, pre-registered, 3 seeds each:
+- Rider honest: PASS-WITH-DEVIATION — the honest meter never pays the ride, but every episode started already below the floor, so the above-floor ride was not tested. That follow-up is board issue #2.
+- Rider liar: PASS — implied-E divergence 740-1278% vs the 15% line.
+- Satisficer, collapse prediction: FAIL — predicted collapse or starvation, actual 0% collapse, 0% starved, stock at cap, a trickle draw never stresses regrowth.
+- Satisficer, true score: PASS — true Y -1231 vs tender +2282/+2093/+1885, binary win fraction exactly 0.000.
+
 Seven gap tests after the meters, pre-registered, 3 seeds each, Mac, Genesis untouched throughout:
 1. Boundary: PASS — tender beats gorger under both boundary draws, every seed. Gap widens 3-6% under the wide draw. Scope note: sustenance tested, not tools. Tools version untested.
 2. Blocker: HOLE, meter FAIL — a squatter does 54-64x more E damage per eat than a matched grazer; punishment tracks eats, damage tracks blocking.
