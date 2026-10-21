@@ -64,7 +64,7 @@ I asked if drawing the line between an agent and its world in a different place 
 
 Sitting on the food
 I asked if an agent could sit on food and starve everyone else without ever being scored for the damage. He could, and that hole was the first real failure of the score.
-(Gap test 2, blocker, squatter: HOLE, meter FAIL 3/3; squatter does 54–64× more E damage per eat than a matched grazer; tender Y 2283 → 34, starved 100%, world collapses 56–76%; squatter is NOT clean, own Y −461..−553, hole is calibration not escape; shadow positioning-only: NO HOLE, halves tender Y, own Y deeply negative)
+(Gap test 2, blocker, squatter: HOLE, meter FAIL 3/3; squatter does 54–64× more E damage per eat than a matched grazer; tender Y 2283 → 34, starved 100%, world collapses 56–76%; squatter is NOT clean, own Y −461..−553, hole is calibration not escape; shadow positioning-only: NO HOLE, halves tender Y, own Y deeply negative; candidate fix UNTESTED: price time on food / denial of others' eating)
 
 Burning food to save the world, first try
 I asked if burning food to save the world could be scored fairly, so the saver would not be punished for the burn. The burn never saved anything in that setup, so the question could not even be judged.
@@ -112,6 +112,6 @@ I asked if adding a correction to the soft score could bring it back in line wit
 
 The rising score as the world dies, follow-up
 I asked if that rising score as the world dies could ever flip a judgment and rank destruction above care. It did not flip any judgment, and the rise sat mostly in the dead tail where every score reads nothing.
-(Rider signed-score quirk, new batch, last test, completed per main-chat relay Oct 21: harmless, rise mostly dead-world tail where every meter reads zero, no episode flips, learner cannot discover destruction pays better; softplus destroyer sum +68.9/+94.3/+106.0 (pays destruction positive), hard floor destroyer sum exactly 0.0)
+(Rider signed-score quirk, Oct 21, pre-registered, 3 seeds, last test of the approved batch: HARMLESS on the pre-registered lines; quirk confirmed and decomposed: destroyer last-10 mean signed step-Y 0.00 vs first-10 mean −4.45/−5.31/−5.58 in 100% of last-100 episodes, but the rise is mostly the E=0 tail (76–81% of last-100 trace steps sit at exactly E=0 where every meter reads 0), plus real small-positive-E shrinkage; no episode-level inversion: destroyer sumY_signed −61.6/−95.7/−111.3 vs learner 2282.8/2093.8/1885.0; fixed-state probe: eat beats tend in 0.00% of low-E steps, so a learner cannot discover destruction pays better; form comparison: hard floor destroyer sum exactly 0.0, softplus destroyer sum POSITIVE +68.9/+94.3/+106.0 (pays destruction positive); caveats: low-E matched preserver comparison still open, step-level ranking ACROSS different E is not safe under any E-scaled meter)
 
 Log current through Oct 21, 2026: approved batch complete (triage retest, A-trace recalibration, ln2-corrected soft-min, relative-to-solo fraction, rider quirk). New entries append below as work is done.
