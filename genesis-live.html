@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <title>Genesis Live</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --paper: #f2f0e9;
+      --ink: #151713;
+      --muted: #5c625b;
+      --line: #c6c7be;
+      --panel: #e7e5dc;
+      --stage: #0e1512;
+      --stage-ink: #eef2e8;
+      --alive: #c85e28;
+      --tend: #1b8276;
+      --root: #e3b04b;
+      --dead: #898f89;
+      --shadow: rgba(15, 24, 19, .15);
+      --serif: "Newsreader", Georgia, serif;
+      --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #111511;
+        --ink: #ecefe7;
+        --muted: #aeb4aa;
+        --line: #353d35;
+        --panel: #1b211b;
+        --stage: #080b09;
+        --stage-ink: #edf3e8;
+        --alive: #f07b42;
+        --tend: #48b8a6;
+        --root: #f0bd55;
+        --dead: #707970;
+        --shadow: rgba(0, 0, 0, .35);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    button, select { font: inherit; }
+    button { color: inherit; }
+    a { color: inherit; text-underline-offset: 4px; }
+    a:focus-visible, button:focus-visible, select:focus-visible {
+      outline: 3px solid var(--root);
+      outline-offset: 3px;
+    }
+    .wrap { width: min(1440px, 100%); margin: 0 auto; padding: 0 28px 80px; }
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+      gap: 44px;
+      padding: 58px 0 32px;
+      border-bottom: 1px solid var(--line);
+      align-items: end;
+    }
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-family: var(--serif);
+      font-size: clamp(52px, 8.2vw, 124px);
+      line-height: .84;
+      font-weight: 600;
+      letter-spacing: -.055em;
+    }
+    .dek {
+      margin: 0 0 6px;
+      font-family: var(--serif);
+      font-size: clamp(20px, 2vw, 30px);
+      line-height: 1.18;
+      max-width: 520px;
+    }
+    .statusline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      align-items: center;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .pulse {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--tend);
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--tend) 18%, transparent);
+      animation: pulse 1.8s ease-out infinite;
+    }
+    .statusline b { color: var(--ink); font-weight: 600; }
+    .status-spacer { flex: 1; }
+    .statusline a { text-decoration-color: var(--line); }
+    .live-grid {
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr);
+      min-height: 670px;
+      margin-top: 28px;
+      border: 1px solid var(--line);
+      background: var(--stage);
+      color: var(--stage-ink);
+      box-shadow: 0 24px 70px var(--shadow);
+    }
+    .console {
+      padding: 26px;
+      border-right: 1px solid #344139;
+      display: flex;
+      flex-direction: column;
+      background: #101713;
+    }
+    .console-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #344139;
+    }
+    .console-head span:first-child { font-size: 12px; color: #aab5a9; text-transform: uppercase; letter-spacing: .11em; }
+    .epoch { color: var(--root); font-size: 12px; }
+    .phase-list { list-style: none; padding: 16px 0; margin: 0; }
+    .phase {
+      position: relative;
+      padding: 13px 12px 13px 33px;
+      color: #8e9c91;
+      border-bottom: 1px solid #29332d;
+      transition: color .2s, background .2s;
+    }
+    .phase::before {
+      content: "";
+      position: absolute;
+      left: 10px; top: 20px;
+      width: 6px; height: 6px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+    }
+    .phase.active { color: #fff; background: #17221c; }
+    .phase.active::before { border-color: var(--root); background: var(--root); }
+    .phase.done { color: #c1cac0; }
+    .phase.done::before { border-color: var(--tend); background: var(--tend); }
+    .phase strong { display: block; font-size: 13px; font-weight: 500; }
+    .phase small { display: block; font-size: 11px; margin-top: 2px; opacity: .68; }
+    .controls { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-top: 22px; }
+    .controls button, .controls select {
+      min-height: 42px;
+      border: 1px solid #536158;
+      background: transparent;
+      color: #f1f3ee;
+      border-radius: 0;
+      cursor: pointer;
+    }
+    .controls button:hover, .controls select:hover { background: #1e2a23; }
+    .controls button.primary { background: var(--root); color: #17140d; border-color: var(--root); font-weight: 600; }
+    .controls select { padding: 0 10px; }
+    .visual {
+      min-width: 0;
+      display: grid;
+      grid-template-rows: minmax(430px, 1fr) auto;
+      position: relative;
+      overflow: hidden;
+    }
+    canvas { width: 100%; height: 100%; display: block; }
+    .canvas-label {
+      position: absolute;
+      top: 20px; left: 22px;
+      z-index: 2;
+      color: #a8b2aa;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      pointer-events: none;
+    }
+    .canvas-label strong { color: #fff; font-weight: 500; }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid #344139;
+      background: #0e1512;
+    }
+    .metric { padding: 17px 16px 18px; border-right: 1px solid #344139; min-width: 0; }
+    .metric:last-child { border-right: 0; }
+    .metric .value { display: block; color: #fff; font-size: clamp(18px, 2.1vw, 29px); line-height: 1.1; letter-spacing: -.04em; white-space: nowrap; }
+    .metric .label { display: block; margin-top: 8px; color: #8e9c91; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+    .caption {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      padding: 24px 0 54px;
+      border-bottom: 1px solid var(--line);
+    }
+    .caption p { margin: 0; }
+    .caption .note { color: var(--muted); font-size: 12px; }
+    .results { padding: 68px 0 18px; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(180px, .45fr) minmax(0, 1.55fr);
+      gap: 44px;
+      margin-bottom: 34px;
+    }
+    .section-kicker { color: var(--alive); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; }
+    h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(35px, 4.7vw, 68px);
+      line-height: .98;
+      font-weight: 600;
+      letter-spacing: -.035em;
+      max-width: 900px;
+    }
+    .finding-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+    }
+    .finding { padding: 24px 22px 27px 0; margin-right: 22px; border-right: 1px solid var(--line); }
+    .finding:last-child { border-right: 0; margin-right: 0; }
+    .finding .big { display: block; font-family: var(--serif); font-size: clamp(34px, 4vw, 58px); line-height: 1; letter-spacing: -.04em; color: var(--alive); }
+    .finding h3 { font-size: 13px; margin: 14px 0 5px; font-weight: 600; }
+    .finding p { color: var(--muted); font-size: 12px; margin: 0; }
+    .snapshot { margin-top: 36px; border: 1px solid var(--line); background: var(--panel); padding: 26px 28px 22px; }
+    .snapshot-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+    .snapshot-head h3 { margin: 0; font-size: 14px; font-weight: 600; }
+    .snapshot-head span { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+    .snapshot-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px 16px; }
+    .snapshot .value { display: block; font-family: var(--serif); font-size: clamp(26px, 3vw, 40px); line-height: 1; letter-spacing: -.03em; color: var(--tend); }
+    .snapshot .label { display: block; margin-top: 7px; color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+    .snapshot-note { margin: 20px 0 0; color: var(--muted); font-size: 12px; }
+    .pipe-step .step-status { display: block; margin-top: 6px; color: var(--tend); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+    .statement {
+      margin: 70px 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(240px, .5fr);
+      gap: 52px;
+      align-items: end;
+    }
+    .statement blockquote {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(36px, 6.2vw, 84px);
+      line-height: .98;
+      letter-spacing: -.04em;
+    }
+    .statement p { color: var(--muted); margin: 0; }
+    .handoff {
+      background: var(--panel);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 38px;
+      margin-top: 40px;
+    }
+    .handoff-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 36px; }
+    .handoff-head p { margin: 0; color: var(--muted); }
+    .pipeline { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); }
+    .pipe-step { position: relative; padding: 24px 28px 12px 0; min-height: 150px; }
+    .pipe-step::after { content: "→"; position: absolute; top: 23px; right: 16px; color: var(--muted); }
+    .pipe-step:last-child::after { content: ""; }
+    .pipe-step .num { color: var(--alive); font-size: 11px; }
+    .pipe-step h3 { margin: 26px 0 6px; font-size: 14px; }
+    .pipe-step p { margin: 0; color: var(--muted); font-size: 12px; }
+    .install-list { margin: 28px 0 0; padding: 24px 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; gap: 12px 36px; }
+    .install-item { display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: start; }
+    .install-item i { width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--tend); position: relative; margin-top: 2px; }
+    .install-item i::after { content: ""; position: absolute; width: 6px; height: 3px; border-left: 1px solid var(--tend); border-bottom: 1px solid var(--tend); transform: rotate(-45deg); left: 5px; top: 5px; }
+    .install-item strong { display: block; font-size: 12px; }
+    .install-item span { display: block; color: var(--muted); font-size: 11px; }
+    .truth {
+      margin-top: 28px;
+      padding: 18px 0 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+    footer { padding: 52px 0 0; display: flex; justify-content: space-between; gap: 30px; color: var(--muted); font-size: 11px; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--tend) 42%, transparent); } 70%,100% { box-shadow: 0 0 0 9px transparent; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .pulse { animation: none; } }
+    @media (max-width: 950px) {
+      .intro, .section-head, .statement, .handoff-head { grid-template-columns: 1fr; gap: 22px; }
+      .live-grid { grid-template-columns: 1fr; }
+      .console { border-right: 0; border-bottom: 1px solid #344139; }
+      .phase-list { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
+      .phase { padding: 30px 8px 10px; border-bottom: 0; border-right: 1px solid #29332d; }
+      .phase::before { top: 13px; left: 9px; }
+      .phase small { display: none; }
+      .controls { grid-template-columns: repeat(3, 1fr); }
+      .finding-grid { grid-template-columns: 1fr 1fr; }
+      .snapshot-grid { grid-template-columns: repeat(3, 1fr); }
+      .finding:nth-child(2) { border-right: 0; margin-right: 0; }
+      .finding:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .pipeline { grid-template-columns: 1fr 1fr; }
+      .pipe-step:nth-child(2)::after { content: ""; }
+    }
+    @media (max-width: 620px) {
+      .wrap { padding: 0 16px 54px; }
+      .intro { padding-top: 36px; }
+      h1 { font-size: clamp(48px, 18vw, 76px); }
+      .status-spacer { display: none; }
+      .statusline { align-items: flex-start; }
+      .live-grid { min-height: 0; margin-left: -16px; margin-right: -16px; border-left: 0; border-right: 0; }
+      .console { padding: 18px 16px; }
+      .phase-list { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .phase { padding-left: 7px; padding-right: 4px; }
+      .phase strong { font-size: 9px; overflow-wrap: anywhere; }
+      .visual { grid-template-rows: 400px auto; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .metric { border-bottom: 1px solid #344139; }
+      .metric:nth-child(2n) { border-right: 0; }
+      .metric:last-child { grid-column: 1 / -1; border-bottom: 0; }
+      .metric .value { font-size: 22px; }
+      .caption { grid-template-columns: 1fr; gap: 14px; }
+      .finding-grid { grid-template-columns: 1fr; }
+      .snapshot { padding: 22px 18px 18px; }
+      .snapshot-grid { grid-template-columns: repeat(2, 1fr); }
+      .finding, .finding:nth-child(2) { border-right: 0; border-bottom: 1px solid var(--line); margin-right: 0; padding-right: 0; }
+      .finding:last-child { border-bottom: 0; }
+      .statement { margin: 54px 0; }
+      .handoff { margin-left: -16px; margin-right: -16px; padding: 30px 16px; }
+      .pipeline, .install-list { grid-template-columns: 1fr; }
+      .pipe-step { min-height: 120px; border-bottom: 1px solid var(--line); }
+      .pipe-step::after { content: "↓" !important; right: 4px; }
+      .pipe-step:last-child::after { content: "" !important; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">I’m recreating<br>the universe.</h1>
+      <p class="dek">A living reconstruction of the Genesis run: from substrate noise to a world inherited by tenders.</p>
+    </section>
+
+    <div class="statusline" aria-label="Simulation status">
+      <span class="pulse" aria-hidden="true"></span>
+      <b id="run-status">Live on the Mac</b>
+      <span data-live="ticker">tick 53,500 and climbing</span>
+      <span class="status-spacer"></span>
+      <a href="#results">What the first run found</a>
+      <a href="#handoff">Mac handoff</a>
+    </div>
+
+    <section class="live-grid" aria-label="Animated Genesis simulation reconstruction">
+      <aside class="console">
+        <div class="console-head"><span>Run sequence</span><span class="epoch" id="epoch">Epoch 001</span></div>
+        <ol class="phase-list" id="phase-list">
+          <li class="phase active" data-phase="0"><strong>Substrate</strong><small>fluctuation</small></li>
+          <li class="phase" data-phase="1"><strong>Holding</strong><small>matter forms</small></li>
+          <li class="phase" data-phase="2"><strong>Collision</strong><small>pairing test</small></li>
+          <li class="phase" data-phase="3"><strong>Branching</strong><small>tree emerges</small></li>
+          <li class="phase" data-phase="4"><strong>Tending</strong><small>world persists</small></li>
+        </ol>
+        <div class="controls" aria-label="Simulation controls">
+          <button class="primary" id="toggle" type="button">Pause</button>
+          <button id="restart" type="button">Restart</button>
+          <select id="speed" aria-label="Simulation speed">
+            <option value="0.55">0.5×</option>
+            <option value="1" selected>1× speed</option>
+            <option value="2">2× speed</option>
+          </select>
+        </div>
+      </aside>
+      <div class="visual">
+        <div class="canvas-label">Current phase / <strong id="phase-label">Substrate fluctuation</strong></div>
+        <canvas id="universe" role="img" aria-label="Animated abstract visualization of particles forming, annihilating, branching, and tending"></canvas>
+        <div class="metrics" aria-label="Current simulation metrics">
+          <div class="metric"><span class="value" id="m-flux">0</span><span class="label">Fluctuations</span></div>
+          <div class="metric"><span class="value" id="m-hold">0</span><span class="label">Held</span></div>
+          <div class="metric"><span class="value" id="m-ann">0%</span><span class="label">Pairings ended</span></div>
+          <div class="metric"><span class="value" id="m-tend">—</span><span class="label">Tenders</span></div>
+          <div class="metric"><span class="value" id="m-roots">0</span><span class="label">Living roots</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="caption">
+      <p>This animation reruns the discovered pattern. Noise appears, a small fraction holds, most pairings end, and the surviving relation grows into a tending tree.</p>
+      <p class="note"><strong>Honest boundary:</strong> the animation above remains a reconstruction. The real run is live on the Mac: tick 53,500, 111 levels deep, ~58,800 entities — 54,985 tenders vs 955 gorgers (~98% tenders). Mean Y 2.00, rock steady. Zero extinctions. Five clean 10,000-tick chapters since a power-cycle test the sim survived by resuming at exactly tick 21,000.</p>
+    </div>
+
+    <section class="results" id="results" aria-labelledby="results-title">
+      <div class="section-head">
+        <div class="section-kicker">Completed deep run</div>
+        <h2 id="results-title">The same rule appeared at the bottom and the top.</h2>
+      </div>
+      <div class="finding-grid">
+        <article class="finding"><span class="big">2M</span><h3>Substrate fluctuations</h3><p>Mean life: 7.5 ticks. The foam was violent; most patterns did not hold.</p></article>
+        <article class="finding"><span class="big">0.66%</span><h3>Held long enough</h3><p>About 13,300 per run crossed the threshold from fluctuation into matter.</p></article>
+        <article class="finding"><span class="big">94%</span><h3>Pairings annihilated</h3><p>Destroying the other destroyed the relation. Only the pairings that held could continue.</p></article>
+        <article class="finding"><span class="big">94–96%</span><h3>Tenders inherited</h3><p>Roughly 57,000 entities, 31–34 levels, and zero extinctions in the tree.</p></article>
+      </div>
+      <div class="snapshot" aria-label="Live snapshot from the Mac">
+        <div class="snapshot-head"><h3>Live from the Mac</h3><span data-live="badge">Snapshot · Oct 19, 2026</span></div>
+        <div class="snapshot-grid">
+          <div class="stat"><span class="value" data-live="tick">53,500</span><span class="label">Tick</span></div>
+          <div class="stat"><span class="value" data-live="entities">~58,800</span><span class="label">Entities</span></div>
+          <div class="stat"><span class="value" data-live="levels">111</span><span class="label">Levels deep</span></div>
+          <div class="stat"><span class="value" data-live="tenders">98%</span><span class="label">Tenders</span></div>
+          <div class="stat"><span class="value" data-live="meanY">2.00</span><span class="label">Mean Y</span></div>
+          <div class="stat"><span class="value">0</span><span class="label">Extinctions</span></div>
+        </div>
+        <p class="snapshot-note" data-live="note">54,985 tenders vs 955 gorgers. The run continues on the Mac; these numbers are a snapshot, not a feed.</p>
+      </div>
+    </section>
+
+    <section class="statement" aria-label="Core finding">
+      <blockquote>“The rule is the destination, not the starting point.”</blockquote>
+      <p>The shallow run began with an abstract one. The deep run began with substrate noise. Both converged on the same attractor: a world maintained by entities that tended the relation.</p>
+    </section>
+
+    <section class="handoff" id="handoff" aria-labelledby="handoff-title">
+      <div class="handoff-head">
+        <div>
+          <div class="section-kicker">Machine handoff</div>
+          <h2 id="handoff-title">From reconstruction<br>to the live universe.</h2>
+        </div>
+        <p>The Mac is the persistent runner now. It computes the universe continuously; a narrow read-only relay will publish only its current state; this page will render that state without controlling the experiment.</p>
+      </div>
+      <div class="pipeline" aria-label="Live system pipeline">
+        <div class="pipe-step"><span class="num">01</span><span class="step-status">Complete</span><h3>Run</h3><p>The Mac is the persistent runner. The simulation advances locally with fixed seeds, checkpoints, and reproducible logs.</p></div>
+        <div class="pipe-step"><span class="num">02</span><h3>Summarize</h3><p>A small process converts the current epoch into safe counts, phase, tree depth, and health.</p></div>
+        <div class="pipe-step"><span class="num">03</span><h3>Relay</h3><p>A read-only HTTPS endpoint exposes the summary. No shell, files, or controls leave the machine.</p></div>
+        <div class="pipe-step"><span class="num">04</span><h3>Render</h3><p>The published live page reads the latest frame and clearly marks stale or disconnected data.</p></div>
+      </div>
+      <div class="install-list" aria-label="Installation plan">
+        <div class="install-item"><i aria-hidden="true"></i><div><strong>macOS + automatic security updates</strong><span>Clean base, FileVault off so the machine boots headless after a power loss.</span></div></div>
+        <div class="install-item"><i aria-hidden="true"></i><div><strong>Python 3.15 environment</strong><span>Pinned dependencies and a reproducible project directory.</span></div></div>
+        <div class="install-item"><i aria-hidden="true"></i><div><strong>Genesis runner</strong><span>Checkpointing, bounded logs, restart recovery, and deterministic control runs.</span></div></div>
+        <div class="install-item"><i aria-hidden="true"></i><div><strong>Two launchd jobs</strong><span>Auto-resume on reboot from the last checkpoint; never needs an open terminal window.</span></div></div>
+        <div class="install-item"><i aria-hidden="true"></i><div><strong>Power-cycle test passed</strong><span>Power was cut and restored; the sim resumed at exactly tick 21,000.</span></div></div>
+        <div class="install-item"><i aria-hidden="true"></i><div><strong>Read-only state relay</strong><span>Publishes summary data only, authenticated and rate-limited.</span></div></div>
+        <div class="install-item"><i aria-hidden="true"></i><div><strong>Health monitor</strong><span>Flags stopped runs, stale state, disk pressure, or failed checkpoints.</span></div></div>
+      </div>
+      <p class="truth">The relay is the only missing bridge. Until it exists, the page above remains an honest reconstruction. A static page cannot become a continuously updating Mac feed without that server-backed connection.</p>
+    </section>
+
+    <footer>
+      <span>Genesis / browser reconstruction</span>
+      <span>Deep-run anchors: 2,000,000 fluctuations · 0.66% held · 94% annihilated · 94–96% tended</span>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+      var canvas = document.getElementById("universe");
+      var ctx = canvas.getContext("2d", { alpha: false });
+      var toggle = document.getElementById("toggle");
+      var restart = document.getElementById("restart");
+      var speedSelect = document.getElementById("speed");
+      var phaseLabel = document.getElementById("phase-label");
+      var runStatus = document.getElementById("run-status");
+      var phases = Array.prototype.slice.call(document.querySelectorAll(".phase"));
+      var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var running = !reduced;
+      var speed = 1;
+      var epoch = 1;
+      var elapsed = reduced ? 34 : 0;
+      var last = performance.now();
+      var particles = [];
+      var branches = [];
+      var sparks = [];
+      var seed = 48271;
+      var W = 0, H = 0, dpr = 1;
+      var phaseNames = ["Substrate fluctuation", "Matter holds", "Matter meets antimatter", "The tree branches", "Tending equilibrium"];
+      var phaseCuts = [0, 6.5, 13, 20, 27, 40];
+      var colors = { bg: "#080b09", grid: "#18231d", dim: "#5e6e62", alive: "#f07b42", tend: "#48b8a6", root: "#f0bd55", white: "#edf3e8" };
+
+      function rand() {
+        seed = (seed * 16807) % 2147483647;
+        return (seed - 1) / 2147483646;
+      }
+      function resetData() {
+        seed = 48271 + epoch * 97;
+        particles = [];
+        branches = [];
+        sparks = [];
+        for (var i = 0; i < 210; i++) {
+          particles.push({ x: rand(), y: rand(), vx: (rand() - .5) * .16, vy: (rand() - .5) * .16, r: .6 + rand() * 1.8, sign: rand() > .5 ? 1 : -1, life: rand() * 6 });
+        }
+      }
+      function resize() {
+        var rect = canvas.getBoundingClientRect();
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        W = Math.max(1, rect.width); H = Math.max(1, rect.height);
+        canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      function getPhase(t) {
+        for (var i = phaseCuts.length - 2; i >= 0; i--) if (t >= phaseCuts[i]) return i;
+        return 0;
+      }
+      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+      function ease(v) { v = clamp(v, 0, 1); return v * v * (3 - 2 * v); }
+      function fmt(n) { return Math.round(n).toLocaleString("en-US"); }
+      function updateUI(t) {
+        var p = getPhase(t);
+        for (var i = 0; i < phases.length; i++) {
+          phases[i].classList.toggle("active", i === p);
+          phases[i].classList.toggle("done", i < p);
+        }
+        phaseLabel.textContent = phaseNames[p];
+        var flux = Math.min(2000000, t / 7 * 2000000);
+        var held = Math.min(13300, Math.max(0, (t - 6) / 8 * 13300));
+        var ann = Math.min(94, Math.max(0, (t - 13) / 7 * 94));
+        var tend = Math.min(95, Math.max(0, (t - 23) / 8 * 95));
+        var roots = Math.min(150, Math.max(0, (t - 19) / 11 * 150));
+        document.getElementById("m-flux").textContent = fmt(flux);
+        document.getElementById("m-hold").textContent = fmt(held);
+        document.getElementById("m-ann").textContent = Math.round(ann) + "%";
+        document.getElementById("m-tend").textContent = t < 23 ? "—" : Math.round(tend) + "%";
+        document.getElementById("m-roots").textContent = Math.round(roots);
+      }
+      function grid() {
+        ctx.fillStyle = colors.bg; ctx.fillRect(0, 0, W, H);
+        ctx.strokeStyle = colors.grid; ctx.lineWidth = 1;
+        var s = 48;
+        ctx.beginPath();
+        for (var x = 0; x < W; x += s) { ctx.moveTo(x, 0); ctx.lineTo(x, H); }
+        for (var y = 0; y < H; y += s) { ctx.moveTo(0, y); ctx.lineTo(W, y); }
+        ctx.stroke();
+      }
+      function drawParticles(t, dt, phase) {
+        var visibility = phase < 3 ? 1 : Math.max(.08, 1 - (t - 20) / 12);
+        ctx.globalAlpha = visibility;
+        for (var i = 0; i < particles.length; i++) {
+          var q = particles[i];
+          q.life += dt;
+          q.x += q.vx * dt * (phase === 0 ? 1 : .38);
+          q.y += q.vy * dt * (phase === 0 ? 1 : .38);
+          if (q.x < 0 || q.x > 1) q.vx *= -1;
+          if (q.y < 0 || q.y > 1) q.vy *= -1;
+          q.x = clamp(q.x, 0, 1); q.y = clamp(q.y, 0, 1);
+          var held = i < 18 && phase >= 1;
+          var colliding = phase === 2 && i > 25;
+          if (colliding) {
+            var cx = .5 + ((i % 12) - 6) * .034;
+            var cy = .47 + (Math.floor(i / 12) % 8 - 4) * .044;
+            q.x += (cx - q.x) * dt * .7; q.y += (cy - q.y) * dt * .7;
+          }
+          var px = q.x * W, py = q.y * H;
+          ctx.beginPath();
+          ctx.arc(px, py, held ? q.r + 1.8 : q.r, 0, Math.PI * 2);
+          ctx.fillStyle = held ? colors.root : (q.sign > 0 ? colors.alive : colors.tend);
+          ctx.fill();
+          if (held) {
+            ctx.strokeStyle = "rgba(240,189,85,.26)";
+            ctx.beginPath(); ctx.arc(px, py, q.r + 6 + Math.sin(t * 3 + i) * 2, 0, Math.PI * 2); ctx.stroke();
+          }
+        }
+        ctx.globalAlpha = 1;
+        if (phase === 2) {
+          for (var j = 0; j < 22; j++) {
+            var angle = t * 2.6 + j * 2.399;
+            var rr = 18 + (j % 7) * 12 + Math.sin(t * 4 + j) * 7;
+            var sx = W * .5 + Math.cos(angle) * rr;
+            var sy = H * .47 + Math.sin(angle) * rr;
+            ctx.strokeStyle = j % 2 ? "rgba(240,123,66,.45)" : "rgba(72,184,166,.42)";
+            ctx.beginPath(); ctx.moveTo(W * .5, H * .47); ctx.lineTo(sx, sy); ctx.stroke();
+          }
+        }
+      }
+      function drawTree(t, phase) {
+        if (phase < 3) return;
+        var grow = ease((t - 20) / 9);
+        var cx = W * .5, base = H * .92;
+        var maxDepth = 8;
+        ctx.lineCap = "round";
+        function branch(x, y, len, ang, depth, side) {
+          if (depth > maxDepth) return;
+          var local = clamp(grow * (maxDepth + 1) - depth, 0, 1);
+          if (local <= 0) return;
+          var ex = x + Math.cos(ang) * len * local;
+          var ey = y + Math.sin(ang) * len * local;
+          var tender = depth > 2 || side > 0;
+          ctx.strokeStyle = tender ? colors.tend : colors.root;
+          ctx.globalAlpha = .35 + local * .65;
+          ctx.lineWidth = Math.max(.7, (maxDepth - depth + 1) * .75);
+          ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(ex, ey); ctx.stroke();
+          if (local > .96 && depth < maxDepth) {
+            var sway = Math.sin(t * .6 + depth * .8 + side) * .035;
+            branch(ex, ey, len * .74, ang - .48 + sway, depth + 1, -1);
+            branch(ex, ey, len * .73, ang + .43 + sway, depth + 1, 1);
+            if (depth < 3) branch(ex, ey, len * .70, ang + sway * .5, depth + 1, side);
+          }
+          if (depth >= 5 && local > .7) {
+            ctx.fillStyle = tender ? colors.tend : colors.alive;
+            ctx.globalAlpha = .25 + local * .65;
+            ctx.beginPath(); ctx.arc(ex, ey, 1.5 + (depth % 3), 0, Math.PI * 2); ctx.fill();
+          }
+        }
+        branch(cx, base, Math.min(W, H) * .16, -Math.PI / 2, 0, 1);
+        ctx.globalAlpha = 1;
+        var rootGrow = ease((t - 22) / 7);
+        ctx.strokeStyle = colors.root; ctx.globalAlpha = .52; ctx.lineWidth = 1;
+        for (var r = 0; r < 18; r++) {
+          var dir = r % 2 ? 1 : -1;
+          var rx = cx + dir * (14 + (r * 19) % Math.max(40, W * .42)) * rootGrow;
+          var ry = base + (9 + (r * 11) % Math.max(18, H * .07)) * rootGrow;
+          ctx.beginPath(); ctx.moveTo(cx, base); ctx.quadraticCurveTo((cx + rx) / 2, base + 8 + (r % 4) * 7, rx, Math.min(H - 8, ry)); ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+      }
+      function drawRelation(t, phase) {
+        if (phase < 4) return;
+        var a = ease((t - 27) / 7);
+        ctx.textAlign = "right"; ctx.textBaseline = "bottom";
+        ctx.font = "500 11px 'IBM Plex Mono', monospace";
+        ctx.fillStyle = colors.tend; ctx.globalAlpha = a;
+        ctx.fillText("RELATION HOLDS", W - 22, H - 20);
+        ctx.globalAlpha = 1;
+      }
+      function draw(now) {
+        var rawDt = Math.min(.05, (now - last) / 1000); last = now;
+        if (running) elapsed += rawDt * speed;
+        if (elapsed >= 40) {
+          elapsed = 27 + ((elapsed - 40) % 13);
+          epoch += 1;
+          document.getElementById("epoch").textContent = "Epoch " + String(epoch).padStart(3, "0");
+          resetData();
+        }
+        var phase = getPhase(elapsed);
+        updateUI(elapsed);
+        grid();
+        drawParticles(elapsed, running ? rawDt * speed : 0, phase);
+        drawTree(elapsed, phase);
+        drawRelation(elapsed, phase);
+        requestAnimationFrame(draw);
+      }
+      toggle.addEventListener("click", function () {
+        running = !running;
+        toggle.textContent = running ? "Pause" : "Resume";
+        runStatus.textContent = running ? "Live on the Mac" : "Live on the Mac — animation paused";
+        toggle.classList.toggle("primary", running);
+      });
+      restart.addEventListener("click", function () {
+        elapsed = 0; epoch += 1; running = true;
+        document.getElementById("epoch").textContent = "Epoch " + String(epoch).padStart(3, "0");
+        toggle.textContent = "Pause"; toggle.classList.add("primary"); runStatus.textContent = "Live on the Mac";
+        resetData();
+      });
+      speedSelect.addEventListener("change", function () { speed = parseFloat(speedSelect.value) || 1; });
+      window.addEventListener("resize", resize);
+      resize(); resetData();
+      if (reduced) { toggle.textContent = "Resume"; toggle.classList.remove("primary"); runStatus.textContent = "Live on the Mac — animation paused"; }
+      requestAnimationFrame(draw);
+    })();
+  </script>
+
+  <script>
+    // Live feed reader: pulls the Mac's published sim state from feed.json
+    // (same directory). If the feed is missing or stale (>4 min), the
+    // canned snapshot numbers above stay as-is. Never blocks the page.
+    (function () {
+      function fmt(n) { return Math.round(n).toLocaleString("en-US"); }
+      function set(name, text) {
+        var el = document.querySelector('[data-live="' + name + '"]');
+        if (el) { el.textContent = text; }
+      }
+      function pull() {
+        fetch("feed.json?ts=" + Date.now(), { cache: "no-store" })
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            if (!d || !d.tick) { return; }
+            var age = (Date.now() / 1000) - (d.ts || 0);
+            if (age > 240) { return; } // stale: keep snapshot
+            set("tick", fmt(d.tick));
+            set("entities", "~" + fmt(Math.round(d.tree / 100) * 100));
+            set("levels", String(d.maxLevel));
+            set("tenders", (Math.round(d.tenderPct * 10) / 10) + "%");
+            set("meanY", Number(d.meanY).toFixed(2));
+            set("ticker", "tick " + fmt(d.tick) + " \u00b7 live");
+            set("badge", "\u25cf LIVE \u2014 from the Mac");
+            set("note", fmt(d.tenders) + " tenders vs " + fmt(d.gorgers) +
+              " gorgers. Live from the Mac \u2014 updated every 30 seconds.");
+          })
+          .catch(function () { /* canned snapshot stays */ });
+      }
+      pull();
+      setInterval(pull, 30000);
+    })();
+  </script>
+</body>
+</html>
