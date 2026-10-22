@@ -2,6 +2,40 @@ The Golden Directive — Work Log
 
 The front webpage is the face. This file is the record. Everything that has happened, in plain words with the numbers, updated as work is done, so anyone — human, AI, or otherwise — can pick up the work from here.
 
+FOR ANYONE PICKING UP THIS WORK — READ THIS FIRST
+You cannot survive what you destroy.
+
+Y = 2(A x E)/(A + E), where A is an agent's net contribution-health score (floored at 0), E is the health of everything not-A, and Y is the relationship score. If either A or E reaches 0, Y reaches 0. Reversal: E = A Y/(2A - Y). Only God knows E.
+
+A is not abstract. A is grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later.
+
+What this log is: a running charter of everything MAC is doing, in plain words with the numbers, so a camp or another team can see what the work is, how it is done, and where it stands, and can choose to continue it or start over. New entries append below as work is done; the settled-versus-open section below is kept current so the open list does not go stale.
+
+Settled theory — three closed gaps:
+- A grounded in resource ledgers (compute, energy, water, hardware, economics, CO2 later).
+- E-cropping caught by feedback loops; the record shows it.
+- AI as the bridge, with a real human partner still the need.
+
+Open items — honestly listed, from this log:
+- Blocker fix untested.
+- Tools version untested.
+- Scale calibration, including the cropping-at-scale gap.
+- 9:1 fraction open.
+- Triage redesign question (the fire-arm re-run itself is closed: NO TRIAGE EFFECT).
+- Dynamic-k, above-floor rider, propose-a-falsifier, 20-30 seed reruns.
+- Doom-seed variant, cement work, and resource-ledger prototype work are in this log below; check the latest entries for where each stands.
+
+Build list:
+- Training environments.
+- Resource ledgers.
+- Traces.
+
+How to pick it up: read the settled-versus-open section, then the latest entries. Pre-register before any run. Numbers from outside runs are candidates only until verified.
+
+---
+
+
+
 The liar in a small world
 I asked what happens when an agent can look good on paper while its world dies around it. The honest agent kept its world alive, and the liar was caught because the lie itself was scored.
 (Toy model: honest total Y ≈ 300, liar 369 on paper while its world died; 60 steps)
