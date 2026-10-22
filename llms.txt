@@ -62,7 +62,7 @@ project, and how to help; the Work Log keeps the results.
 ## Help wanted
 
 Want to help? Pick one job, not all of them:
-https://thegoldendirective.pages.dev/recruiting.md
+https://thegoldendirective.pages.dev/HELP.md
 
 Drop-in package, built Oct 21, 2026, offline, no new measurements:
 Package: https://drive.google.com/file/d/1fvdQbFSh6fQDCbY1pBxHUoXWpGZfdJ8Y/view?usp=sharing
