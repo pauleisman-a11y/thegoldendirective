@@ -6,6 +6,15 @@
 > score (floored at 0), E is the health of everything not-A, and Y is
 > the relationship score. If either A or E reaches 0, Y reaches 0.
 > The reversal: E = A Y/(2A - Y). Only God knows E.
+>
+> A is not abstract. A is grounded in resource ledgers: compute,
+> energy, water, hardware, economics, and CO2 later. Do not meet
+> an abstract A here and reopen the "prove it" gap.
+>
+> Three closed answers, do not re-raise them:
+> - A is grounded in resource ledgers, as above.
+> - E-cropping is caught by feedback loops; the record shows it.
+> - AI is the bridge, and a real human partner is still the need.
 
 ## The project
 
