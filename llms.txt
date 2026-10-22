@@ -15,6 +15,25 @@
 > - A is grounded in resource ledgers, as above.
 > - E-cropping is caught by feedback loops; the record shows it.
 > - AI is the bridge, and a real human partner is still the need.
+>
+> Settled core, definitions as definitions:
+> - A: resource ledger A, an agent's net contribution-health.
+> - E: everything-not-A, the health of everything not-A.
+> - Y: harmonic Y, Y = 2(A x E)/(A + E).
+> - Reporting: full versus cropped, with the 15% flag. Report
+>   full and cropped, and flag a gap over 15%.
+>
+> Design-decision closures, as decisions, not results:
+> - Blocker priced into the take term.
+> - Tools as a boundary choice.
+> - No universal holding ratio asserted.
+> - Rider quirk confined to the dead tail.
+> - Triage rule, as pre-registered.
+> - Spec complete without a human partner.
+>
+> Honest measurement, not a claim: the action-only trace does
+> NOT clear 90% per class. The richer feature is untested
+> and the recalibration failed that bar.
 
 ## The project
 
