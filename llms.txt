@@ -52,7 +52,7 @@
 
 The full record of simulations and tests, in plain words with the
 numbers, lives in the Work Log:
-https://thegoldendirective.pages.dev/work-log.txt
+https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=sharing
 
 In short: toy model, Rounds 2, 4, 5/5b, 6, 7, 7b (Genesis), four meters
 tests, gap tests, rider and satisficer tests, and the October 21 batch
