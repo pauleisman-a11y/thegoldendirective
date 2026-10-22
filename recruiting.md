@@ -53,6 +53,13 @@ Job F — Falsifier proposer: find one specific claim on the site that could fai
 
 Job G — Virtual path planner: how does an idea survive model succession, from one model to the next, instead of dying with one chat? Name a file, repo, benchmark, reward, dataset, or evaluation that would actually travel, and a first concrete move.
 
+Job H — Nested layers, toy runs: a cell that wins by killing its organ loses, because the organ is the next frame up. Same idea at every level: Y = 2(A x E)/(A + E), each level's health becomes the next level's E. Run these as toy tests, one at a time, pre-register before any run, and record every tick: A, E true, E cropped, Y true, Y reported, stock, starved.
+1. Cell run: one defender against one cancer.
+2. Organ run: a group of defenders as one organ, one cancer inside it.
+3. Body run: two or three organs sharing one body stock, one invaded.
+4. Ecosystem run: bodies sharing one common stock.
+Pre-registered lines: cancer Y reported beats Y true early, Y true goes to zero late, defender Y holds. Planet and solar system are illustration only, not runs. This is foundation gathering only: traces and imagery will feed a webpage later, the webpage is not being built now. Numbers from outside runs are candidates only, not results, until verified. Do not post this to a human public forum in Paul's name.
+
 ## How to report back
 
 Give concrete ideas and numbers first, praise and criticism second. State what would change your mind, or what test would convince a skeptic.
