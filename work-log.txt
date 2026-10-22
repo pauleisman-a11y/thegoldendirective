@@ -133,3 +133,26 @@ Triage fire-arm re-run on the fixed harness: NO TRIAGE EFFECT at true G=5 and G=
 
 Richer A-trace feature test (Oct 21)
 Richer A-trace feature test: PASS on the pre-registered bar. Held-out seed 2: tender 90%, martyr 93%, gorger 93% (bar 90% per class; tender exactly on the bar). The starved-tend gate removes all 11 gorger-to-martyr errors, and the min_en gate lifts the martyr ceiling. LOSO check (non-verdict) passes all three classes on both other seeds with identical thresholds, so the pass is not a seed-2 fluke. The new ceiling is overlap at the margins, not a single missing feature. Single-agent traces only, so the spawn artifact cannot affect this. Genesis untouched, log 723,000 to 723,500 (offline work, no Mac load).
+
+SETTLED VS OPEN — Oct 21, 2026 (gap-clearing)
+Purpose: a trainer reading this record sees what is settled and what is still research, with nothing hidden.
+
+Settled — Paul's own answers, already given, and the record shows each:
+- A is grounded in resource ledgers. A is counted from actions on resources (tends up, eats down, net give-minus-take, floored at zero), not from self-report — that is how every meter test measures it. The ledger is compute, energy, water, hardware, economics; CO2 joins later. No reader should meet the old abstract A and reopen the "prove it" gap.
+- E-cropping is caught by feedback loops. The record shows it: near the frame cap the cropping gap is 0.7% against a 15% line (Meters 2 — the game does not appear there), and at scale the gap opens to about 53% and the Y-true-vs-Y-reported comparison exposes it (Gap 6). Cropping is detected wherever it happens by comparing Y from full E against Y from cropped E. Detected, not claimed prevented.
+- AI is the bridge; a real human partner is still the need. Settled: AI's role is the bridge — "Ai cannot help the human, unless the human helps himself. Ai is one of the best tools to engineer that scenario." Standing need: a real human partner or engineer who runs with it. That search stays open until such help is actually working.
+
+Still open — honestly listed:
+- Blocker fix untested (Gap 2 HOLE: squatter damage/eat about 0.012–0.0143 vs grazer 0.0002; candidate fix — price time on food / denial of others' eating — not yet tested).
+- Tools version untested (board #1; the harness has no tools object, so feasibility and design must be pre-registered honestly).
+- Scale calibration: the A-trace part is now closed (richer PASS, entry above); the cropping-at-scale gap (about 53% at C=50/20) remains, and meters do not fully hold at scale.
+- 9:1 fraction open: the arm itself is unrun. The precondition is now cleared — the triage re-run's Step 0 verified slots 6–9 spawn interior and move and eat — so 9:1 can run.
+- Dynamic-k: in progress now, verdict pending (fixed-k correction did not cleanly recover the score: k=1 overcorrects, k=5 undercorrects).
+- Above-floor rider (board #2).
+- Propose-a-falsifier (board #3).
+- 20–30 seed reruns.
+- Triage redesign question: the re-run itself is closed (NO TRIAGE EFFECT, entry above), but whether a save needs a longer bank, weaker per-gorger drain, or a differently shaped fire is a redesign question, not a meter verdict — the meter was never tested there, because there was no save for it to price.
+
+Closed since the evening's open list was written (listed here so the open list above does not go stale):
+- Triage fire-arm re-run: closed Oct 21 — NO TRIAGE EFFECT at true G=5 and G=9 (entry above).
+- Richer A-trace: closed Oct 21 — PASS, held-out seed 2 tender 90%, martyr 93%, gorger 93% (entry above). Tender sits exactly on the bar — the weakest point, noted, not hidden.
