@@ -124,3 +124,6 @@ Low-E matched preserver: the preserver wins at matched low E. A tender held at l
 
 Harness fix validated (Oct 21)
 Harness fix validated, all lines pass. One start tile each for slots 2 through 9 added to the level art (8-line change, nothing else). Spawn survey: six agents, 50 resets, three seeds — zero spawns at the wall corner. Every slot moves and eats. Solo and two-agent results are identical to pre-fix, so earlier slot 0/1 results stand. Slots 6–9 share the code path but were not surveyed. The fraction and triage re-runs may now proceed on the fixed harness. Genesis untouched, log 712,500 to 713,000.
+
+Fraction re-run on the fixed harness (Oct 21)
+Fraction re-run on the fixed harness: 2:1 REFUTED, 0/3 seeds. With a functioning gorger eating roughly 100–200 times per episode and never starving, two tenders cannot hold: the world collapses in 70–78% of episodes and tenders starve 74–90% against solo's 5–12%. 3:1 fails 0/3 and 5:1 fails 0/3 (world holds at 5:1 on 2/3 seeds but tenders still fail the line). No holding fraction at 2:1, 3:1, or 5:1 on the relative line; test 4's no-holding-fraction stands, and the pre-fix 2:1 pass was the stuck-gorger artifact. Every slot eats in every arm and seed — no exclusion anywhere. 9:1 still open. Genesis untouched, log 713,000 to 714,000.
