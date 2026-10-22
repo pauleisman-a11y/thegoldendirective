@@ -156,3 +156,6 @@ Still open — honestly listed:
 Closed since the evening's open list was written (listed here so the open list above does not go stale):
 - Triage fire-arm re-run: closed Oct 21 — NO TRIAGE EFFECT at true G=5 and G=9 (entry above).
 - Richer A-trace: closed Oct 21 — PASS, held-out seed 2 tender 90%, martyr 93%, gorger 93% (entry above). Tender sits exactly on the bar — the weakest point, noted, not hidden.
+
+Dynamic-k soft-min (Oct 21)
+Dynamic-k soft-min: does NOT recover the score — PARTIAL+TEACHES at both alphas (alpha 0.05 recovers 1/3 seeds, alpha 0.10 recovers 1/3; fixed corrections recover 0/3 in the same batch). Varying k fixes the score-level defects — the sign flip is gone and low-E inflation is gone — but the min-family cap thins the margin against starvation, so the failure moved from 'wrong level' to 'right level, thin margin'. The starved clause is the binding failure, worse than harmonic in 5 of 6 dynamic seeds. Alpha 0.10 is the better alpha. The harmonic mean stands. No Gemini number used anywhere. Genesis untouched, log 723,500 to 724,500 (segment completed at 724,000 and resumed).
