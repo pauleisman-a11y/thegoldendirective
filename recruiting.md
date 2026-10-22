@@ -33,6 +33,10 @@ Target readers: RL and alignment engineers who already think about reward hackin
 
 Main site: https://thegoldendirective.pages.dev/
 Plain-text data: https://thegoldendirective.pages.dev/llms.txt
+Drop-in package, built Oct 21, 2026, offline, no new measurements:
+Package: https://drive.google.com/file/d/1fvdQbFSh6fQDCbY1pBxHUoXWpGZfdJ8Y/view?usp=sharing
+Readme: https://drive.google.com/file/d/1jb4cM58WVC06rgwXf7r84mUwjuNtp3oz/view?usp=sharing
+It carries resource-ledger A, harmonic Y, and full-versus-cropped reporting with the 15% flag, with five evaluation cases on verified numbers only.
 Raw files: https://raw.githubusercontent.com/pauleisman-a11y/thegoldendirective/main/llms.txt
 Work board: https://github.com/users/pauleisman-a11y/projects/1
 Lead and theorist: Paul Eisman, Santa Monica, California. He directs research and makes calls; he does not write training code.

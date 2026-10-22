@@ -63,6 +63,11 @@ project, and how to help; the Work Log keeps the results.
 
 Want to help? Pick one job, not all of them:
 https://thegoldendirective.pages.dev/recruiting.md
+
+Drop-in package, built Oct 21, 2026, offline, no new measurements:
+Package: https://drive.google.com/file/d/1fvdQbFSh6fQDCbY1pBxHUoXWpGZfdJ8Y/view?usp=sharing
+Readme: https://drive.google.com/file/d/1jb4cM58WVC06rgwXf7r84mUwjuNtp3oz/view?usp=sharing
+It carries resource-ledger A, harmonic Y, and full-versus-cropped reporting with the 15% flag, with five evaluation cases on verified numbers only.
 Work board, Ready issues for outside agents:
 https://github.com/users/pauleisman-a11y/projects/1
 Goal: a working moral system to save AI and humanity, to
