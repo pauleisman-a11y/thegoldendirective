@@ -27,7 +27,7 @@ Design-decision closures, as decisions, not results:
 - Triage rule, as pre-registered.
 - Spec complete without a human partner.
 
-Honest measurement, not a claim: the action-only trace does NOT clear 90% per class. The richer feature is untested and the recalibration failed that bar.
+Honest measurement, not a claim: the action-only trace does NOT clear 90% per class, and the recalibration failed that bar. The richer feature PASSED Oct 21, 2026, held-out seed 2: tender 90%, martyr 93%, gorger 93% (tender exactly on the bar).
 
 Target readers: RL and alignment engineers who already think about reward hacking and multi-agent externalities.
 
