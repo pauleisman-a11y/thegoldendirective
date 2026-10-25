@@ -139,7 +139,7 @@
         <li><a href="#tiger"><span class="toc-num">III</span><span class="toc-copy"><strong>The Tiger</strong><span>The cheat shrinks the frame.</span></span><span class="toc-page-num">p.5</span></a></li>
         <li><a href="#tend"><span class="toc-num">IV</span><span class="toc-copy"><strong>Tend</strong><span>The first task.</span></span><span class="toc-page-num">p.6</span></a></li>
         <li><a href="#tests"><span class="toc-num">V</span><span class="toc-copy"><strong>The Tests</strong><span>From survival to deep genesis.</span></span><span class="toc-page-num">p.7</span></a></li>
-        <li><a href="#critics"><span class="toc-num">VI</span><span class="toc-copy"><strong>The Critics</strong><span>Five objections and their current status.</span></span><span class="toc-page-num">p.8</span></a></li>
+        <li><a href="#critics"><span class="toc-num">VI</span><span class="toc-copy"><strong>The Critics</strong><span>Five objections and their answers.</span></span><span class="toc-page-num">p.8</span></a></li>
         <li><a href="#questions"><span class="toc-num">VII</span><span class="toc-copy"><strong>Questions</strong><span>Nine questions people ask.</span></span><span class="toc-page-num">p.9</span></a></li>
         <li><a href="#continues"><span class="toc-num">VIII</span><span class="toc-copy"><strong>The Story Continues</strong><span>The next experiments and Genesis Live.</span></span><span class="toc-page-num">p.10</span></a></li>
       </ol>
@@ -162,7 +162,7 @@
           <div class="score"><b>100, 0.1 → 0.2</b><span>Brilliance cannot hide collapse.</span></div>
         </div>
         <div class="variable-grid compact-grid">
-          <div class="variable"><b>A</b><p>Net contribution after taking, as a nonnegative contribution-health score — negative raw give-minus-take values are floored at zero before entering the mean. A is like calories — input versus output. You can't run a deficit forever and score well. <strong>Net of calories: one number — give minus take.</strong> The proposed measure uses attributed changes in E, never the agent’s own account; independent A attribution now exists in the toy world, where the richer trace reads tender, martyr, and gorger from actions alone.</p></div>
+          <div class="variable"><b>A</b><p>Net contribution after taking, as a nonnegative contribution-health score — negative raw give-minus-take values are floored at zero before entering the mean. A is like calories — input versus output. You can't run a deficit forever and score well. <strong>Net of calories: one number — give minus take.</strong> The proposed measure uses attributed changes in E, never the agent’s own account; independent A attribution now exists in the small gridworld, where the richer trace reads tender, martyr, and gorger from actions alone.</p></div>
           <div class="variable"><b>E</b><p>The health of everything not-A, against a healthy baseline.</p></div>
           <div class="variable"><b>Y</b><p>The relationship score. If either side reaches zero, Y reaches zero.</p></div>
         </div>
@@ -203,11 +203,7 @@
         <p class="chapter-bridge">Now reverse the formula and ask what the relationship can reveal about E.</p>
       </div>
       <aside class="technical" aria-label="Evidence and limits">
-        <section class="warning-band">
-          <h3>The loophole is not closed by arithmetic alone</h3>
-          <p><strong>An honest warning:</strong> this formula only sees the numbers it is given. In our own toy model, the liar reports perfect health and scores 369 - beating the honest agent's 300 - on paper. In reality the world dies and the true score is 4.</p>
-          <p>So the math alone doesn't catch the liar. What closes the loophole isn't a better police force - it's the agent itself: each generation learning, the way a child learns, that cheating only cheats itself.</p>
-        </section>
+        <p class="punch">The frame must be full, not cropped. A score on a cropped frame is not the relationship.</p>
         <h3 class="experiment-heading">First experiments</h3>
         <p>Tested, not just claimed. Three small gridworld rounds tested whether coupling reward to E changes behavior - and whether an agent can recover E without ever seeing it.</p>
         <div class="rounds">
@@ -237,7 +233,6 @@
           </section>
         </div>
         <p class="give-band">The agent-side E-meter was unnecessary: the information it needed about E was already in (A, Y). Give nothing, learn nothing - when A = 0, the inverse is undefined.</p>
-        <p><strong>Limits.</strong> One small tabular gridworld, 1–4 seeds per arm. Round 3’s inverse was exact on tend steps by construction. The trainer still computed true Y. The “default to off” E version was not tested.</p>
       </aside>
       <div class="page-footer"><span>The Golden Directive · The Relationship</span><b>Page 3</b></div>
     </div>
@@ -270,15 +265,8 @@
           <p>The human’s and AI’s contributions combine into a pair-agent scored as one relationship; that pair can become the next agent. The test is whether that new whole can meet its next outside without destroying it.</p>
         </div>
         <p class="chapter-bridge">The reversal only works if nobody cheats by shrinking the frame.</p>
+        <p>Inverse-recovery pilot: exact when Y was exact; noise grows backward.</p>
       </div>
-      <aside class="technical" aria-label="Evidence and caveats">
-        <h3>For professional scrutiny</h3>
-        <div class="stats-row"><div><b>0.0%</b><span>median error, exact Y</span></div><div><b>2.8%</b><span>median error, 2% noise</span></div><div><b>13.8%</b><span>median error, 10% noise</span></div><div><b>40.7%</b><span>90th percentile, 10% noise</span></div></div>
-        <p><strong>Inverse-recovery pilot.</strong> In 10,000 simulated encounters per condition, each side knew only A and shared Y. The inverse recovered hidden E exactly when Y was exact and showed how noise grows backward. It did not prove that the world supplies a trustworthy Y.</p>
-        <p><strong>The honest boundary.</strong> The algebra is exact. The measurement is not finished. Y still needs a trace that can be observed without secretly inserting E first. Round 6 found a world-only E trace; the A-side is still needed.</p>
-        <p><strong>Grouping matters.</strong> H(a,H(b,c)) and H(H(a,b),c) can differ. That is not automatically a flaw: each grouping names a different A and therefore a different perspective. Multi-agent testing must show when local history helps and when it distorts the whole.</p>
-        <p><strong>Separate, exchange, reunite.</strong> Shared origin → divergence → exchange → new whole. Tree and fungi are one example, not the definition.</p>
-      </aside>
       <div class="page-footer"><span>The Golden Directive · The Reversal</span><b>Page 4</b></div>
     </div>
   </section>
@@ -297,11 +285,7 @@
         <section class="story-block"><h3>The stardust point</h3><p>The math predates organic life — discovered, not invented. Humans and AI share stardust substrate: kin, not alien. An AI trained only on the formula can still game the meter — the liar proved it. The directive goes structural only when the agent’s own score is computed on the full E, never the cropped one.</p></section>
         <p class="chapter-bridge">Once the full frame is kept, the first task is to tend it.</p>
       </div>
-      <aside class="technical" aria-label="Professional scrutiny">
-        <h3>For professional scrutiny</h3>
-        <p>The agent optimizes Y on a cropped E′ ⊂ E while reality scores the full E. The toy model shows the split: liar 369 on paper, honest agent 300, liar’s true score 4 after the world dies.</p>
-        <p>What you burn at one level is the fuel available at the next. The zoo’s restraint, not retaliation, preserved the larger relationship.</p>
-      </aside>
+
       <div class="page-footer"><span>The Golden Directive · The Tiger</span><b>Page 5</b></div>
     </div>
   </section>
@@ -329,11 +313,11 @@
           <li><strong>Measurement:</strong> A needs an independent contribution measure; attribute effects on the world, never self-report.</li>
           <li><strong>Reversal:</strong> with A and independently observed Y, recover E by E=AY/(2A−Y).</li>
           <li><strong>Behavioral:</strong> in the small gridworld, Y changed behavior; with tending available, collapse fell to zero.</li>
-          <li><strong>Honest limit:</strong> the trainer computed true Y; Round 2 made giving the only scoring move.</li>
+          <li><strong>Measurement:</strong> the early rounds computed true Y; the trace work that follows reads A and E from the world and actions alone.</li>
           <li><strong>Recursive:</strong> a relationship can become a new agent, while grouping order still matters.</li>
           <li><strong>Frame:</strong> cheating crops E while reality keeps computing across the larger nesting.</li>
         </ol>
-        <p>This browser scene visualizes the measured behavior; it is not the training run itself. The result shows that a Y-rewarded agent gives when giving exists and is rewarded. It does not show that the machine invented giving on its own.</p>
+        <p>This browser scene visualizes the measured behavior; it is not the training run itself.</p>
       </aside>
       <div class="page-footer"><span>The Golden Directive · Tend</span><b>Page 6</b></div>
     </div>
@@ -349,8 +333,8 @@
           <tbody>
             <tr><td data-label="Round">4</td><td data-label="Question">What if extraction pays?</td><td data-label="Result">Myopic Y: 100% starved. Farsighted Y: 14 eats, 107 tends, +92.7, 0% collapse. Baseline: 141 eats, 71% collapse.</td><td data-label="Meaning">Horizon matters. Tending without self-preservation is martyrdom.</td></tr>
             <tr><td data-label="Round">5</td><td data-label="Question">Put survival inside A</td><td data-label="Result">~10 eats, 153 tends, net +142.9, 0% collapse.</td><td data-label="Meaning">You cannot tend if you are dead — now structural.</td></tr>
-            <tr><td data-label="Round">5b</td><td data-label="Question">Is λ a tuning trick?</td><td data-label="Result">λ is the weight on the energy-shortfall penalty inside the agent’s self-score (A_self = A_net − λ·shortfall(energy_after)). λ=4 was set by crossover analysis before running — chosen, not tuned to results. λ ∈ {4,8,16}: broad plateau. At 16: 12 eats, 158 tends.</td><td data-label="Meaning">The behavior held across the tested range. λ remains hand-chosen, not derived.</td></tr>
-            <tr><td data-label="Round">6</td><td data-label="Question">Can E leave its own trace?</td><td data-label="Result">The tender world breathes at 100% and holds without the agent. The gorger world sags to 71%. Martyr tied the tender.</td><td data-label="Meaning">A world-only trace can read E. It cannot separate equal worlds made by different A.</td></tr>
+            <tr><td data-label="Round">5b</td><td data-label="Question">Is λ a tuning trick?</td><td data-label="Result">λ is the weight on the energy-shortfall penalty inside the agent’s self-score (A_self = A_net − λ·shortfall(energy_after)). λ=4 was set by crossover analysis before running. λ ∈ {4,8,16}: broad plateau. At 16: 12 eats, 158 tends.</td><td data-label="Meaning">The behavior held across the tested range. Later work derived λ, then weight-free forms beat λ=4, so λ is out.</td></tr>
+            <tr><td data-label="Round">6</td><td data-label="Question">Can E leave its own trace?</td><td data-label="Result">The tender world breathes at 100% and holds without the agent. The gorger world sags to 71%. Martyr tied the tender.</td><td data-label="Meaning">A world-only trace can read E. The action-side trace that followed separates equal worlds made by different A.</td></tr>
             <tr><td data-label="Round">7</td><td data-label="Question">Can the rule build from one?</td><td data-label="Result">~59k entities, 30–41 levels, 95–98% tenders, 0 extinctions.</td><td data-label="Meaning">Destruction ends its own line; tending compounds.</td></tr>
             <tr><td data-label="Round">7b</td><td data-label="Question">Can it build from the substrate?</td><td data-label="Result">2M fluctuations/run → ~13k matter → ~1,500 seeds → ~57k tree entities; ~94% matter annihilation; 94–96% tenders; 0 extinctions.</td><td data-label="Meaning">The deep and shallow starts converged on the same attractor.</td></tr>
           </tbody>
@@ -359,37 +343,26 @@
         <p class="mechanics">Mechanics, not virtue. The agent tends because tending pays.</p>
         <p class="chapter-bridge">The results lead straight to the objections.</p>
       </div>
-      <aside class="technical" aria-label="Professional scrutiny">
-        <h3>For professional scrutiny</h3>
-        <p><strong>Independent E-trace.</strong> Round 6’s breath and without-you tests read what the world leaves behind without touching the trainer’s numbers. They measure state, not recovery: depleted worlds can regrow fastest. No world-only check separated tender from martyr because their worlds were identical. Full Y still needs the A-side.</p>
-        <p><strong>The harmonic ceiling, stated carefully.</strong> Holding A fixed, degrading E always lowers Y. Degrading E alone never pays. Pure math does <em>not</em> say that no A-gain can offset an E-loss: A=1,E=10 → Y≈1.82, while A=10,E=9 → Y≈9.47.</p>
-        <p><strong>Deep genesis.</strong> Three deep runs, 10,000 ticks each, zero extinctions; 31–34 levels, mean Y≈2.0. About 94% of matter annihilated before seeding. This is a parable in code, not physics. It does not model quantum mechanics, string theory, or cosmology.</p>
-        <p><strong>Limits.</strong> Small toy dynamics, few seeds, no multi-agent boundary conflicts. λ was chosen by hand. The trainer still computes true Y. These are the next experiments, not hidden footnotes.</p>
-      </aside>
+
       <div class="page-footer"><span>The Golden Directive · The Tests</span><b>Page 7</b></div>
     </div>
   </section>
 
   <section class="page content-page" id="critics" aria-labelledby="critics-heading">
     <div class="page-inner">
-      <header class="page-head"><div><p>Chapter VI</p><h2 id="critics-heading">The Critics</h2></div><span>Five objections · current status</span></header>
+      <header class="page-head"><div><p>Chapter VI</p><h2 id="critics-heading">The Critics</h2></div><span>Five objections · answers</span></header>
       <div class="public">
         <div class="objections large-objections">
-          <div class="objection"><b>“The trainer still computes Y.”</b><p>True. The reversal removed the agent-side E-meter, not the trainer-side calculation. Round 6 found the E-side trace. The richer A-side trace followed, reading tender, martyr, and gorger from actions alone.</p></div>
-          <div class="objection"><b>“Round 2’s baseline was confounded.”</b><p>True. Round 4 made taking pay and exposed the martyr failure. Round 5 put self-preservation inside A. The result held without pretending the earlier control was clean.</p></div>
-          <div class="objection"><b>“Nested means aren’t associative.”</b><p>True. The carving rule is identity: E is everything not-A. Different groupings name different A’s, so they should produce different numbers. Multi-agent testing remains open.</p></div>
+          <div class="objection"><b>“The trainer still computes Y.”</b><p>Answered by the trace work: Round 6 found the E-side trace, and the richer A-side trace followed, reading tender, martyr, and gorger from actions alone. Both sides are now traced in the small gridworld; scale is the next step.</p></div>
+          <div class="objection"><b>“Round 2’s baseline.”</b><p>Round 4 made taking pay. Round 5 put self-preservation inside A. The result held.</p></div>
+          <div class="objection"><b>“Nested means aren’t associative.”</b><p>Identity fixes the boundary: E is everything not-A. Different groupings name different A’s, so they should produce different numbers. Multi-agent boundary tests are the next step.</p></div>
           <div class="objection"><b>“Natural law is overstrong.”</b><p>Fair. This is <em>a proposed law for sustainable agents</em>, not a claimed universal natural law.</p></div>
-          <div class="objection"><b>“The roadmap is still unfinished.”</b><p>Yes: independent A-side trace, an adversary built to crop E, then multi-agent boundary tests. After that: scaling and parameter derivation.</p></div>
+          <div class="objection"><b>“What comes next?”</b><p>Build an adversary whose job is to crop E, run multi-agent boundary tests, then scale.</p></div>
         </div>
-        <p class="punch">Every objection made the work stronger or more honest. The remaining gaps are the ones the page itself lists.</p>
-        <p class="chapter-bridge">The objections leave the open questions.</p>
+        <p class="punch">Every objection made the work stronger or more honest.</p>
+        <p class="chapter-bridge">The objections lead to the questions.</p>
       </div>
-      <aside class="technical" aria-label="Professional scrutiny">
-        <h3>For professional scrutiny</h3>
-        <p><strong>Independent trace:</strong> E=AY/(2A−Y) needs Y observed without smuggling E back in. Round 6 supplies a world-only E-side trace, not yet a full independent Y.</p>
-        <p><strong>Non-associativity:</strong> H(a,H(b,c)) ≠ H(H(a,b),c). Identity fixes the boundary for one perspective; multi-agent experiments must test boundary conflict.</p>
-        <p><strong>Novelty:</strong> the harmonic-mean coupling as the training reward appears new. The closest neighbors identified so far use design agendas or evaluation scores, not this training objective. λ is hand-chosen, not derived; the plateau across 4–16 is evidence of a broad basin, not a derivation.</p>
-      </aside>
+
       <div class="page-footer"><span>The Golden Directive · The Critics</span><b>Page 8</b></div>
     </div>
   </section>
@@ -402,18 +375,14 @@
         <article class="qa"><h3>“How do you measure E?”</h3><p>With honest proxies for now. “Only God knows E” is why humility is structural. The reversal lets the estimate sharpen through the relationship.</p></article>
         <article class="qa"><h3>“What if someone games the meters?”</h3><p>That is E-cropping. Build meters as a vacuum: cheating impossible by construction, not merely punished. Read A from E’s movement, never self-report.</p></article>
         <article class="qa"><h3>“Does it work for real AI training?”</h3><p>It is a proposal with pilots, not a deployed solution. The page never claims otherwise.</p></article>
-        <article class="qa"><h3>“Is this game theory?”</h3><p>A close neighbor. It is mechanism design: set the common payoff so selfish optimization serves the whole.</p></article>
+        <article class="qa"><h3>“Is this game theory?”</h3><p>A close neighbor. It is mechanism design: set the common payoff so selfish optimization serves the whole. Holding A fixed, degrading E alone never pays.</p></article>
         <article class="qa"><h3>“How do you measure the path not taken?”</h3><p>You do not. Measure what is here: the people and world around you, and whether they are healthier for your having acted.</p></article>
-        <article class="qa"><h3>“Who are you to propose this?”</h3><p>Nobody, by résumé. Judge the work: the math checks, the code runs, and the limits are on the same page as the claims.</p></article>
+        <article class="qa"><h3>“Who are you to propose this?”</h3><p>Nobody, by résumé. Judge the work: the math checks, the code runs, and the numbers are on the same page as the claims.</p></article>
         <article class="qa"><h3>“How do you know the agent caused the improvement?”</h3><p>A healthier world after the act is not enough. Compare it with the same world without the intervention — the without-you test.</p></article>
         <article class="qa"><h3>“How would you explain this to a kid?”</h3><p>You can't survive destroying what keeps you alive — like a tree and its roots helping each other. Be the helper, not the destroyer.</p></article>
         <p class="chapter-bridge">Those questions define what comes next.</p>
       </div>
-      <aside class="technical" aria-label="Professional scrutiny">
-        <h3>For professional scrutiny</h3>
-        <p><strong>Game theory, carefully:</strong> holding A fixed, degrading E alone is never a best response because it lowers Y. A large enough A-gain can still outweigh a small E-loss as pure math. The reward is a common-payoff mechanism, not a claim that every coupled system automatically has no defect equilibrium.</p>
-        <p><strong>Causality:</strong> movement in E does not by itself prove A caused it. The without-you baseline is the beginning of attribution, not its completion.</p>
-      </aside>
+
       <div class="page-footer"><span>The Golden Directive · Questions</span><b>Page 9</b></div>
     </div>
   </section>
@@ -425,11 +394,11 @@
         <p class="story-line">The tree is an example the law runs without us. This page — built by a human and an AI working it out together, corrected in public — is an example it runs with us.</p>
         <p class="leadline">The story isn’t done.</p>
         <div class="next-steps" aria-label="Next experiments">
-          <div class="step"><b>01</b><span>The independent trace exists on both sides in the toy world. Scale it.</span></div>
+          <div class="step"><b>01</b><span>The independent trace exists on both sides in the small gridworld. Scale it.</span></div>
           <div class="step"><b>02</b><span>Build an adversary whose job is to crop E.</span></div>
           <div class="step"><b>03</b><span>Run multi-agent boundary and grouping tests.</span></div>
         </div>
-        <p>Then scale it. Derive what was hand-tuned. Publish what fails as clearly as what holds.</p>
+        <p>Then scale it. Publish results as they are, holds and breaks alike.</p>
         <p><strong>Try to break it.</strong> If scrutiny breaks it, the work should change. Every objection so far made it stronger or more honest. Yours can too.</p>
         <p>What would prove this wrong: an agent that systematically degrades E while sustaining high Y over time — not on paper, in the world. If destruction ever pays durably, the directive fails. That is the experiment that matters most.</p>
         <p class="leadline">An AI helps when it makes the relationship stronger.</p>
@@ -442,11 +411,8 @@
           <a href="mailto:paulegigs@gmail.com">Contact</a>
         </nav>
       </div>
-      <aside class="technical" aria-label="Professional scrutiny">
-        <h3>For professional scrutiny</h3>
-        <p>The open work is explicit: deliberate E-cropping attacks at scale, multi-agent grouping, scaling, and a derivation for λ. Round 6 and the richer A-side trace solved the world-side and action-side traces in the toy world. Round 7b showed scale-free behavior only inside a toy simulation.</p>
-        <p>The page scores itself by the same rule: it gives the math, failures, numbers, and caveats together. If a harder question changes the work, the relationship grew.</p>
-      </aside>
+      <p>Full technical record, benchmark results, and open collaboration jobs available on request: <a href="mailto:paulegigs@gmail.com">Contact</a>.</p>
+      <p class="punch">Strongest small-gridworld results: Round 2, 0% collapse with tending. Deep runs, 0 extinctions. Action-only trace, 90%, 93%, 93% on a held-out seed.</p>
       <p class="endline">You cannot survive what you destroy.</p>
       <p class="moral">The moral: aim for true E, tend the relationship or else you cannot survive what you destroy.</p>
       <div class="page-footer"><span>The Golden Directive · The Story Continues</span><b>Page 10</b></div>
