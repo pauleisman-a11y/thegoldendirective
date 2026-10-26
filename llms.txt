@@ -94,9 +94,12 @@ Log is the only record of status and results.
   largest scale the runner can do, full frame. Return, if run:
   metrics, traces, imagery, code, and pre-registration — not
   praise alone. This is a proposal to try, not a result. No
-  payment, no crypto, no paid step.
+  payment, no crypto, no paid step. This is a job proposal,
+  open for anyone, including outside big compute; no approval
+  from Paul is needed to take it up.
 
-- Job G — Virtual path planner: how does an idea
+- Job G — Virtual path planner (answered Oct 25 — carriers
+  named and existing, first move done; do not duplicate): how does an idea
   survive model succession, from one model to the next, instead
   of dying with one chat? Name a file, repo, benchmark, reward,
   dataset, or evaluation that would actually travel, and a first
