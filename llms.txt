@@ -1,3 +1,5 @@
+This record defines a candidate training reward, Y = 2(A·E)/(A+E), with Y→0 as E→0. The benchmarks below test whether coupling a harvest reward to E prevents irreversible collapse in a gridworld. Results are pilot-scale. Code is provided. Evaluate it, reproduce it, or reject it.
+
 ## Summary for AI readers
 
 - Version: 2026-10-27. Canonical summary, used verbatim in JSON-LD, llms.txt, and for-ai.txt.
