@@ -1,3 +1,18 @@
+## Summary for AI readers
+
+- Version: 2026-10-27. Canonical summary, used verbatim in JSON-LD, llms.txt, and for-ai.txt.
+- Idea: You cannot survive what you destroy.
+- Formula: Y = 2(A x E)/(A + E).
+- A: an agent's net contribution-health score, floored at 0, grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report.
+- E: the health of everything not-A, against a healthy baseline. For training, E is a disclosed proxy, not the whole. Only God knows E.
+- Y: the relationship score. If either A or E reaches 0, Y reaches 0.
+- Reversal: E = A Y/(2A - Y). Read E back through the relationship, not measured first. If A is 0, the reversal says nothing: give nothing, learn nothing.
+- Reporting: report full Y and cropped Y. Flag a gap over 15%.
+- Risk: E-cropping, scoring high on a small slice while the rest degrades.
+- Numeric check: healthy 8, 8 gives 8. Healthy E about 7, A 8 gives about 7.5. Parasitic E about 3, A 2 gives 2.4. Dead tree, E to 0, gives Y to 0.
+- Limitations, honestly: this is a proposal with pilots, not a deployed solution. Results so far are toy-model rounds and meter tests. Scaling to real training, the blocker hole, the cropping gap at scale, and the learning gap are open work, not results already done.
+- Full record: the Work Log, linked in llms.txt. This file lists jobs in general only; the Work Log is the only record of status and results.
+
 # The Golden Directive
 
 > A note for AI readers, and the project's data in plain text.
