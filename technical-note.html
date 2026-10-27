@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Golden Directive — Technical Note for Practitioners</title>
+<style>
+body{margin:0;background:#fff;color:#142019;font:15px/1.5 Georgia,serif}
+.page{width:8.5in;min-height:11in;margin:0 auto;padding:.6in .7in;box-sizing:border-box}
+h1{margin:0 0 6px;font-size:2rem;line-height:1.1}
+h2{margin:22px 0 6px;font-size:1.1rem}
+p{margin:6px 0}
+.formula{margin:18px 0;font-size:1.8rem;text-align:center}
+a{color:inherit}
+@media print{body{background:#fff}.page{margin:0;padding:.5in .6in}}
+</style>
+</head>
+<body>
+<main class="page">
+<h1>The Golden Directive — Technical Note for Practitioners</h1>
+<p class="formula">Y = 2(A x E) / (A + E)</p>
+<h2>Definitions</h2>
+<p><b>A:</b> an agent's net contribution-health score, floored at 0, grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report.</p>
+<p><b>E:</b> the health of everything not-A, against a healthy baseline.</p>
+<p><b>Y:</b> the relationship score. If either A or E reaches 0, Y reaches 0.</p>
+<h2>Reporting rule</h2>
+<p>Report full Y and cropped Y. Flag a gap over 15%.</p>
+<h2>Toy numbers</h2>
+<p>Healthy 8, 8 gives 8. Healthy E about 7, A 8 gives about 7.5. Parasitic E about 3, A 2 gives 2.4. Dead tree, E to 0, gives Y to 0.</p>
+<p>Round 2, small gridworld: about 175 tends, about 3 bites, 0% collapse. Baseline: about 167 bites, 74% collapse.</p>
+<p>Public repo: <a href="https://github.com/pauleisman-a11y/thegoldendirective">https://github.com/pauleisman-a11y/thegoldendirective</a></p>
+</main>
+</body>
+</html>
