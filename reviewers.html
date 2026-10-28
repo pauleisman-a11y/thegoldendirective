@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Golden Directive — Reviewer Summary</title>
+<style>
+body{margin:0;background:#fff;color:#142019;font:15px/1.5 Georgia,serif}
+.page{width:8.5in;min-height:11in;margin:0 auto;padding:.6in .7in;box-sizing:border-box}
+h1{margin:0 0 6px;font-size:2rem;line-height:1.1}
+h2{margin:22px 0 6px;font-size:1.1rem}
+p{margin:6px 0}
+a{color:inherit}
+@media print{body{background:#fff}.page{margin:0;padding:.5in .6in}}
+</style>
+</head>
+<body>
+<main class="page">
+<h1>The Golden Directive — Reviewer Summary</h1>
+<p>This page is for a first-pass reviewer: what is the claim, what has been shown, at what scale, what has not, how could it fail, where is the code, and what is being asked. It is built only from materials already on this site.</p>
+<h2>Claim</h2>
+<p>A training reward Y = 2(A x E) / (A + E), where A is the agent's net contribution and E is the environment's health, collapses to zero when either side collapses. The proposal, in the toy model if Y is actually the reward, is that coupling an agent's reward to both terms makes environmental destruction structurally self-undermining rather than merely penalized.</p>
+<h2>Demonstrated in this pilot</h2>
+<p>Round 1 cut collapse from 100% to 66%. It did not prevent collapse yet, and that lesson pointed to tending, which Round 2 proved.</p>
+<p>Round 2, small gridworld, tend action supplied by the environment: about 175 tends, about 3 bites, 0% collapse, against a baseline of about 167 bites and 74% collapse.</p>
+<p>Round 3, reversal: E = A x Y / (2A - Y) inferred E within about 5% under 10% noise, with 0.7% collapse.</p>
+<p>Self-preservation inside A: Round 4 myopic Y starved 100%, farsighted Y gave 14 eats, 107 tends, 0% collapse. Round 5 gave about 10 eats, 153 tends, 0% collapse. A tuning weight held across 4, 8, and 16, then later forms beat it, so that weight was a step, not the answer.</p>
+<h2>Not demonstrated</h2>
+<p>Whether harmonic Y outperforms arithmetic mean or min(A, E) under identical seeds. That ablation is not yet completed.</p>
+<p>Any result outside a toy gridworld. No real model has been trained on Y.</p>
+<p>That an agent would invent a giving action. The tend action was supplied by the environment.</p>
+<h2>Known failure modes</h2>
+<p>Martyr failure: fixed in Round 5, as above, then superseded by later forms. Cropping: an agent can score high on a cropped E while the full E declines, which is why full Y and cropped Y must both be reported, with a gap over 15% flagged. Blocker hole, cropping gap at scale, and learning gap: open work, not closed results.</p>
+<h2>The bar, set in advance</h2>
+<p>A claim holds only if: collapse rate is no more than 5%; it beats the baseline by at least 20 percentage points; E-inference error is no more than 10% under 10% noise; and the full versus cropped Y gap is no more than 15% or is flagged. A rung is passed only when it meets its criteria. Until it does, that rung is where the work continues. No later rung is claimed until this one is passed.</p>
+<h2>Scale ladder</h2>
+<p>Larger grid with more resource types, then multiple agents sharing one environment, then continuous actions, then a small neural-network policy instead of tabular Q-learning. Each rung has pass criteria set in advance, as in the technical note.</p>
+<h2>Materials</h2>
+<p>Code and pilot dataset: Zenodo DOI 10.5281/zenodo.23701309. Full record: Zenodo https://zenodo.org/records/23455393, concept DOI 10.5281/zenodo.23349525. Repository: <a href="https://github.com/pauleisman-a11y/thegoldendirective">https://github.com/pauleisman-a11y/thegoldendirective</a>. Technical note: <a href="https://thegoldendirective.pages.dev/technical-note">https://thegoldendirective.pages.dev/technical-note</a>. Researcher questions: <a href="https://thegoldendirective.pages.dev/researcher-questions">https://thegoldendirective.pages.dev/researcher-questions</a>. Letter: <a href="https://thegoldendirective.pages.dev/letter">https://thegoldendirective.pages.dev/letter</a>.</p>
+<p>The full Work Log is not published on the site. It is available on request to serious reviewers, and full publication will wait for third-party confirmation.</p>
+<h2>What is being asked</h2>
+<p>Evaluation, reproduction, or rejection — not endorsement.</p>
+<p><a href="https://thegoldendirective.pages.dev/">Back to The Golden Directive</a></p>
+</main>
+</body>
+</html>
