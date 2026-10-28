@@ -74,6 +74,8 @@ https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=shari
 
 This file keeps the idea, the project, and how to help; the Work Log
 keeps the results. For status on any job below, see the Work Log.
+
+Note, by design and not an oversight: the Work Log is not published as a site page, because its numbers are premature and need third-party interpretation before they are made readily crawlable. The full record is linked here, and is also available on request to serious reviewers. Full publication will wait for third-party confirmation.
 This file lists the jobs in general only, so the list can grow
 with new ideas without status here going stale.
 
