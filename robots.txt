@@ -10,4 +10,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://pauleisman-a11y.github.io/thegoldendirective/sitemap.xml
+Sitemap: https://thegoldendirective.pages.dev/sitemap.xml

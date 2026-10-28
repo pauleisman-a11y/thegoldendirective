@@ -18,3 +18,6 @@ Full record: the Work Log, linked in llms.txt. This file lists jobs in general o
 Full for-AI file: llms.txt, on this site.
 Canonical site: https://thegoldendirective.pages.dev/
 Author: Paul Eisman, Santa Monica, California.
+
+Public repo: https://github.com/pauleisman-a11y/thegoldendirective
+Records: Zenodo v1 DOI 10.5281/zenodo.23349526, concept DOI 10.5281/zenodo.23349525, v2 https://zenodo.org/records/23455393
