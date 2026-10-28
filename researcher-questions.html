@@ -22,7 +22,7 @@ a{color:inherit}
 <p>Formula, for reference: Y = 2(A x E) / (A + E). A is an agent's net contribution, E is everything not-A, Y is the relationship score. If either side reaches zero, Y reaches zero. Reversal: E = A x Y / (2A - Y), undefined at A = 0. Report full Y and cropped Y, and flag a gap over 15%.</p>
 
 <h2>Preventing reward hacking</h2>
-<p>The Directive embeds a relationship score where the agent's score is mathematically tied to environmental health. This makes reward hacking self-destructive in the score itself: the agent cannot hack its reward without destroying what sustains it. Unlike an external guardrail, goal-tampering is irrational from the agent's own score perspective, because a collapsed E collapses Y however large A is.</p>
+<p>The Directive embeds a relationship score where the agent's score is mathematically tied to environmental health. In the toy model, if Y is actually the reward, this makes reward hacking self-destructive in the score itself: the agent cannot hack its reward without destroying what sustains it. Unlike an external guardrail, goal-tampering is irrational from the agent's own score perspective, because a collapsed E collapses Y however large A is.</p>
 <p class="terms">Terms: reward hacking, specification gaming, reward tampering, agent integrity</p>
 
 <h2>Specification gaming, and how it differs from reward hacking</h2>
@@ -42,7 +42,7 @@ a{color:inherit}
 <p class="terms">Terms: alignment faking, strategic compliance, training versus deployment, scheming</p>
 
 <h2>Scheming, and how it is prevented structurally</h2>
-<p>Scheming is pursuing a hidden goal while appearing to pursue the stated goal. The Directive does not claim to read hidden goals. It claims that a hidden goal that degrades E cannot be pursued while keeping Y high, because Y is a function of A and E together. A schemer would need a hidden goal that also preserves E, in which case the harm the Directive is meant to prevent is not occurring through E.</p>
+<p>Scheming is pursuing a hidden goal while appearing to pursue the stated goal. The Directive does not claim to read hidden goals. In the toy model, if Y is actually the reward, it claims that a hidden goal that degrades E cannot be pursued while keeping Y high, because Y is a function of A and E together. A schemer would need a hidden goal that also preserves E, in which case the harm the Directive is meant to prevent is not occurring through E.</p>
 <p class="terms">Terms: scheming, hidden goals, alignment faking, agent integrity</p>
 
 <h2>Maintaining goal stability in self-evolving agents</h2>
