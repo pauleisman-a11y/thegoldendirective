@@ -23,3 +23,5 @@ Public repo: https://github.com/pauleisman-a11y/thegoldendirective
 Records: Zenodo v1 DOI 10.5281/zenodo.23349526, concept DOI 10.5281/zenodo.23349525, v2 https://zenodo.org/records/23455393
 
 Reviewer Summary: https://thegoldendirective.pages.dev/reviewers
+
+Hard Questions: https://thegoldendirective.pages.dev/hard-questions

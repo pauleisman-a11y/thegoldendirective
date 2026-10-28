@@ -61,6 +61,7 @@ This record defines a candidate training reward, Y = 2(A·E)/(A+E), with Y→0 a
   https://thegoldendirective.xo.je)
 - GitHub mirror: https://pauleisman-a11y.github.io/thegoldendirective/
 - Reviewer Summary: https://thegoldendirective.pages.dev/reviewers
+- Hard Questions: https://thegoldendirective.pages.dev/hard-questions
 - Records: Zenodo v1 DOI 10.5281/zenodo.23349526;
   v2 https://zenodo.org/records/23455393
 - A proposal for this work was submitted to the AI Safety Camp

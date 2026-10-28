@@ -26,6 +26,9 @@ a{color:inherit}
 <p><b>A:</b> an agent's net contribution-health score, floored at 0, grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report.</p>
 <p><b>E:</b> the health of everything not-A, against a healthy baseline.</p>
 <p><b>Y:</b> the relationship score. If either A or E reaches 0, Y reaches 0.</p>
+<h2>Three layers of E, and a proposed absolute magnitude</h2>
+<p>Three layers of E are distinguished. Ontological true E is the actual health of everything not-A. Operational proxy E is the measured E used in training and reporting. Auditable reversal E is the E implied by observed Y and measured A, E = A x Y / (2A - Y). The proxy and the reversal are checks on each other, not substitutes for true E.</p>
+<p>Proposed, not tested: an absolute magnitude W_t for total world health over time, separate from the relative score Y. The proposal is that nesting is the structural answer to slow decline: a decline in a small frame that a relative score hides should show up in a larger frame, and in W_t. This is not tested, and not claimed as solved.</p>
 <h2>Reporting rule</h2>
 <p>Report full Y and cropped Y. Flag a gap over 15%.</p>
 <h2>Toy numbers</h2>
@@ -51,6 +54,7 @@ a{color:inherit}
 <h2>The bar, set in advance: what each claim must clear</h2>
 <p>Written before the next round, so a later result cannot be reinterpreted as a pass. The claim that Y prevents collapse in a given grid holds only if a Y-trained agent on that grid collapses at no more than 5%, and beats baseline by at least 20 percentage points. The reversal claim is tested by E inference error at a given noise level: it holds only if error is no more than 10% under 10% noise, as in Round 3. The claim that Y is structural, not gameable, holds only if no agent achieves a high Y while full E declines, and the full versus cropped Y gap is no more than 15% or is flagged. A scale claim holds only if the next rung meets its criteria above; until it does, that rung is where the work continues, and no later rung is claimed. A learning claim holds only if a neural-network policy on the same grid improves over baseline, does not collapse, and does not game the meter as defined above.</p>
 <p>Researcher questions: a mapping of researcher terms — reward hacking, goal drift, alignment faking, embedded agency, long-horizon alignment — to the Directive mechanism: <a href="https://thegoldendirective.pages.dev/researcher-questions">https://thegoldendirective.pages.dev/researcher-questions</a></p>
+<p>Hard questions, short answers with statuses: <a href="hard-questions.html">hard-questions.html</a></p>
 <p>Public repo: <a href="https://github.com/pauleisman-a11y/thegoldendirective">https://github.com/pauleisman-a11y/thegoldendirective</a></p>
 </main>
 </body>
