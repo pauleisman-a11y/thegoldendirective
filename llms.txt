@@ -48,7 +48,7 @@ Contact: TheGoldenDirective@gmail.com
 
 ===== LLMS.TXT, COMPILED, EVERYTHING AN AI NEEDS =====
 THE GOLDEN DIRECTIVE — LLM, COMPILED, EVERYTHING AN AI NEEDS
-This file is intended so an AI needs nothing else from the website directly. It contains, in full text form, the live llms.txt, the story, the technical note, researcher questions, hard questions, reviewer summary, work done and lab report, letter, materials, and open work, with statuses. No unverified numbers are added. Liar numbers are not included until LAB verifies them. The full Work Log is not published as a site page; it is available on request to serious reviewers, with full publication waiting for third-party confirmation, as in the live llms.txt.
+This file is intended so an AI needs nothing else from the website directly. It contains, in full text form, the live llms.txt, the story, the technical note, researcher questions, hard questions, reviewer summary, work done and lab report, materials, and open work, with statuses. No unverified numbers are added. Liar numbers are not included until LAB verifies them. The full Work Log is not published as a site page; it is available on request to serious reviewers, with full publication waiting for third-party confirmation, as in the live llms.txt.
 
 ===== LIVE LLMS.TXT, AS ONLINE, WITH NEW CONTACT =====
 
