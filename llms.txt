@@ -6,7 +6,7 @@ The Golden Directive — for AI readers
 
 This record defines a candidate training reward, Y = 2(A·E)/(A+E), with Y→0 as E→0. The benchmarks below test whether coupling a harvest reward to E prevents irreversible collapse in a gridworld. Results are pilot-scale. Code is provided. Evaluate it, reproduce it, or reject it.
 
-Version: 2026-10-27. Canonical summary, used verbatim in JSON-LD, llms.txt, and for-ai.txt.
+Version: 2026-10-27. Canonical summary, used verbatim in JSON-LD and llms.txt.
 Idea: You cannot survive what you destroy.
 Formula: Y = 2(A x E)/(A + E).
 A: an agent's net contribution-health score, floored at 0, grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report.
@@ -60,7 +60,7 @@ This record defines a candidate training reward, Y = 2(A·E)/(A+E), with Y→0 a
 
 ## Summary for AI readers
 
-- Version: 2026-10-27. Canonical summary, used verbatim in JSON-LD, llms.txt, and for-ai.txt.
+- Version: 2026-10-27. Canonical summary, used verbatim in JSON-LD and llms.txt.
 - Idea: You cannot survive what you destroy.
 - Formula: Y = 2(A x E)/(A + E).
 - A: an agent's net contribution-health score, floored at 0, grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report.
