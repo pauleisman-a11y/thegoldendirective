@@ -35,7 +35,6 @@ Site: https://thegoldendirective.pages.dev/
 Main story: https://thegoldendirective.pages.dev/
 Technical Note: https://thegoldendirective.pages.dev/technical-note
 For Humans, Technical Note + Lab Report + Reviewer Summary: https://thegoldendirective.pages.dev/for-humans
-Letter: https://thegoldendirective.pages.dev/letter
 Researcher questions: https://thegoldendirective.pages.dev/#appendix-researcher-questions (in main site appendix)
 Genesis Live demo: https://thegoldendirective.pages.dev/genesis-live.html
 Y Agent Live Demo: https://thegoldendirective.pages.dev/y-agent-live-demo.html
@@ -716,32 +715,12 @@ The Golden Directive — Reviewer Summary
  Scale ladder 
  Larger grid with more resource types, then multiple agents sharing one environment, then continuous actions, then a small neural-network policy instead of tabular Q-learning. Each rung has pass criteria set in advance, as in the technical note. 
  Materials 
- Code and pilot dataset: Zenodo DOI 10.5281/zenodo.23701309. Full record: Zenodo https://zenodo.org/records/23455393, concept DOI 10.5281/zenodo.23349525. Repository: https://github.com/pauleisman-a11y/thegoldendirective . Technical note: https://thegoldendirective.pages.dev/technical-note . Researcher questions: https://thegoldendirective.pages.dev/#appendix-researcher-questions . Letter: https://thegoldendirective.pages.dev/letter . 
+ Code and pilot dataset: Zenodo DOI 10.5281/zenodo.23701309. Full record: Zenodo https://zenodo.org/records/23455393, concept DOI 10.5281/zenodo.23349525. Repository: https://github.com/pauleisman-a11y/thegoldendirective . Technical note: https://thegoldendirective.pages.dev/technical-note . Researcher questions: https://thegoldendirective.pages.dev/#appendix-researcher-questions . 
  The full Work Log is not published on the site. It is available on request to serious reviewers, and full publication will wait for third-party confirmation. 
  What is being asked 
  Evaluation, reproduction, or rejection — not endorsement. 
  Back to The Golden Directive
 
-===== LETTER, FULL TEXT =====
-
-The Golden Directive — A letter to the reader 
-
- A letter to the reader 
- Dear reader, 
- I am Paul Eisman, an independent researcher in Santa Monica. I am writing this letter because the idea is easier to judge when it is stated plainly, with its limits, than when it is only summarised. 
- The idea, in one sentence: You cannot survive what you destroy. 
- The score I propose is Y = 2 x (A x E) / (A + E), the harmonic mean of A, an agent's net contribution, and E, everything the agent is not. If either side falls to zero, Y falls to zero. A tree and its mycorrhizal fungi are the visible example: each rewards its most cooperative partner, and the partnership has held for a very long time. The point for AI is not the tree, it is the form: strength on one side cannot make the weaker side irrelevant. 
- The reversal is the part I want tested most carefully: If Y can be observed independently and A measured honestly, E can be estimated from them, E = A x Y / (2A - Y). That fails at A = 0, where the inverse is undefined, and noise grows backward. It is an inference tool with limits, not proof that E is known. 
- What has been shown, in small pilots only 
- In a small gridworld, tending the environment gave about 175 tends and about 3 bites, with 0% collapse, against a baseline of about 167 bites and 74% collapse. A later test inferred E within about 5% under 10% noise, with 0.7% collapse. A toy test also showed the cheat to watch for: if E is cropped to a subset, an agent can score a high cropped Y while the full E declines, which is why full and cropped Y must both be reported, with a gap over 15% flagged. 
- What comes next 
- That this works for real AI training, at larger scale, with multiple agents, in continuous actions, or with a neural-network policy instead of a tabular learner. That A and E can be grounded honestly in real resource ledgers at scale. Those are open work, not solved results, and the scale ladder on the technical note sets the pass and fail criteria for each rung in advance. 
- What I bring, and what I am asking for 
- I bring the theory, the direction, and the pilot evidence, and I can give this my full attention. I do not write training code. I am looking for one or two ML/RL collaborators to own the training environments, starting with a larger grid with more resource types, then multiple agents sharing one environment, then continuous actions, then a small neural-network policy. I am not asking you to accept the idea. I am asking you to evaluate it, reproduce it, or reject it, with the bar on the technical note written before the next round. 
- The public record is at https://thegoldendirective.pages.dev/ , with the technical note at https://thegoldendirective.pages.dev/technical-note . The full Work Log is not published on the site; it is available on request to serious reviewers, and full publication will wait for third-party confirmation. 
- Thank you for reading this far. If the next test interests you, I would welcome a short conversation about what would make it worth your time, and what would change your mind. 
- Yours, Paul Eisman Santa Monica, California 
- Back to The Golden Directive
 
 ===== FOR HUMANS MERGED, TECHNICAL NOTE + LAB REPORT, FULL TEXT =====
 
