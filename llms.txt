@@ -31,6 +31,26 @@ Reviewer Summary: https://thegoldendirective.pages.dev/reviewers
 Hard Questions: https://thegoldendirective.pages.dev/hard-questions
 
 
+===== LIVE PAGES, ALL ROUTES, SO NOTHING ELSE IS NEEDED =====
+Site: https://thegoldendirective.pages.dev/
+Main story: https://thegoldendirective.pages.dev/
+Technical Note: https://thegoldendirective.pages.dev/technical-note
+For Humans, Technical Note + Lab Report + Reviewer Summary: https://thegoldendirective.pages.dev/for-humans
+Letter: https://thegoldendirective.pages.dev/letter
+Researcher questions: https://thegoldendirective.pages.dev/researcher-questions
+Reviewer Summary: https://thegoldendirective.pages.dev/reviewers
+Hard questions: https://thegoldendirective.pages.dev/hard-questions
+Genesis Live demo: https://thegoldendirective.pages.dev/genesis-live.html
+Y Agent Live Demo: https://thegoldendirective.pages.dev/y-agent-live-demo.html
+This file: https://thegoldendirective.pages.dev/llms.txt
+For AI entry: https://thegoldendirective.pages.dev/for-ai.txt
+Sitemap: https://thegoldendirective.pages.dev/sitemap.xml
+Robots: https://thegoldendirective.pages.dev/robots.txt
+Code, site repo: https://github.com/pauleisman-a11y/thegoldendirective
+Reproduction package: https://github.com/pauleisman-a11y/golden-directive-toy-reproduction
+Zenodo v0.1: DOI 10.5281/zenodo.23701309, 54 files, open access
+Contact: TheGoldenDirective@gmail.com
+
 ===== LLMS.TXT, COMPILED, EVERYTHING AN AI NEEDS =====
 THE GOLDEN DIRECTIVE — LLM, COMPILED, EVERYTHING AN AI NEEDS
 This file is intended so an AI needs nothing else from the website directly. It contains, in full text form, the live llms.txt, the story, the technical note, researcher questions, hard questions, reviewer summary, work done and lab report, letter, materials, and open work, with statuses. No unverified numbers are added. Liar numbers are not included until LAB verifies them. The full Work Log is not published as a site page; it is available on request to serious reviewers, with full publication waiting for third-party confirmation, as in the live llms.txt.
