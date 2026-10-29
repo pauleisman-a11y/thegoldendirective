@@ -26,7 +26,6 @@ Author: Paul Eisman, Santa Monica, California.
 Public repo: https://github.com/pauleisman-a11y/thegoldendirective
 Records: Zenodo v1 DOI 10.5281/zenodo.23349526, concept DOI 10.5281/zenodo.23349525, v2 https://zenodo.org/records/23455393
 
-Reviewer Summary: https://thegoldendirective.pages.dev/reviewers
 
 Hard Questions: https://thegoldendirective.pages.dev/hard-questions
 
@@ -37,9 +36,7 @@ Main story: https://thegoldendirective.pages.dev/
 Technical Note: https://thegoldendirective.pages.dev/technical-note
 For Humans, Technical Note + Lab Report + Reviewer Summary: https://thegoldendirective.pages.dev/for-humans
 Letter: https://thegoldendirective.pages.dev/letter
-Researcher questions: https://thegoldendirective.pages.dev/researcher-questions
-Reviewer Summary: https://thegoldendirective.pages.dev/reviewers
-Hard questions: https://thegoldendirective.pages.dev/hard-questions
+Researcher questions: https://thegoldendirective.pages.dev/#appendix-researcher-questions (in main site appendix)
 Genesis Live demo: https://thegoldendirective.pages.dev/genesis-live.html
 Y Agent Live Demo: https://thegoldendirective.pages.dev/y-agent-live-demo.html
 This file: https://thegoldendirective.pages.dev/llms.txt
@@ -118,8 +115,7 @@ This record defines a candidate training reward, Y = 2(A·E)/(A+E), with Y→0 a
   (main link from Oct 20, 2026; backup:
   https://thegoldendirective.xo.je)
 - GitHub mirror: https://pauleisman-a11y.github.io/thegoldendirective/
-- Reviewer Summary: https://thegoldendirective.pages.dev/reviewers
-- Hard Questions: https://thegoldendirective.pages.dev/hard-questions
+- - Hard Questions: https://thegoldendirective.pages.dev/hard-questions
 - Records: Zenodo v1 DOI 10.5281/zenodo.23349526;
   v2 https://zenodo.org/records/23455393
 - A proposal for this work was submitted to the AI Safety Camp
