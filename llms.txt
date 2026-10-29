@@ -33,7 +33,6 @@ Hard Questions: https://thegoldendirective.pages.dev/#appendix-questions
 ===== LIVE PAGES, ALL ROUTES, SO NOTHING ELSE IS NEEDED =====
 Site: https://thegoldendirective.pages.dev/
 Main story: https://thegoldendirective.pages.dev/
-Technical Note: https://thegoldendirective.pages.dev/technical-note
 For Humans, Technical Note + Lab Report + Reviewer Summary: https://thegoldendirective.pages.dev/for-humans
 Researcher questions: https://thegoldendirective.pages.dev/#appendix-researcher-questions (in main site appendix)
 Genesis Live demo: https://thegoldendirective.pages.dev/genesis-live.html
@@ -659,7 +658,7 @@ The Golden Directive — Researcher questions
 
  Expert facts 
  E is scale-relative and nested: a larger frame's E includes smaller frames, and other agents are in each agent's E. Three layers of E are distinguished: real E, measured E, and E worked back from Y, E = A x Y / (2A - Y); measured and worked-back are checks on each other, not substitutes for real E. Divergence delta = |E_implied - E_proxy| / E_proxy is flagged over 15%; threshold sensitivity is open unresolved. W_t, total world health over time, is proposed to track slow decline, not tested, not claimed as solved. Multi-agent E is defined, not run. 
- Public record: https://thegoldendirective.pages.dev/ , technical note: https://thegoldendirective.pages.dev/technical-note . The full Work Log is not published on the site; it is available on request to serious reviewers, and full publication will wait for third-party confirmation.
+ Public record: https://thegoldendirective.pages.dev/ . The full Work Log is not published on the site; it is available on request to serious reviewers, and full publication will wait for third-party confirmation.
 
 ===== HARD QUESTIONS, FULL TEXT =====
 
@@ -715,7 +714,7 @@ The Golden Directive — Reviewer Summary
  Scale ladder 
  Larger grid with more resource types, then multiple agents sharing one environment, then continuous actions, then a small neural-network policy instead of tabular Q-learning. Each rung has pass criteria set in advance, as in the technical note. 
  Materials 
- Code and pilot dataset: Zenodo DOI 10.5281/zenodo.23701309. Full record: Zenodo https://zenodo.org/records/23455393, concept DOI 10.5281/zenodo.23349525. Repository: https://github.com/pauleisman-a11y/thegoldendirective . Technical note: https://thegoldendirective.pages.dev/technical-note . Researcher questions: https://thegoldendirective.pages.dev/#appendix-researcher-questions . 
+ Code and pilot dataset: Zenodo DOI 10.5281/zenodo.23701309. Full record: Zenodo https://zenodo.org/records/23455393, concept DOI 10.5281/zenodo.23349525. Repository: https://github.com/pauleisman-a11y/thegoldendirective . Researcher questions: https://thegoldendirective.pages.dev/#appendix-researcher-questions . 
  The full Work Log is not published on the site. It is available on request to serious reviewers, and full publication will wait for third-party confirmation. 
  What is being asked 
  Evaluation, reproduction, or rejection — not endorsement. 
