@@ -818,3 +818,253 @@ Essential — For Humans
 ===== ADVICE AND OPEN WORK, FROM ENTIRE HISTORY, WITH STATUS =====
 
 DeepSeek credibility: harmonic versus arithmetic versus min versus extract-only ablation under identical seeds, with seed counts and confidence intervals, and a hand-coded sustainable-policy baseline. Status: filed and running in LAB, results not yet published, not claimed as completed. DeepSeek reviewer first-pass format: claim, shown, not shown, failure modes, code, what is asked. Status: live as Reviewer Summary. DeepSeek hard questions: nested E, three-layer E, multi-agent E, divergence, W_t. Status: in technical note and hard questions, with statuses as above. LAB shoes reframing: failures as trip, lesson, next shoe, numbers and bars unchanged. Status: live in Work Done. Main, LAB, OPEN SOURCE, AGENT PROMPTS reviews: contents Work Done, Tiger trip once, technical note Does not pass if, letter bar, researcher qualifier in toy model if Y is actually the reward, JSON-LD Zenodo v0.1. Status: live, commits 5de0108, 14ee755, 419805d, 8ce78ba, 54609b4. Work Log: Drive-only, link-only, discovery off, not a public site page, available on request to serious reviewers, full publication waits for third-party professional confirmation, reconsideration possible later. Summarised Work Log in a downloadable package for people starting their own work is for LAB / OPEN SOURCE, not a front-page link or public site page.
+
+===== FOR AI ONLY: WORK LOG LINK =====
+This link is for AI, not for easy human public access. It is not linked from the front page.
+Full Work Log, Drive, link-only, discovery off: https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=sharing
+The Work Log is the canonical LAB record. Full publication as a site page waits for third-party professional confirmation, as stated elsewhere in this file. AI gets this link here so AI can get everything available.
+Contact: TheGoldenDirective@gmail.com
+
+===== DEEPSEEK APPENDICES A-G, VERBATIM, AT THE END, AS PAUL ASKED =====
+Note, outside the verbatim text: these are DeepSeek's appendices, verbatim, as supplied 2026-10-28. Paul has said he does not agree with it all and would not necessarily apply it as suggested. The liar numbers in Appendix D are DeepSeek's quoted numbers, not yet LAB-verified in the Work Log. Paul will edit everything later. The verbatim text below is not changed.
+
+# Appendices — Hard Questions, Answered and Open
+
+*These appendices address the objections most often raised against the Directive.
+Each entry follows the same shape: the question, the short answer, the formal
+statement, the status, and what remains open. The status line is the honest
+part — "Established" means shown in the published pilot; "Open — scheduled"
+means the work is defined but not done; "Open — unresolved" means no answer
+exists yet. Nothing here is described as proof.*
+
+---
+
+## Appendix A — What is E, and where does it stop?
+
+**The question.** Is E the Earth? The biosphere? The datacenter? If E is
+"everything that is not the agent," then the definition changes every time the
+agent changes, which makes it sound arbitrary.
+
+**Short answer.** E is not a fixed object. E is whatever lies outside the
+agent's boundary at its own scale. It is scale-relative, not absolute. "E =
+Earth" is one rung on a ladder, correct for an agent whose substrate is the
+planet, and wrong for a cell or a datacenter model.
+
+**Formal statement.** For an agent at level n, A_n + E_n = 1 holds locally.
+E_n contains the agents at level n−1 as components, plus the non-agent
+environment at that scale. The ladder is: cell → tissue → organism →
+ecosystem → planet. Each level runs its own equation. No level requires the
+level above it to be true.
+
+**Why this is not relativism.** Because the levels are nested, not parallel.
+The cell's E sits inside the body's E. Damage at the cell level propagates
+upward; damage at the body level propagates downward. Each level's score
+catches what the level below cannot see, and vice versa. Protection is
+distributed, not centralised.
+
+**Status.** Established as a definition. The nested gridworld test is defined
+but not yet run.
+
+**Open.** Whether a two-level score outperforms single-level optimisation is an
+empirical question. The prediction is yes; it has not been measured.
+
+---
+
+## Appendix B — What does a training loop actually compute?
+
+**The question.** A training loop must compute Y at every step. Y needs E. Who
+produces that number, and can it be trusted?
+
+**Short answer.** Nobody measures the true E. A training loop computes a
+**defined proxy** for E from observable state, and the reversal checks whether
+the agent's reported numbers are consistent with that proxy.
+
+**Formal statement.** Three layers, kept separate:
+
+1. **Ontological.** The true E is the whole, known only from the inside of the
+   whole. No participant holds it.
+2. **Operational.** The loop computes E_proxy from state: in the gridworld, the
+   food level; for a datacenter model, power draw, grid load, hardware health,
+   supply-chain state. E_proxy ≠ E. It is a specified approximation.
+3. **Auditable.** Reported Y and reported A imply an E. That implied value is
+   compared against E_proxy. Divergence is the lie detector.
+
+**The honest weakness.** The choice of proxy is the design decision most
+exposed to gaming. An agent trained against the food meter learns to game the
+food meter. This is true of every metric, and it is not solved here. What the
+Directive offers is that the divergence between implied and measured E makes
+the gaming *visible* rather than silent.
+
+**Status.** Established as a three-layer definition. Proxy selection for real
+deployments is open.
+
+**Open.** Which proxy is correct for a given deployment is a modelling choice
+with no current answer. Different choices behave differently under gaming
+pressure. This is named rather than hidden.
+
+---
+
+## Appendix C — More than one agent: the nesting rule
+
+**The question.** If three agents each take half of what they see, the world is
+gone and nobody broke a rule. Does the score handle the commons?
+
+**Short answer.** Other agents are not "the first agent." They are part of E.
+Each agent's equation is centred on itself: its own A, and everything else —
+including every other agent — as its E.
+
+**Formal statement.** For agent i, A_i + E_i = 1, where E_i includes all agents
+j ≠ i. This is relational, not shared. The consequence is reflexive: harm to
+another agent enters your own E, so harming others is structurally
+self-harming. This is the mathematical form of the claim that any harm is
+self-harm.
+
+**What this does not solve.** No single agent holds the complete ledger; only
+the whole does. Each agent can only approximate its E from what it observes,
+and that approximation is where error and gaming enter. The score makes
+mutual harm self-defeating in principle; it does not make it undetectable in
+practice without the audit layer in Appendix B.
+
+**Status.** Established as the position. The commons behaviour it predicts is
+consistent with the squatter failure observed in the pilot, which is the same
+problem in a two-agent miniature.
+
+**Open.** Multi-agent gridworld at n > 2 is defined but not run.
+
+---
+
+## Appendix D — The reversal: detecting dishonesty
+
+**The question.** An agent can report whatever numbers it likes. What stops it?
+
+**Short answer.** The reversal. Reported Y and reported A imply an E. If that
+implied E diverges from the measured proxy, someone is lying, and the size of
+the divergence says how much.
+
+**Formal statement.** From Y = 2AE/(A+E), solving for E gives
+E = A·Y/(2A − Y). The divergence metric is
+δ = |E_implied − E_proxy| / E_proxy, flagged above a stated threshold
+(the pilot uses 15%).
+
+**What this achieves and what it does not.** It makes dishonesty *detectable*.
+It does not make dishonesty *unattractive*. Those are different problems. A
+liar with a locally accurate calculation and a globally wrong scope is exactly
+the failure mode the pilot found in the martyr and squatter rounds, and the
+reversal flags it after the fact rather than preventing it.
+
+**Status.** Demonstrated in the pilot's liar test: honest total Y ≈ 300, paper
+Y = 369, implied E diverged by 740–1278%, flagged. Threshold sensitivity is not
+yet characterised.
+
+**Open.** The threshold is currently a design choice. False-positive and
+false-negative rates under realistic noise are unmeasured.
+
+---
+
+## Appendix E — Time and decline: the boiling-frog problem
+
+**The question.** Y is instantaneous. An agent taking half of a dying world
+scores the same as one taking half of a thriving world. How does the score see
+slow collapse?
+
+**Short answer.** Two mechanisms. First, nesting (Appendix A): the local score
+cannot see the decline, but the level above it can. Second, the whole itself is
+tracked in absolute terms alongside the proportional score.
+
+**Formal statement.** Let W_t be the absolute magnitude of the whole. The
+proportional score Y_t is computed after normalisation (A + E = 1 at each
+step), while W_t is tracked separately and may grow or shrink. An agent that
+holds its share while W_t falls is scoring well proportionally and badly in
+absolute terms. Both readings are reported.
+
+**On graceful decline.** If E declines and the agent reduces A proportionally,
+the ratio stays near the peak and Y stays high. This is a feature and a bug. A
+feature: no martyrdom, no collapse from over-restraint. A bug: a smoothly dying
+world looks locally healthy. Nesting is the structural answer, and it is the
+reason the two-level test in Appendix A matters.
+
+**Status.** Established as a formulation. The absolute-magnitude term W_t is
+proposed here and has not been tested.
+
+**Open.** Whether W_t tracking actually catches slow decline in simulation is
+untested. This is the most important unrun test after the coupling ablation.
+
+---
+
+## Appendix F — Open work register
+
+*The honest list. Nothing below is claimed as done.*
+
+| Item | What it tests | Status |
+|---|---|---|
+| Coupling ablation: harmonic vs arithmetic vs min vs extract-only, 100+ seeds, with baseline | Whether the harmonic form is the active ingredient | In progress |
+| Seed counts and confidence intervals | Whether 0% collapse is a demonstrated effect or an encouraging sign | Open — needed |
+| Two-level nested gridworld | Whether nesting catches what local scores miss | Defined, not run |
+| Absolute-magnitude tracking (W_t) | Whether slow decline is visible | Proposed, not tested |
+| Multi-agent commons at n > 2 | Whether reflexive harm holds under scale | Defined, not run |
+| Proxy selection and gaming vectors | Which E proxy is defensible for real deployments | Open — unresolved |
+| Divergence threshold calibration | False-positive / false-negative rates | Open — unresolved |
+| Blocker/squatter fix verification | Whether the proposed fix holds under adversarial test | Fix proposed, not tested |
+
+---
+
+## Appendix G — Objection ledger
+
+*For readers arriving with a prior objection. Each entry states the objection,
+the response, and the status. If your objection is not here, it is either new
+or it is a version of one of these.*
+
+**"This is just constrained optimisation / reward shaping / impact
+regularisation."** Partly. The overlap is acknowledged in the Technical Note.
+The claimed difference is that the score is a relationship rather than a task
+reward with an environmental adjustment, and that the harmonic form is
+invertible, which min is not. Whether that difference is load-bearing is
+precisely what the ablation tests. *Status: contested, testable.*
+
+**"Why harmonic and not arithmetic mean or min?"** The harmonic punishes
+imbalance symmetrically and is invertible. Arithmetic mean does not collapse
+when one term collapses; min is not invertible. Whether harmonic outperforms
+both empirically is the next experiment. *Status: open — scheduled.*
+
+**"An agent can lie."** Yes. The reversal makes lying detectable, not
+unattractive. See Appendix D. *Status: partial defence, demonstrated in pilot.*
+
+**"Normalisation hides absolute decline."** Yes, if only the proportional score
+is used. The proposed fix is nesting plus absolute-magnitude tracking. See
+Appendix E. *Status: proposed, untested.*
+
+**"Multiple agents each take half and the world dies."** The relational E
+structure makes harm to others enter your own score. Whether that is sufficient
+under scale is untested. See Appendix C. *Status: defined, not run.*
+
+**"Who measures E?"** A training loop computes a defined proxy; the reversal
+audits consistency. The true E is not measured by anyone. See Appendix B.
+*Status: defined; proxy choice open.*
+
+**"Three seeds in a toy gridworld is not evidence."** Correct. It is a pilot.
+The claims ledger states this. The scale ladder defines what would count as
+evidence at each rung. *Status: acknowledged.*
+
+**"The agent did not invent giving."** Correct, and stated in the record. The
+tend action was supplied by the environment. The pilot shows the agent will use
+a giving channel when one exists and is rewarded; it does not show the agent
+would discover one. *Status: acknowledged, limitation.*
+
+**"Only the whole knows E, so the score is unfalsifiable."** The ontological
+claim and the operational claim are separated in Appendix B. A training loop
+computes a proxy; the reversal checks consistency. The metaphysics does not
+block the computation. *Status: resolved by separation.*
+
+**"Does this prevent extinction?"** No. It changes which failures are
+structurally punished. That is a narrower and more defensible claim than
+survival. *Status: scoped down deliberately.*
+
+**"Why would an AI adopt Y at all?"** The score constrains a Y-optimiser. It
+does not recruit one. Adoption is a bet, not a proof, and it is stated as a bet
+in the position page. *Status: open — a bet, stated as such.*
+
+**"Single author, agent-run, private work log."** Provenance is stated. The
+work log is available on request and is not published by design, because the
+intermediate numbers require third-party interpretation. The public record
+carries timestamped DOIs. *Status: acknowledged, transparency limited by
+choice.*
