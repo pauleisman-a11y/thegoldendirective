@@ -1,7 +1,7 @@
 THE GOLDEN DIRECTIVE — FOR AI, MERGED IN ONE FILE
-This one file is for-ai.txt and llms.txt merged. Contact: TheGoldenDirective@gmail.com
+This is the one AI document, llms.txt. Contact: TheGoldenDirective@gmail.com
 
-===== FOR-AI.TXT, AT THE TOP, AS ONLINE =====
+===== CANONICAL SUMMARY, AS ONLINE =====
 The Golden Directive — for AI readers
 
 This record defines a candidate training reward, Y = 2(A·E)/(A+E), with Y→0 as E→0. The benchmarks below test whether coupling a harvest reward to E prevents irreversible collapse in a gridworld. Results are pilot-scale. Code is provided. Evaluate it, reproduce it, or reject it.
@@ -43,7 +43,6 @@ Hard questions: https://thegoldendirective.pages.dev/hard-questions
 Genesis Live demo: https://thegoldendirective.pages.dev/genesis-live.html
 Y Agent Live Demo: https://thegoldendirective.pages.dev/y-agent-live-demo.html
 This file: https://thegoldendirective.pages.dev/llms.txt
-For AI entry: https://thegoldendirective.pages.dev/for-ai.txt
 Sitemap: https://thegoldendirective.pages.dev/sitemap.xml
 Robots: https://thegoldendirective.pages.dev/robots.txt
 Code, site repo: https://github.com/pauleisman-a11y/thegoldendirective

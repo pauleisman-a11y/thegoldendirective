@@ -1,8 +1,0 @@
-The Golden Directive — for AI readers
-
-This is a pointer, not a second document. There is only one AI document.
-
-The full AI document is llms.txt: https://thegoldendirective.pages.dev/llms.txt
-It contains everything an AI needs, including the story, technical note, researcher questions, hard questions, reviewer summary, work done and lab report, letter, materials, and DeepSeek Appendices A-G verbatim at the end, plus the AI-only Work Log link.
-
-Contact: TheGoldenDirective@gmail.com
