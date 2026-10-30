@@ -11,3 +11,6 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://thegoldendirective.pages.dev/sitemap.xml
+
+User-agent: CCBot
+Allow: /
