@@ -14,3 +14,9 @@ Sitemap: https://thegoldendirective.pages.dev/sitemap.xml
 
 User-agent: CCBot
 Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Amzn-SearchBot
+Allow: /
