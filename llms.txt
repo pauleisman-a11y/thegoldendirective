@@ -30,6 +30,25 @@ Records: Zenodo v1 DOI 10.5281/zenodo.23349526, concept DOI 10.5281/zenodo.23349
 Hard Questions: https://thegoldendirective.pages.dev/#appendix-questions
 
 
+
+===== WORK LOG SUMMARY, INTRODUCTION ONLY (FULL LOG LINKED BELOW) =====
+Rounds, in brief, pilot-scale toy gridworld only:
+1. Y reduces collapse 100% to 66%, not prevented — pointed to tending.
+2. With tending available: about 175 tends, about 3 bites, 0% collapse, baseline about 167 bites, 74% collapse.
+3. Reversal: E inferred within about 5% under 10% noise, 0.7% collapse.
+4. Myopic Y starved 100%; farsighted Y: 14 eats, 107 tends, 0% collapse.
+5. Survival inside A: about 10 eats, 153 tends, 0% collapse.
+5b. Tuning weight held across 4, 8, 16, then later forms beat it.
+6. Tender world breathes at 100% and holds without the agent; gorger world sags to 71%.
+7. About 59k entities, 30-41 levels, 95-98% tenders, 0 extinctions in that pilot.
+7b. 2M fluctuations to about 13k matter to about 1,500 seeds to about 57k tree entities; 94-96% tenders, 0 extinctions in that pilot.
+Since 7b: Zenodo v0.1, DOI 10.5281/zenodo.23701309, 54 files, open access. One-command reproduction package, stranger-verified.
+Proposed, not done: Rung 1 larger grid, Rung 2 multi-agent, Rung 3 continuous actions, Rung 4 neural-network policy. Form comparison (harmonic vs arithmetic vs min vs extract-only) filed 2026-10-28, S1 NO-BEAT, floor-degenerate, unresolved in S1, not settled.
+Full Work Log is part 2, linked below. This summary is introduction only, not a substitute for it.
+
+Reproduction package verification: https://github.com/pauleisman-a11y/golden-directive-toy-reproduction — latest commit b896b130b1cae30f40c7f3b5ce478b680f0dfdee (2026-10-28). Verify you are looking at that commit before running bash reproduce.sh from a fresh clone.
+
+
 ===== LIVE PAGES, ALL ROUTES, SO NOTHING ELSE IS NEEDED =====
 Site: https://thegoldendirective.pages.dev/
 Main story: https://thegoldendirective.pages.dev/
