@@ -55,7 +55,7 @@ Rounds, in brief, pilot-scale toy gridworld only:
 7. About 59k entities, 30-41 levels, 95-98% tenders, 0 extinctions in that pilot.
 7b. 2M fluctuations to about 13k matter to about 1,500 seeds to about 57k tree entities; 94-96% tenders, 0 extinctions in that pilot.
 Since 7b: Zenodo v0.1, DOI 10.5281/zenodo.23701309, 54 files, open access. One-command reproduction package, stranger-verified.
-Proposed, not done: Rung 1 larger grid, Rung 2 multi-agent, Rung 3 continuous actions, Rung 4 neural-network policy. Form comparison (harmonic vs arithmetic vs min vs extract-only) filed 2026-10-28, S1 NO-BEAT, floor-degenerate, unresolved in S1, not settled.
+Rung 1 larger grid COMPLETED 2026-10-30, overall FAIL (collapse 27.74% vs bar at most 5%, 72.26 points below baseline vs bar at least 20, full-vs-cropped gap approx 63.9% vs bar at most 15%, E within 10% as noise-averaging sanity check; collapse = food-stock depletion vs clean control, survival approx 99.91%; program stopped at this rung). Rung 2 multi-agent, Rung 3 continuous actions, Rung 4 neural-network policy: proposed, not done. Form comparison (harmonic vs arithmetic vs min vs extract-only) filed 2026-10-28, S1 NO-BEAT, floor-degenerate, unresolved in S1, not settled.
 Full Work Log is part 2, linked below. This summary is introduction only, not a substitute for it.
 
 Reproduction package verification: https://github.com/pauleisman-a11y/golden-directive-toy-reproduction — latest commit b896b130b1cae30f40c7f3b5ce478b680f0dfdee (2026-10-28). Verify you are looking at that commit before running bash reproduce.sh from a fresh clone.
