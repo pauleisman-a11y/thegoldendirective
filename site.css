@@ -38,4 +38,18 @@
     .larger-list li{padding:11px 0;border-bottom:1px solid var(--rule)}
     .larger-list b{display:block;font:600 1rem/1.25 var(--serif)}
     .larger-list span{display:block;margin-top:3px;color:var(--muted);font-size:.86rem;line-height:1.45}
+    .ia-dialogue{padding:12px 14px;border:1px solid var(--rule);background:var(--panel)}
+    .ia-dialogue p{font-size:.9rem;line-height:1.45}
+    .ia-dialogue p+p{margin-top:8px}
+    .ia-dialogue b{color:var(--accent);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+    .ia-crops{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+    .ia-crops li{padding:8px 10px;border-bottom:1px solid var(--rule);font-size:.84rem;line-height:1.4}
+    .ia-crops li b{color:var(--accent)}
+    .ia-answer{padding:14px 16px;background:var(--accent-soft)}
+    .ia-answer p{font:500 .95rem/1.5 var(--serif)}
+    .ia-answer p+p{margin-top:8px}
+    .ia-map{display:grid;gap:7px}
+    .ia-map div{padding:8px 10px;border-bottom:1px solid var(--rule)}
+    .ia-map b{display:block;color:var(--accent);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+    .ia-map span{display:block;margin-top:2px;font-size:.84rem;line-height:1.4}
   
