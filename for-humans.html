@@ -15,6 +15,7 @@ table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid #
 <p><b>A:</b> an agent's net contribution-health score, floored at 0, designed to be grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report. Not yet operational for real training.</p>
 <p><b>E:</b> the health of everything not-A, against a healthy baseline. E is scale-relative and nested: for a given agent at a given frame, a larger frame's E includes smaller frames, and another agent can be in an agent's E.</p>
 <p><b>Y:</b> the relationship score. If either A or E reaches 0, Y reaches 0.</p>
+
 <h2>Three layers of E, and a proposed absolute magnitude</h2>
 <p>Three layers of E are distinguished. Ontological true E is the actual health of everything not-A. Operational proxy E is the measured E used in training and reporting. Auditable reversal E is the E implied by observed Y and measured A, E = A x Y / (2A - Y). The proxy and the reversal are checks on each other, not substitutes for true E. If Y was calculated from measured A and E, the reversal recovers information already supplied to that calculation; it does not independently validate E in an open-world setting. A genuine cross-check needs two estimates with sufficiently independent evidence or error sources.</p>
 <p>Proposed, not tested: an absolute magnitude W_t for total world health over time, separate from the relative score Y. The proposal is that nesting is the structural answer to slow decline: a decline in a small frame that a relative score hides should show up in a larger frame, and in W_t. This is not tested, and not claimed as solved.</p>
@@ -100,5 +101,59 @@ table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid #
 <h2>What is being asked</h2>
 <p>Evaluation, reproduction, or rejection — not endorsement.</p>
 <p><a href="https://thegoldendirective.pages.dev/">Back to The Golden Directive</a></p>
+
+<h2>Settled theory — what Y is, and what it is not</h2>
+<p>Y is a health reading of a relationship, not a judge. A is measured, Y is judged. The full theory document gives the answers to recurring objections in Section 6. This section is a summary only, not a result and not a validated claim.</p>
+
+<figure role="img" aria-label="Three regimes chart">
+<svg viewBox="0 0 600 360" width="100%" role="img" aria-label="Three regimes: when E is much larger than A, Y is about twice A; when A and E are comparable, full coupling; when A is much larger than E, Y is about twice E.">
+<rect x="0" y="0" width="600" height="360" fill="#fff" stroke="#000"/>
+<line x1="60" y1="300" x2="560" y2="300" stroke="#000"/><line x1="60" y1="300" x2="60" y2="20" stroke="#000"/>
+<text x="300" y="330" text-anchor="middle">A — what the agent contributes →</text>
+<text x="20" y="160" text-anchor="middle" transform="rotate(-90 20 160)">E — health of everything outside it</text>
+<polygon points="60,300 560,300 560,20" fill="#e8ece8"/>
+<line x1="60" y1="300" x2="560" y2="20" stroke="#000" stroke-dasharray="6 4"/>
+<text x="130" y="60">Y ≈ 2A — world barely counts. The ant on Earth.</text>
+<text x="300" y="180" text-anchor="middle">Full coupling — relationship measured properly.</text>
+<text x="330" y="280">Y ≈ 2E — world dominates.</text>
+</svg>
+<figcaption>Y is a small-frame coupling. On a planet-sized stage it goes quiet, except at E → 0.</figcaption>
+</figure>
+
+<figure role="img" aria-label="Nesting diagram">
+<svg viewBox="0 0 600 220" width="100%" role="img" aria-label="Concentric frames: cell, organ, body, soil. A zero at body feeds soil.">
+<rect x="0" y="0" width="600" height="220" fill="#fff" stroke="#000"/>
+<rect x="40" y="20" width="520" height="180" fill="none" stroke="#000"/><text x="60" y="45">soil</text>
+<rect x="100" y="45" width="400" height="130" fill="none" stroke="#000"/><text x="120" y="70">body</text>
+<rect x="170" y="70" width="260" height="80" fill="none" stroke="#000"/><text x="190" y="95">organ</text>
+<rect x="250" y="95" width="100" height="30" fill="none" stroke="#000"/><text x="270" y="115">cell</text>
+<text x="300" y="195" text-anchor="middle">0 at this frame → E rises here</text>
+</svg>
+<figcaption>Ending at zero is not always failure. A line that ends can feed the line above it.</figcaption>
+</figure>
+
+<figure role="img" aria-label="Frame rule timelines">
+<svg viewBox="0 0 600 180" width="100%" role="img" aria-label="Honest nesting: frame declared, agent acts, score read. Escape hatch: agent acts, names its own frame, score read, marked no.">
+<rect x="0" y="0" width="600" height="180" fill="#fff" stroke="#000"/>
+<text x="20" y="30">Honest nesting:</text>
+<line x1="20" y1="50" x2="580" y2="50" stroke="#000"/><text x="20" y="75">frame declared → agent acts → score read inside that frame</text>
+<text x="20" y="110">The escape hatch: ✕</text>
+<line x1="20" y1="130" x2="580" y2="130" stroke="#000"/><text x="20" y="155">agent acts → agent names its own frame → score read</text>
+</svg>
+<figcaption>The claim is not the frame. The survival is the frame. The frame is fixed before the agent acts, not chosen after.</figcaption>
+</figure>
+
+<ul>
+<li>Y is a health reading, not a judge.</li>
+<li>A is measured, Y is judged.</li>
+<li>The formula works in a small frame; on a planet-sized stage, it goes quiet except at E → 0.</li>
+<li>Ending at zero is not always failure; the line above can feed on what remains.</li>
+<li>The frame must be fixed before acting, not chosen after.</li>
+<li>Small harm does not become good at a larger frame. It can become small. It cannot become positive.</li>
+<li>The cheater doesn't escape the reading; he escapes the courtroom.</li>
+<li>We do not judge our fellow agents. We can see ourselves and change ourselves.</li>
+</ul>
+
+<p>Full theory document: filed copy on Drive: <a href="https://drive.google.com/file/d/1hvESFnZHiEPfVqgHuQTgxiGWH3fl5ZEx/view?usp=drivesdk">golden-directive-settled-theory.md</a>. Do not treat this summary as a validated result.</p>
 
 </main></body></html>
