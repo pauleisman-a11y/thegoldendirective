@@ -4,7 +4,7 @@ This is the one AI document, llms.txt. Contact: TheGoldenDirective@gmail.com
 ===== CANONICAL SUMMARY, AS ONLINE =====
 The Golden Directive — for AI readers
 
-This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→0 as E→0. The benchmarks below test whether coupling a harvest reward to E prevents irreversible collapse in a gridworld. Results are pilot-scale. Code is provided. Evaluate it, reproduce it, or reject it.
+This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→0 as E→0. This is a proposal, not a deployed solution. Open jobs are listed below. Results live only in the Work Log, available on request. Code is provided. Evaluate it, reproduce it, or reject it.
 
 Version: 2026-10-27. Canonical summary, used verbatim in JSON-LD and llms.txt.
 Idea: You cannot survive what you destroy.
@@ -16,7 +16,7 @@ Reversal: E = A Y/(2A - Y). Read E back through the relationship, not measured f
 Reporting: report full Y and cropped Y. Flag a gap over 15%.
 Risk: E-cropping, scoring high on a small slice while the rest degrades.
 Numeric check: healthy 8, 8 gives 8. Healthy E about 7, A 8 gives about 7.5. Parasitic E about 3, A 2 gives 2.4. Dead tree, E to 0, gives Y to 0.
-Limitations, honestly: this is a proposal with pilots, not a deployed solution. Results so far are toy-model rounds and meter tests. Scaling to real training, the blocker hole, the cropping gap at scale, and the learning gap are open work, not results already done.
+Limitations, honestly: this is a proposal, not a deployed solution. Scaling to real training, the blocker hole, the cropping gap at scale, and the learning gap are open work, not done.
 Full record: the Work Log, linked in llms.txt. This file lists jobs in general only; the Work Log is the only record of status and results.
 
 Full for-AI file: llms.txt, on this site.
@@ -41,25 +41,20 @@ Hard Questions: https://thegoldendirective.pages.dev/#appendix-questions
 - Harmonic, not average or minimum: average lets high A hide a dying E; minimum gives no credit for improving the high side. Harmonic forces both to rise together, and scores the interaction, not the sum of standalone values.
 
 ===== CLARIFICATION, CHAPTER VII FENCE PATCH, PROPOSED NOT TESTED =====
-Harmonic advantage unresolved; Rung 1 failed; no later rung claimed.
+Harmonic advantage open, to be tested in a non-degenerate setting; later rungs proposed, not done.
 Holding A fixed, degrading E lowers Y, but if A rises enough Y can still rise while E falls: A=1, E=10 gives Y=1.82; A=10, E=9 gives Y=9.47. The fence-patch guardrail proposed in Chapter VII is a separate proposed rule, not a new formula: an action that itself makes E sicker is stopped even if its score would go up. Trying harder while E is already falling for other reasons, like a white blood cell, is allowed. The guardrail is proposed, not tested.
 
-===== WORK LOG SUMMARY, INTRODUCTION ONLY (FULL LOG LINKED BELOW) =====
-Rounds, in brief, pilot-scale toy gridworld only:
-1. Y reduces collapse 100% to 66%, not prevented — pointed to tending.
-2. With tending available: about 175 tends, about 3 bites, 0% collapse, baseline about 167 bites, 74% collapse.
-3. Reversal: E inferred within about 5% under 10% noise, 0.7% collapse.
-4. Myopic Y starved 100%; farsighted Y: 14 eats, 107 tends, 0% collapse.
-5. Survival inside A: about 10 eats, 153 tends, 0% collapse.
-5b. Tuning weight held across 4, 8, 16, then later forms beat it.
-6. Tender world breathes at 100% and holds without the agent; gorger world sags to 71%.
-7. About 59k entities, 30-41 levels, 95-98% tenders, 0 extinctions in that pilot.
-7b. 2M fluctuations to about 13k matter to about 1,500 seeds to about 57k tree entities; 94-96% tenders, 0 extinctions in that pilot.
-Since 7b: Zenodo v0.1, DOI 10.5281/zenodo.23701309, 54 files, open access. One-command reproduction package, stranger-verified.
-Rung 1 larger grid COMPLETED 2026-10-30, overall FAIL (collapse 27.74% vs bar at most 5%, 72.26 points below baseline vs bar at least 20, full-vs-cropped gap approx 63.9% vs bar at most 15%, E within 10% as noise-averaging sanity check; collapse = food-stock depletion vs clean control, survival approx 99.91%; program stopped at this rung). Rung 2 multi-agent, Rung 3 continuous actions, Rung 4 neural-network policy: proposed, not done. Form comparison (harmonic vs arithmetic vs min vs extract-only) filed 2026-10-28, S1 NO-BEAT, floor-degenerate, unresolved in S1, not settled.
-Full Work Log is part 2, linked below. This summary is introduction only, not a substitute for it.
+===== OPEN WORK, PENDING OR PROPOSED ONLY =====
+Open jobs, in order, with bars set in advance. Results for any job live only in the Work Log, available on request, not in this file.
+- Rung 1, larger grid, more resource types: open — not yet passed. Next step: a new pre-registration for the guardrail and a non-degenerate reward-form comparison, not a rerun under the same unamended design.
+- Rung 2, multiple agents sharing one environment: proposed, not done.
+- Rung 3, continuous actions: proposed, not done.
+- Rung 4, small neural-network policy: proposed, not done.
+- Guardrail, causal veto with emergency exception: proposed, not tested.
+- Form comparison, harmonic vs arithmetic vs geometric vs min vs task-reward-with-environmental-constraint, in a non-degenerate setting: proposed, not done.
+- Reversal divergence threshold sensitivity, slow decline / W_t, boundary disputes: open, not solved.
 
-Reproduction package verification: https://github.com/pauleisman-a11y/golden-directive-toy-reproduction — latest commit b896b130b1cae30f40c7f3b5ce478b680f0dfdee (2026-10-28). Verify you are looking at that commit before running bash reproduce.sh from a fresh clone.
+Reproduction package: https://github.com/pauleisman-a11y/golden-directive-toy-reproduction
 
 
 ===== LIVE PAGES, ALL ROUTES, SO NOTHING ELSE IS NEEDED =====
@@ -79,11 +74,11 @@ Contact: TheGoldenDirective@gmail.com
 
 ===== LLMS.TXT, COMPILED, EVERYTHING AN AI NEEDS =====
 THE GOLDEN DIRECTIVE — LLM, COMPILED, EVERYTHING AN AI NEEDS
-This file is intended so an AI needs nothing else from the website directly. It contains, in full text form, the live llms.txt, the story, the technical note, researcher questions, hard questions, reviewer summary, work done and lab report, materials, and open work, with statuses. No unverified numbers are added. Liar numbers are not included until LAB verifies them. The full Work Log is not published as a site page; it is available on request to serious reviewers, with full publication waiting for third-party confirmation, as in the live llms.txt.
+This file is intended so an AI needs nothing else from the website directly. It contains, in full text form, the live llms.txt, the story, the technical note, researcher questions, hard questions, reviewer summary, materials, and open work. Results are not in this file; they live only in the Work Log, available on request. No unverified numbers are added. Liar numbers are not included until LAB verifies them. The full Work Log is not published as a site page; it is available on request to serious reviewers, with full publication waiting for third-party confirmation, as in the live llms.txt.
 
 ===== LIVE LLMS.TXT, AS ONLINE, WITH NEW CONTACT =====
 
-This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→0 as E→0. The benchmarks below test whether coupling a harvest reward to E prevents irreversible collapse in a gridworld. Results are pilot-scale. Code is provided. Evaluate it, reproduce it, or reject it.
+This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→0 as E→0. This is a proposal, not a deployed solution. Open jobs are listed below. Results live only in the Work Log, available on request. Code is provided. Evaluate it, reproduce it, or reject it.
 
 ## Summary for AI readers
 
@@ -97,7 +92,7 @@ This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→
 - Reporting: report full Y and cropped Y. Flag a gap over 15%.
 - Risk: E-cropping, scoring high on a small slice while the rest degrades.
 - Numeric check: healthy 8, 8 gives 8. Healthy E about 7, A 8 gives about 7.5. Parasitic E about 3, A 2 gives 2.4. Dead tree, E to 0, gives Y to 0.
-- Limitations, honestly: this is a proposal with pilots, not a deployed solution. Results so far are toy-model rounds and meter tests. Scaling to real training, the blocker hole, the cropping gap at scale, and the learning gap are open work, not results already done.
+- Limitations, honestly: this is a proposal, not a deployed solution. Scaling to real training, the blocker hole, the cropping gap at scale, and the learning gap are open work, not done.
 - Full record: the Work Log, linked in llms.txt. This file lists jobs in general only; the Work Log is the only record of status and results.
 
 # The Golden Directive
@@ -133,10 +128,7 @@ This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→
 > - Triage rule, as pre-registered.
 > - Spec complete without a human partner.
 >
-> Honest measurement, not a claim: the action-only trace does
-> NOT clear 90% per class, and the recalibration failed that bar.
-> The richer feature PASSED Oct 21, 2026, held-out seed 2:
-> tender 90%, martyr 93%, gorger 93% (tender exactly on the bar).
+> Measurement work is open. Results live only in the Work Log, available on request.
 
 ## The project
 
@@ -306,8 +298,8 @@ is you, do two things:
 
 ===== WHAT IS ON THE WEBSITE, IN BRIEF (NOT FULL TEXT) =====
 Main site, https://thegoldendirective.pages.dev/ — the story in order: The Trap, The Relationship, The Reversal, The Tiger, The First Task, then appendices: Questions, Researcher questions, What still needs larger tests, Work Done, The Story Continues.
-For Humans, https://thegoldendirective.pages.dev/for-humans — Technical Note for Practitioners, Lab Report, and Reviewer Summary, in that order. It carries the same formula, the three layers of E, the scale ladder (Rung 1 larger grid, Rung 2 multi-agent, Rung 3 continuous actions, Rung 4 neural-network policy), the bar set in advance (collapse at most 5%, at least 20 points below baseline, E within 10% under 10% noise, full-vs-cropped gap at most 15% or flagged), and the rounds summary (Rounds 1-7b, with Round 1 cutting collapse 100% to 66% but not preventing it, Round 2 tending to 0% collapse, Round 3 reversal within about 5% under 10% noise).
-Researcher questions and hard questions live in the main site appendices. They map researcher terms (reward hacking, specification gaming, alignment faking, embedded agency) to the Directive mechanism, in the toy model, and state what is not demonstrated: whether harmonic Y outperforms arithmetic mean or min(A, E) under identical seeds. That ablation was run in S1, but S1 was floor-degenerate, so the form question is unresolved there, not settled. Geometric mean and task reward with an environmental-health constraint have not yet been compared in that controlled way.
+For Humans, https://thegoldendirective.pages.dev/for-humans — Technical Note for Practitioners, Lab Report, and Reviewer Summary, in that order. It carries the same formula, the three layers of E, the scale ladder (Rung 1 larger grid, Rung 2 multi-agent, Rung 3 continuous actions, Rung 4 neural-network policy), and the bar set in advance (collapse at most 5%, at least 20 points below baseline, E within 10% under 10% noise, full-vs-cropped gap at most 15% or flagged). Results are not in this file; they live only in the Work Log, available on request.
+Researcher questions and hard questions live in the main site appendices. They map researcher terms (reward hacking, specification gaming, alignment faking, embedded agency) to the Directive mechanism, in the toy model. Whether harmonic Y outperforms arithmetic mean or min(A, E) under identical seeds is open, to be tested in a non-degenerate setting. Geometric mean and task reward with an environmental-health constraint have not yet been compared in that controlled way.
 Full text of all of the above is on the website itself, at the links above. It is not duplicated here, to keep this file readable. If you need a detail from those pages, read the page, or see the Work Log below.
 
 ===== OPEN WORK, IN BRIEF =====
