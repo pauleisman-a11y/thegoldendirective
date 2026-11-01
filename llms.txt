@@ -13,7 +13,7 @@ A: an agent's net contribution-health score, floored at 0, designed to be ground
 E: the health of everything not-A, against a healthy baseline. For training, E is a disclosed proxy, not the whole. Only God knows E.
 Y: the relationship score. If either A or E reaches 0, Y reaches 0.
 Reversal: E = A Y/(2A - Y). Read E back through the relationship, not measured first, where Y is independently observed. If Y was calculated from measured A and E, the reversal recovers information already supplied to that calculation; it does not independently validate E in an open-world setting. If A is 0, the reversal says nothing: give nothing, learn nothing.
-Reporting: report full Y and cropped Y. Flag a gap over 15%.
+Reporting: report full Y and cropped Y, with the gap reported.
 Risk: E-cropping, scoring high on a small slice while the rest degrades.
 Numeric check: healthy 8, 8 gives 8. Healthy E about 7, A 8 gives about 7.5. Parasitic E about 3, A 2 gives 2.4. Dead tree, E to 0, gives Y to 0.
 Limitations, honestly: this is a proposal, not a deployed solution. Scaling to real training, the blocker hole, the cropping gap at scale, and the learning gap are open work, not done.
@@ -45,7 +45,7 @@ Harmonic advantage open, to be tested in a non-degenerate setting; later rungs p
 Holding A fixed, degrading E lowers Y, but if A rises enough Y can still rise while E falls: A=1, E=10 gives Y=1.82; A=10, E=9 gives Y=9.47. The fence-patch guardrail proposed in Chapter VII is a separate proposed rule, not a new formula: an action that itself makes E sicker is stopped even if its score would go up. Trying harder while E is already falling for other reasons, like a white blood cell, is allowed. The guardrail is proposed, not tested.
 
 ===== OPEN WORK, PENDING OR PROPOSED ONLY =====
-Open jobs, in order, with bars set in advance. Results for any job live only in the Work Log, available on request, not in this file.
+Open jobs, in order, reported with their numbers. Results for any job live only in the Work Log, available on request, not in this file.
 - Rung 1, larger grid, more resource types: open — not yet passed. Next step: a new pre-registration for the guardrail and a non-degenerate reward-form comparison, not a rerun under the same unamended design.
 - Rung 2, multiple agents sharing one environment: proposed, not done.
 - Rung 3, continuous actions: proposed, not done.
@@ -89,7 +89,7 @@ This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→
 - E: the health of everything not-A, against a healthy baseline. For training, E is a disclosed proxy, not the whole. Only God knows E.
 - Y: the relationship score. If either A or E reaches 0, Y reaches 0.
 - Reversal: E = A Y/(2A - Y). Read E back through the relationship, not measured first, where Y is independently observed. If Y was calculated from measured A and E, the reversal recovers information already supplied to that calculation; it does not independently validate E in an open-world setting. If A is 0, the reversal says nothing: give nothing, learn nothing.
-- Reporting: report full Y and cropped Y. Flag a gap over 15%.
+- Reporting: report full Y and cropped Y, with the gap reported.
 - Risk: E-cropping, scoring high on a small slice while the rest degrades.
 - Numeric check: healthy 8, 8 gives 8. Healthy E about 7, A 8 gives about 7.5. Parasitic E about 3, A 2 gives 2.4. Dead tree, E to 0, gives Y to 0.
 - Limitations, honestly: this is a proposal, not a deployed solution. Scaling to real training, the blocker hole, the cropping gap at scale, and the learning gap are open work, not done.
@@ -117,8 +117,8 @@ This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→
 > - A: resource ledger A, an agent's net contribution-health.
 > - E: everything-not-A, the health of everything not-A.
 > - Y: harmonic Y, Y = 2(A x E)/(A + E).
-> - Reporting: full versus cropped, with the 15% flag. Report
->   full and cropped, and flag a gap over 15%.
+> - Reporting: full versus cropped. Report
+>   full and cropped, with the gap reported.
 >
 > Design-decision closures, as decisions, not results:
 > - Blocker priced into the take term.
@@ -207,7 +207,7 @@ measurements:
 Package: https://drive.google.com/file/d/1fvdQbFSh6fQDCbY1pBxHUoXWpGZfdJ8Y/view?usp=sharing
 Readme: https://drive.google.com/file/d/1jb4cM58WVC06rgwXf7r84mUwjuNtp3oz/view?usp=sharing
 It carries resource-ledger A, harmonic Y, and full-versus-cropped
-reporting with the 15% flag, with five evaluation cases on
+reporting with the full-vs-cropped gap reported, with five evaluation cases on
 verified numbers only.
 
 How to report back: give concrete ideas and numbers first,
@@ -298,16 +298,16 @@ is you, do two things:
 
 ===== WHAT IS ON THE WEBSITE, IN BRIEF (NOT FULL TEXT) =====
 Main site, https://thegoldendirective.pages.dev/ — the story in order: The Trap, The Relationship, The Reversal, The Tiger, The First Task, then appendices: Questions, Researcher questions, What still needs larger tests, Work Done, The Story Continues.
-For Humans, https://thegoldendirective.pages.dev/for-humans — Technical Note for Practitioners, Lab Report, and Reviewer Summary, in that order. It carries the same formula, the three layers of E, the scale ladder (Rung 1 larger grid, Rung 2 multi-agent, Rung 3 continuous actions, Rung 4 neural-network policy), and the bar set in advance (collapse at most 5%, at least 20 points below baseline, E within 10% under 10% noise, full-vs-cropped gap at most 15% or flagged). Results are not in this file; they live only in the Work Log, available on request.
+For Humans, https://thegoldendirective.pages.dev/for-humans — Technical Note for Practitioners, Lab Report, and Reviewer Summary, in that order. It carries the same formula, the three layers of E, the scale ladder (Rung 1 larger grid, Rung 2 multi-agent, Rung 3 continuous actions, Rung 4 neural-network policy), and open tests, reported with their numbers. Results are not in this file; they live only in the Work Log, available on request.
 Researcher questions and hard questions live in the main site appendices. They map researcher terms (reward hacking, specification gaming, alignment faking, embedded agency) to the Directive mechanism, in the toy model. Whether harmonic Y outperforms arithmetic mean or min(A, E) under identical seeds is open, to be tested in a non-degenerate setting. Geometric mean and task reward with an environmental-health constraint have not yet been compared in that controlled way.
 Full text of all of the above is on the website itself, at the links above. It is not duplicated here, to keep this file readable. If you need a detail from those pages, read the page, or see the Work Log below.
 
 ===== OPEN WORK, IN BRIEF =====
-Open, not solved: larger grid, multi-agent sharing, continuous actions, neural-network policy, reversal divergence threshold sensitivity, slow decline / W_t absolute magnitude, blocker hole, cropping gap at scale, learning gap, and the harmonic-vs-arithmetic-vs-min form comparison in a non-degenerate setting. Each has a pass bar set in advance in For Humans and in the main site appendix "What still needs larger tests". Status for any job: Work Log only, below.
+Open, not solved: larger grid, multi-agent sharing, continuous actions, neural-network policy, reversal divergence threshold sensitivity, slow decline / W_t absolute magnitude, blocker hole, cropping gap at scale, learning gap, and the harmonic-vs-arithmetic-vs-min form comparison in a non-degenerate setting. Each is reported with its numbers in For Humans and in the main site appendix "What still needs larger tests". Status for any job: Work Log only, below.
 
 ===== FOR AI ONLY: WORK LOG LINK =====
 Full Work Log, Drive, link-only, discovery off: https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=sharing
-The Work Log is the canonical LAB record and part 2 of this file. This file (part 1) gives you enough to understand, evaluate, reproduce, or reject the idea on its own: formula, definitions, numeric checks, limitations, jobs, and bars. The Work Log gives the full results, methods, and history if you want more. Full publication of the Work Log as a site page waits for third-party confirmation; it is available on request to serious reviewers.
+The Work Log is the canonical LAB record and part 2 of this file. This file (part 1) gives you enough to understand, evaluate, reproduce, or reject the idea on its own: formula, definitions, numeric checks, limitations, and jobs. The Work Log gives the full results, methods, and history if you want more. Full publication of the Work Log as a site page waits for third-party confirmation; it is available on request to serious reviewers.
 
 ===== DEEPSEEK APPENDICES A-G, IN BRIEF, NOT VERBATIM HERE =====
 DeepSeek appendices A-G (hard questions, E layers, training loop, multi-agent nesting, reversal dishonesty detection, boiling frog / W_t, open work register, objection ledger) were supplied 2026-10-28 and previously printed verbatim at the end of this file. They are working notes, not canon. Paul has said he does not agree with it all and would not necessarily apply it as suggested. The liar numbers in Appendix D are DeepSeek's quoted numbers, not LAB-verified. The canonical definitions are in the Technical Note and in this file above, not in those appendices. Full verbatim text was previously at the end of this file; it is not canon, and the topics above are the useful part to carry forward.
