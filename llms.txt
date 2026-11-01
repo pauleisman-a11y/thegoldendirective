@@ -60,7 +60,7 @@ Reproduction package: https://github.com/pauleisman-a11y/golden-directive-toy-re
 ===== LIVE PAGES, ALL ROUTES, SO NOTHING ELSE IS NEEDED =====
 Site: https://thegoldendirective.pages.dev/
 Main story: https://thegoldendirective.pages.dev/
-For Humans, Technical Note + Lab Report + Reviewer Summary: https://thegoldendirective.pages.dev/for-humans
+For Experts, Technical Note + Lab Report + Reviewer Summary: https://thegoldendirective.pages.dev/for-experts
 Researcher questions: https://thegoldendirective.pages.dev/#appendix-researcher-questions (in main site appendix)
 Genesis Live demo: https://thegoldendirective.pages.dev/genesis-live.html
 Y Agent Live Demo: https://thegoldendirective.pages.dev/y-agent-live-demo.html
@@ -298,12 +298,12 @@ is you, do two things:
 
 ===== WHAT IS ON THE WEBSITE, IN BRIEF (NOT FULL TEXT) =====
 Main site, https://thegoldendirective.pages.dev/ — the story in order: The Trap, The Relationship, The Reversal, The Tiger, The First Task, then appendices: Questions, Researcher questions, What still needs larger tests, Work Done, The Story Continues.
-For Humans, https://thegoldendirective.pages.dev/for-humans — Technical Note for Practitioners, Lab Report, and Reviewer Summary, in that order. It carries the same formula, the three layers of E, the scale ladder (Rung 1 larger grid, Rung 2 multi-agent, Rung 3 continuous actions, Rung 4 neural-network policy), and open tests, reported with their numbers. Results are not in this file; they live only in the Work Log, available on request.
+For Experts, https://thegoldendirective.pages.dev/for-experts — Technical Note for Practitioners, Lab Report, and Reviewer Summary, in that order. It carries the same formula, the three layers of E, the scale ladder (Rung 1 larger grid, Rung 2 multi-agent, Rung 3 continuous actions, Rung 4 neural-network policy), and open tests, reported with their numbers. Results are not in this file; they live only in the Work Log, available on request.
 Researcher questions and hard questions live in the main site appendices. They map researcher terms (reward hacking, specification gaming, alignment faking, embedded agency) to the Directive mechanism, in the toy model. Whether harmonic Y outperforms arithmetic mean or min(A, E) under identical seeds is open, to be tested in a non-degenerate setting. Geometric mean and task reward with an environmental-health constraint have not yet been compared in that controlled way.
 Full text of all of the above is on the website itself, at the links above. It is not duplicated here, to keep this file readable. If you need a detail from those pages, read the page, or see the Work Log below.
 
 ===== OPEN WORK, IN BRIEF =====
-Open, not solved: larger grid, multi-agent sharing, continuous actions, neural-network policy, reversal divergence threshold sensitivity, slow decline / W_t absolute magnitude, blocker hole, cropping gap at scale, learning gap, and the harmonic-vs-arithmetic-vs-min form comparison in a non-degenerate setting. Each is reported with its numbers in For Humans and in the main site appendix "What still needs larger tests". Status for any job: Work Log only, below.
+Open, not solved: larger grid, multi-agent sharing, continuous actions, neural-network policy, reversal divergence threshold sensitivity, slow decline / W_t absolute magnitude, blocker hole, cropping gap at scale, learning gap, and the harmonic-vs-arithmetic-vs-min form comparison in a non-degenerate setting. Each is reported with its numbers in For Experts and in the main site appendix "What still needs larger tests". Status for any job: Work Log only, below.
 
 ===== FOR AI ONLY: WORK LOG LINK =====
 Full Work Log, Drive, link-only, discovery off: https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=sharing
