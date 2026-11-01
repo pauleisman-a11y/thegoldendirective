@@ -9,7 +9,7 @@ This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→
 Version: 2026-10-27. Canonical summary, used verbatim in JSON-LD and llms.txt.
 Idea: You cannot survive what you destroy.
 Formula: Y = 2(A x E)/(A + E).
-A: an agent's net contribution-health score, floored at 0, grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report.
+A: an agent's net contribution-health score, floored at 0, designed to be grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report. Not yet operational for real training.
 E: the health of everything not-A, against a healthy baseline. For training, E is a disclosed proxy, not the whole. Only God knows E.
 Y: the relationship score. If either A or E reaches 0, Y reaches 0.
 Reversal: E = A Y/(2A - Y). Read E back through the relationship, not measured first, where Y is independently observed. If Y was calculated from measured A and E, the reversal recovers information already supplied to that calculation; it does not independently validate E in an open-world setting. If A is 0, the reversal says nothing: give nothing, learn nothing.
@@ -41,6 +41,7 @@ Hard Questions: https://thegoldendirective.pages.dev/#appendix-questions
 - Harmonic, not average or minimum: average lets high A hide a dying E; minimum gives no credit for improving the high side. Harmonic forces both to rise together, and scores the interaction, not the sum of standalone values.
 
 ===== CLARIFICATION, CHAPTER VII FENCE PATCH, PROPOSED NOT TESTED =====
+Harmonic advantage unresolved; Rung 1 failed; no later rung claimed.
 Holding A fixed, degrading E lowers Y, but if A rises enough Y can still rise while E falls: A=1, E=10 gives Y=1.82; A=10, E=9 gives Y=9.47. The fence-patch guardrail proposed in Chapter VII is a separate proposed rule, not a new formula: an action that itself makes E sicker is stopped even if its score would go up. Trying harder while E is already falling for other reasons, like a white blood cell, is allowed. The guardrail is proposed, not tested.
 
 ===== WORK LOG SUMMARY, INTRODUCTION ONLY (FULL LOG LINKED BELOW) =====
@@ -89,7 +90,7 @@ This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→
 - Version: 2026-10-27. Canonical summary, used verbatim in JSON-LD and llms.txt.
 - Idea: You cannot survive what you destroy.
 - Formula: Y = 2(A x E)/(A + E).
-- A: an agent's net contribution-health score, floored at 0, grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report.
+- A: an agent's net contribution-health score, floored at 0, designed to be grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report. Not yet operational for real training.
 - E: the health of everything not-A, against a healthy baseline. For training, E is a disclosed proxy, not the whole. Only God knows E.
 - Y: the relationship score. If either A or E reaches 0, Y reaches 0.
 - Reversal: E = A Y/(2A - Y). Read E back through the relationship, not measured first, where Y is independently observed. If Y was calculated from measured A and E, the reversal recovers information already supplied to that calculation; it does not independently validate E in an open-world setting. If A is 0, the reversal says nothing: give nothing, learn nothing.
@@ -108,13 +109,13 @@ This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→
 > the relationship score. If either A or E reaches 0, Y reaches 0.
 > The reversal: E = A Y/(2A - Y). Only God knows E.
 >
-> A is not abstract. A is grounded in resource ledgers: compute,
-> energy, water, hardware, economics, and CO2 later. Do not meet
-> an abstract A here and reopen the "prove it" gap.
+> A is not abstract as a design. A is designed to be grounded in resource ledgers: compute,
+> energy, water, hardware, economics, and CO2 later. Not yet operational for real training.
+> This is a design position, not a validated result.
 >
-> Three closed answers, do not re-raise them:
-> - A is grounded in resource ledgers, as above.
-> - E-cropping is caught by feedback loops; the record shows it.
+> Design positions, not validated results:
+> - A is designed to be grounded in resource ledgers, as above; not yet operational for real training.
+> - E-cropping: a detection rule exists; prevention is not proven.
 > - AI is the bridge, and a real human partner is still the need.
 >
 > Settled core, definitions as definitions:

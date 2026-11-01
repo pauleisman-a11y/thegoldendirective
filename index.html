@@ -26,7 +26,7 @@
     {
       "@type": "DefinedTerm",
       "name": "A",
-      "description": "A: an agent's net contribution-health score, floored at 0, grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report."
+      "description": "A: an agent's net contribution-health score, floored at 0, designed to be grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report. Not yet operational for real training."
     },
     {
       "@type": "DefinedTerm",
@@ -158,7 +158,7 @@
         <p><strong>Appeasement breaks under messy input.</strong> A system forced to say yes learns to work around the rule, not to live by it.</p>
         <p><strong>A programmed score is a target.</strong> Once the score is known, the score can be optimized while the world it was meant to stand for degrades.</p>
         <p><strong>Speed, scale, and engagement are not free.</strong> They draw on compute, energy, water, hardware, and attention, and a reward that charges nothing for those draws will keep drawing.</p>
-        <p>The closed structure, in one place. Y = 2(A × E) / (A + E). A is net contribution, grounded in resource ledgers, never self-report.</p>
+        <p>The closed structure, in one place. Y = 2(A × E) / (A + E). A is net contribution, designed to be grounded in resource ledgers, never self-report, not yet operational for real training.</p>
         <p>Evidence level, stated once: pilot-scale, toy environments.</p>
       </div>
       <div class="page-footer"><span>The Golden Directive · The Trap</span><b>Page 3</b></div>
@@ -211,7 +211,7 @@
         <p class="lede">The first version measured E, then calculated the relationship. The reversal lets the relationship happen and, if Y can be independently observed, solves for the outside that produced it. Stated precisely: the reversal recovers hidden E from a supplied relationship score. It does not independently validate E in an open-world setting.</p>
         <p>The math is old. The move is new: use it as the training reward, then reverse it.</p>
         <p class="punch">Give nothing, learn nothing. At A = 0, the inverse is undefined.</p>
-        <p>The reversal reads E back: E = A Y / (2A − Y). An agent scored on full Y is capped by a dying E: as E approaches zero, Y approaches zero, however large A grows. Damage is penalized, all else equal — the separate fence-patch guardrail that covers the case where A rises while E falls is stated in Chapter VII, The Monorail and the Fence Patch. E-cropping is caught by the full-vs-cropped Y gap flag: the gap between Y computed on full E and Y computed on cropped E, flagged when it is over 15%. Nested frames: directives inside directives.</p>
+        <p>The reversal reads E back: E = A Y / (2A − Y). An agent scored on full Y is capped by a dying E: as E approaches zero, Y approaches zero, however large A grows. Damage is penalized, all else equal — the separate fence-patch guardrail that covers the case where A rises while E falls is stated in Chapter VII, The Monorail and the Fence Patch. E-cropping: a detection rule exists, the full-vs-cropped Y gap flag, flagged when it is over 15%; prevention is not proven. Nested frames: directives inside directives.</p>
         <div class="relation-grid" aria-label="A, E, Y, and the whole">
           <div><b>The A-side</b><span>The agent inside the chosen boundary. Its numeric A is that side’s nonnegative contribution-health score.</span></div>
           <div><b>The E-side</b><span>Everything outside that boundary. Its numeric E is the outside world’s health score.</span></div>
