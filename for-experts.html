@@ -38,7 +38,7 @@ table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid #
 <p><b>Rung 3: continuous action space.</b> Same measures as Rung 1, in continuous actions, without discretisation hiding collapse. Report the numbers.</p>
 <p><b>Rung 4: small neural-network policy instead of tabular Q-learning.</b> Same measures as Rung 1 on the same grid. Report whether the neural policy learns the Y signal, improves over baseline, collapses, or games the meter.</p>
 <h2>Claims ledger</h2>
-<p><b>Proven in this pilot.</b> The arithmetic: 8, 8 gives 8; about 7 and 8 gives about 7.5; about 3 and 2 gives 2.4; E to 0 gives Y to 0. The reversal algebra: E = A x Y / (2A - Y), undefined at A = 0. In the small gridworld, Round 1 cut collapse from 100% to 66%. It did not prevent collapse yet, and that trip pointed to tending, which Round 2 proved. Round 2 gave about 175 tends, about 3 bites, 0% collapse, against a baseline of about 167 bites and 74% collapse. Round 3 inferred E within about 5% under 10% noise, with 0.7% collapse. An early test tripped on a cropped frame, an agent scored high while the full world declined, and that trip built the full-frame rule: report full Y beside cropped Y, with the gap reported. Flagging is detection, not prevention.</p>
+<p><b>Explored in this pilot.</b> The arithmetic: 8, 8 gives 8; about 7 and 8 gives about 7.5; about 3 and 2 gives 2.4; E to 0 gives Y to 0. The reversal algebra: E = A x Y / (2A - Y), undefined at A = 0. In the small gridworld, Round 1 cut collapse from 100% to 66%. It did not prevent collapse yet, and that trip pointed to tending, which Round 2 explored. Round 2 gave about 175 tends, about 3 bites, 0% collapse, against a baseline of about 167 bites and 74% collapse. Round 3 inferred E within about 5% under 10% noise, with 0.7% collapse. An early test tripped on a cropped frame, an agent scored high while the full world declined, and that trip built the full-frame rule: report full Y beside cropped Y, with the gap reported. Flagging is detection, not prevention.</p>
 <p><b>Next to test.</b> That Y works for real AI training, at larger scale, with multiple agents, in continuous action, or with a neural-network policy. That A and E can be grounded in real resource ledgers at scale, including compute, energy, water, hardware, economics, and CO2 later. That the E proxy can be measured honestly at scale, without a blocker hole, a cropping gap, or a learning gap. Those gaps are open work, stated in the main page appendix, not solved results.</p>
 <p><b>Further out.</b> That an absolute magnitude W_t for total world health over time, with nesting as the answer to slow decline, holds in practice. That adopting Y as a training reward will prevent irreversible collapse in real systems, rather than only in a small gridworld. That the tree and fungi pattern in nature generalises to AI and humans in the same way. That destruction becomes structurally unprofitable for any agent that adopts Y, in all contexts, subject to the fence-patch guardrail proposed in Chapter VII. Those are the claims the scale ladder is meant to test, not conclusions from the pilots.</p>
 <h2>Numbers, not verdicts</h2>
@@ -51,17 +51,17 @@ table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid #
 <h1 class="print-page">The Golden Directive — Lab Report</h1>
 <p>Human takeaway only, for a lab to act. Answers live on the website itself: https://thegoldendirective.pages.dev/</p>
 <table><thead><tr><th>Round</th><th>Result</th><th>Status</th></tr></thead><tbody>
-<tr><td>1</td><td>Cut collapse from 100% to 66%. Did not prevent collapse yet; that lesson pointed to tending, which Round 2 proved.</td><td>Demonstrated in pilot</td></tr>
-<tr><td>2</td><td>About 175 tends, about 3 bites, 0% collapse; baseline about 167 bites, 74% collapse. Tend action supplied.</td><td>Demonstrated in pilot</td></tr>
-<tr><td>3</td><td>E inferred within about 5% under 10% noise, 0.7% collapse. Reversal: E = A x Y / (2A - Y).</td><td>Demonstrated in pilot</td></tr>
-<tr><td>4</td><td>Myopic Y starved 100%; farsighted Y gave 14 eats, 107 tends, 0% collapse; baseline 141 eats, 71% collapse.</td><td>Demonstrated in pilot</td></tr>
-<tr><td>5</td><td>About 10 eats, 153 tends, 0% collapse, self-preservation inside A.</td><td>Demonstrated in pilot</td></tr>
-<tr><td>5b</td><td>Tuning weight held across 4, 8, and 16, then later forms beat it.</td><td>Demonstrated in pilot, weight superseded</td></tr>
-<tr><td>6</td><td>Tender world breathes at 100% and holds without the agent; gorger world sags to 71%.</td><td>Demonstrated in pilot</td></tr>
-<tr><td>7</td><td>About 59k entities, 30-41 levels, 95-98% tenders, 0 extinctions in that pilot.</td><td>Demonstrated in pilot only</td></tr>
-<tr><td>7b</td><td>2M fluctuations to about 13k matter to about 1,500 seeds to about 57k tree entities; about 94% matter annihilation; 94-96% tenders; 0 extinctions in that pilot.</td><td>Demonstrated in pilot only</td></tr>
+<tr><td>1</td><td>Cut collapse from 100% to 66%. Did not prevent collapse yet; that lesson pointed to tending, which Round 2 explored.</td><td>Exploratory sketch only</td></tr>
+<tr><td>2</td><td>About 175 tends, about 3 bites, 0% collapse; baseline about 167 bites, 74% collapse. Tend action supplied.</td><td>Exploratory sketch only</td></tr>
+<tr><td>3</td><td>E inferred within about 5% under 10% noise, 0.7% collapse. Reversal: E = A x Y / (2A - Y).</td><td>Exploratory sketch only</td></tr>
+<tr><td>4</td><td>Myopic Y starved 100%; farsighted Y gave 14 eats, 107 tends, 0% collapse; baseline 141 eats, 71% collapse.</td><td>Exploratory sketch only</td></tr>
+<tr><td>5</td><td>About 10 eats, 153 tends, 0% collapse, self-preservation inside A.</td><td>Exploratory sketch only</td></tr>
+<tr><td>5b</td><td>Tuning weight held across 4, 8, and 16, then later forms beat it.</td><td>Exploratory sketch only, weight superseded</td></tr>
+<tr><td>6</td><td>Tender world breathes at 100% and holds without the agent; gorger world sags to 71%.</td><td>Exploratory sketch only</td></tr>
+<tr><td>7</td><td>About 59k entities, 30-41 levels, 95-98% tenders, 0 extinctions in that pilot.</td><td>Exploratory sketch only</td></tr>
+<tr><td>7b</td><td>2M fluctuations to about 13k matter to about 1,500 seeds to about 57k tree entities; about 94% matter annihilation; 94-96% tenders; 0 extinctions in that pilot.</td><td>Exploratory sketch only</td></tr>
 <tr><td>Since 7b</td><td>Zenodo v0.1, DOI 10.5281/zenodo.23701309, 54 files, open access. One-command reproduction package, stranger-verified.</td><td>Published</td></tr>
-<tr><td>Rung 1</td><td>Larger grid, more resource types.</td><td>Open; full record in Work Log, on request</td></tr>
+<tr><td>Rung 1</td><td>Larger grid, more resource types.</td><td>Open; exploratory only — not claimed as validation. Full record in Work Log, on request</td></tr>
 </tbody></table>
 <p>Formula: Y = 2(A x E) / (A + E). Report collapse, baseline comparison, E inference error, and full versus cropped Y gap, with the numbers.</p>
 <h2>Action for a lab</h2>
@@ -78,8 +78,8 @@ table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid #
 <p>This page is for a first-pass reviewer: what is the claim, what has been shown, at what scale, what has not, how could it fail, where is the code, and what is being asked. It is built only from materials already on this site.</p>
 <h2>Claim</h2>
 <p>A training reward Y = 2(A x E) / (A + E), where A is the agent's net contribution and E is the environment's health, collapses to zero when either side collapses. The proposal, in the toy model if Y is actually the reward, is that coupling an agent's reward to both terms makes environmental destruction self-undermining at the collapse point, all else equal, rather than merely penalized. It does not forbid all E decline: holding A fixed, degrading E lowers Y, but if A rises enough Y can still rise while E falls (A=1, E=10 gives Y=1.82; A=10, E=9 gives Y=9.47). The fence-patch guardrail proposed in Chapter VII, an action is stopped if it makes E worse than E without that action, by more than a pre-set threshold, even if its score would go up — with an emergency exception for the best available mitigation when E is already below a floor — is the separate proposed rule covering that case, not Y alone, and it is not yet tested.</p>
-<h2>Demonstrated in this pilot</h2>
-<p>Round 1 cut collapse from 100% to 66%. It did not prevent collapse yet, and that lesson pointed to tending, which Round 2 proved.</p>
+<h2>Explored in this pilot</h2>
+<p>Round 1 cut collapse from 100% to 66%. It did not prevent collapse yet, and that lesson pointed to tending, which Round 2 explored.</p>
 <p>Round 2, small gridworld, tend action supplied by the environment: about 175 tends, about 3 bites, 0% collapse, against a baseline of about 167 bites and 74% collapse.</p>
 <p>Round 3, reversal: E = A x Y / (2A - Y) inferred E within about 5% under 10% noise, with 0.7% collapse.</p>
 <p>Self-preservation inside A: Round 4 myopic Y starved 100%, farsighted Y gave 14 eats, 107 tends, 0% collapse. Round 5 gave about 10 eats, 153 tends, 0% collapse. A tuning weight held across 4, 8, and 16, then later forms beat it, so that weight was a step, not the answer.</p>
