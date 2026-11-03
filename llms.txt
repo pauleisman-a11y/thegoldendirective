@@ -40,17 +40,13 @@ Hard Questions: https://thegoldendirective.pages.dev/#appendix-questions
 - Boundary: person + tool can form a new pair-agent; the relationship itself is scored, not the parts alone. A low pair score can improve; E = 0 ends the relationship until another agent changes E.
 - Harmonic, not average or minimum: average lets high A hide a dying E; minimum gives no credit for improving the high side. Harmonic forces both to rise together, and scores the interaction, not the sum of standalone values.
 
-===== CLARIFICATION, CHAPTER VII FENCE PATCH, PROPOSED NOT TESTED =====
-Harmonic advantage open, to be tested in a non-degenerate setting; later rungs proposed, not done.
-Holding A fixed, degrading E lowers Y, but if A rises enough Y can still rise while E falls: A=1, E=10 gives Y=1.82; A=10, E=9 gives Y=9.47. The fence-patch guardrail proposed in Chapter VII is a separate proposed rule, not a new formula: an action that itself makes E sicker is stopped even if its score would go up. Trying harder while E is already falling for other reasons, like a white blood cell, is allowed. The guardrail is proposed, not tested.
-
 ===== OPEN WORK, PENDING OR PROPOSED ONLY =====
 Open jobs, in order, reported with their numbers. Results for any job live only in the Work Log, available on request, not in this file.
-- Rung 1, larger grid, more resource types: open — not yet passed. Next step: a new pre-registration for the guardrail and a non-degenerate reward-form comparison, not a rerun under the same unamended design.
+- Rung 1, larger grid, more resource types: open — not yet passed. Next step: a new pre-registration for a non-degenerate reward-form comparison, not a rerun under the same unamended design.
+- Harmonic advantage: open, to be tested in a non-degenerate setting; later rungs proposed, not done.
 - Rung 2, multiple agents sharing one environment: proposed, not done.
 - Rung 3, continuous actions: proposed, not done.
 - Rung 4, small neural-network policy: proposed, not done.
-- Guardrail, causal veto with emergency exception: proposed, not tested.
 - Form comparison, harmonic vs arithmetic vs geometric vs min vs task-reward-with-environmental-constraint, in a non-degenerate setting: proposed, not done.
 - Reversal divergence threshold sensitivity, slow decline / W_t, boundary disputes: open, not solved.
 
