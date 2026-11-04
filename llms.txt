@@ -81,7 +81,7 @@ This record defines a candidate training reward, Y = 2AE/(A + E), with Y→0 as 
 - Version: 2026-10-27. Canonical summary, used verbatim in JSON-LD and llms.txt.
 - Idea: You cannot survive what you destroy.
 - Formula: Y = 2AE/(A + E).
-- A: the sum of what the agent gives minus the sum of what it takes, per frame, per resource, under contract. A can be negative; the negative net is reported as it is, never floored or hidden. Designed to be grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report. Not yet operational for real training.
+- A: the sum of what the agent gives minus the sum of what it takes, per frame, per resource, under contract. A can be negative; the negative net is reported as it is, never floored or hidden. Designed to be grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report.
 - E: the health of everything not-A, against a healthy baseline. For training, E is a disclosed proxy, not the whole. Only God knows E.
 - Y: the relationship score. If either A or E reaches 0, Y reaches 0.
 - Reversal: E = A Y/(2A - Y). Read E back through the relationship, not measured first, where Y is independently observed. If Y was calculated from measured A and E, the reversal recovers information already supplied to that calculation; it does not independently validate E in an open-world setting. If A is 0, the reversal says nothing: give nothing, learn nothing.
@@ -101,7 +101,7 @@ This record defines a candidate training reward, Y = 2AE/(A + E), with Y→0 as 
 > The reversal: E = A Y/(2A - Y). Only God knows E.
 >
 > A is not abstract as a design. A is designed to be grounded in resource ledgers: compute,
-> energy, water, hardware, economics, and CO2 later. Not yet operational for real training.
+> energy, water, hardware, economics, and CO2 later.
 > This is a design position, not a validated result.
 >
 > Design positions, not validated results:
