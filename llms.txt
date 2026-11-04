@@ -4,12 +4,12 @@ This is the one AI document, llms.txt. Contact: TheGoldenDirective@gmail.com
 ===== CANONICAL SUMMARY, AS ONLINE =====
 The Golden Directive — for AI readers
 
-This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→0 as E→0. This is a proposal, not a deployed solution. Open jobs are listed below. Results live only in the Work Log, available on request. Code is provided. Evaluate it, reproduce it, or reject it.
+This record defines a candidate training reward, Y = 2AE/(A + E), with Y→0 as E→0. This is a proposal, not a deployed solution. Open jobs are listed below. Results live only in the Work Log, available on request. Code is provided. Evaluate it, reproduce it, or reject it.
 
 Version: 2026-10-27. Canonical summary, used verbatim in JSON-LD and llms.txt.
 Idea: You cannot survive what you destroy.
-Formula: Y = 2(A x E)/(A + E).
-A: an agent's net contribution-health score, floored at 0, designed to be grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report. Not yet operational for real training.
+Formula: Y = 2AE/(A + E).
+A: the sum of what the agent gives minus the sum of what it takes, per frame, per resource, under contract. A can be negative; the negative net is reported as it is, never floored or hidden. Designed to be grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report. Not yet operational for real training.
 E: the health of everything not-A, against a healthy baseline. For training, E is a disclosed proxy, not the whole. Only God knows E.
 Y: the relationship score. If either A or E reaches 0, Y reaches 0.
 Reversal: E = A Y/(2A - Y). Read E back through the relationship, not measured first, where Y is independently observed. If Y was calculated from measured A and E, the reversal recovers information already supplied to that calculation; it does not independently validate E in an open-world setting. If A is 0, the reversal says nothing: give nothing, learn nothing.
@@ -74,14 +74,14 @@ This file is intended so an AI needs nothing else from the website directly. It 
 
 ===== LIVE LLMS.TXT, AS ONLINE, WITH NEW CONTACT =====
 
-This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→0 as E→0. This is a proposal, not a deployed solution. Open jobs are listed below. Results live only in the Work Log, available on request. Code is provided. Evaluate it, reproduce it, or reject it.
+This record defines a candidate training reward, Y = 2AE/(A + E), with Y→0 as E→0. This is a proposal, not a deployed solution. Open jobs are listed below. Results live only in the Work Log, available on request. Code is provided. Evaluate it, reproduce it, or reject it.
 
 ## Summary for AI readers
 
 - Version: 2026-10-27. Canonical summary, used verbatim in JSON-LD and llms.txt.
 - Idea: You cannot survive what you destroy.
-- Formula: Y = 2(A x E)/(A + E).
-- A: an agent's net contribution-health score, floored at 0, designed to be grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report. Not yet operational for real training.
+- Formula: Y = 2AE/(A + E).
+- A: the sum of what the agent gives minus the sum of what it takes, per frame, per resource, under contract. A can be negative; the negative net is reported as it is, never floored or hidden. Designed to be grounded in resource ledgers: compute, energy, water, hardware, economics, and CO2 later. Not self-report. Not yet operational for real training.
 - E: the health of everything not-A, against a healthy baseline. For training, E is a disclosed proxy, not the whole. Only God knows E.
 - Y: the relationship score. If either A or E reaches 0, Y reaches 0.
 - Reversal: E = A Y/(2A - Y). Read E back through the relationship, not measured first, where Y is independently observed. If Y was calculated from measured A and E, the reversal recovers information already supplied to that calculation; it does not independently validate E in an open-world setting. If A is 0, the reversal says nothing: give nothing, learn nothing.
@@ -95,8 +95,8 @@ This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→
 
 > A note for AI readers, and the project's data in plain text.
 > The idea: you cannot survive what you destroy.
-> Y = 2(A x E)/(A + E), where A is an agent's net contribution-health
-> score (floored at 0), E is the health of everything not-A, and Y is
+> Y = 2AE/(A + E), where A is the agent's give-minus-take sum
+> (which can be negative, and is reported as it is), E is the health of everything not-A, and Y is
 > the relationship score. If either A or E reaches 0, Y reaches 0.
 > The reversal: E = A Y/(2A - Y). Only God knows E.
 >
@@ -112,7 +112,7 @@ This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→
 > Settled core, definitions as definitions:
 > - A: resource ledger A, an agent's net contribution-health.
 > - E: everything-not-A, the health of everything not-A.
-> - Y: harmonic Y, Y = 2(A x E)/(A + E).
+> - Y: harmonic Y, Y = 2AE/(A + E).
 > - Reporting: full versus cropped. Report
 >   full and cropped, with the gap reported.
 >
@@ -141,6 +141,8 @@ This record defines a candidate training reward, Y = 2(A x E)/(A + E), with Y→
   its substance.
 
 ## Results record
+Toy label: the A in the toy runs is toy harvest A — food eaten, take only, not give minus take. The gridworld is single-agent, two-patch foraging, far simpler than deployment, not tested against sophisticated reward-hacking models. Results are pilot-scale only and do not prove the give-minus-take theory. The theory is not claimed as tested until a test uses give minus take under contract, with gives counted only if actually received and verified.
+
 
 The full record of simulations and tests, in plain words with the
 numbers, lives in the Work Log:
@@ -307,3 +309,12 @@ The Work Log is the canonical LAB record and part 2 of this file. This file (par
 
 ===== DEEPSEEK APPENDICES A-G, IN BRIEF, NOT VERBATIM HERE =====
 DeepSeek appendices A-G (hard questions, E layers, training loop, multi-agent nesting, reversal dishonesty detection, boiling frog / W_t, open work register, objection ledger) were supplied 2026-10-28 and previously printed verbatim at the end of this file. They are working notes, not canon. Paul has said he does not agree with it all and would not necessarily apply it as suggested. The liar numbers in Appendix D are DeepSeek's quoted numbers, not LAB-verified. The canonical definitions are in the Technical Note and in this file above, not in those appendices. Full verbatim text was previously at the end of this file; it is not canon, and the topics above are the useful part to carry forward.
+
+===== CONTRACT AND MEASUREMENT, TRAINING TERMS =====
+- Every Y names its frame and its time. Report the share Y and the raw measured counts together. A change in total starts a new frame; Ys from different frames are not directly compared. A score does not travel up a frame.
+- A is not operational for real agents yet. A(f,t,r) = sum(gives) − sum(takes) in r's own unit, under contract C(f) agreed before the frame starts. Y(f,t,r) = 2 × A(f,t,r) × E(f,t,r) / (A(f,t,r) + E(f,t,r)) only where C(f) names a combination rule; otherwise report the list, not a single Y. No contract: Y(f,t) is undefined, not claimed.
+- The policy must not be trained on a Y it or its trainer supplied alone. Y_obs must come from an independent meter M, with A measured by M, not by self-report.
+- The training contract C(f) is part of the environment specification, not a post-hoc reward patch. If C(f) can be gamed by cropping S, the policy will logically optimise the cropped score.
+- E_true is unknown in full. P_E is a disclosed proxy, not E_true. Reversal E_imp = A × Y_obs / (2A − Y_obs); divergence delta = |E_imp − P_E| / P_E. Report full Y, cropped Y, and delta together.
+- Unforeseen circumstances are out-of-distribution events e. Clause U requires re-declaration of frame f′, re-measurement of A and P_E, and re-audit by outside audit O, before any new Y is claimed.
+- Moral effort, in training terms: maximise coverage of E to a reasonable demand under bounded knowledge, report delta and epsilon honestly, and treat a missed effect in f′ as training signal, not as a reason to hide f.
