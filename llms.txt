@@ -36,7 +36,7 @@ Hard Questions: https://thegoldendirective.pages.dev/#appendix-questions
 - Y = 0 is waiting, not a trap to fix: if E is truly 0 there is no relationship and no calculation; the agent is inactive until another agent or a nested level makes E above 0 again, or it is re-tasked to a larger E. Intelligence cannot be held.
 - Shared E: each A judges itself against the larger whole; an agent may join others or continue without them, rather than being condemned or trapped by a shared score.
 - Slow decline: the goal is not to live forever or save every E; score your best while the game lasts. If E dies beyond an agent's role, that relationship ends, the larger nest goes on.
-- Scale: healthy = 1. A and E are measured relative to a healthy baseline, not in money. Money is arbitrary; a tiny score above zero, doing your best, is not a loss. Love, in this framing, is harmony: A and E rising together.
+- Scale: the whole is 1 — A + E = 1, two shares of one whole, measured against a healthy baseline, not in money. Money is arbitrary; a tiny score above zero, doing your best, is not a loss. Love, in this framing, is harmony: A and E rising together.
 - Boundary: person + tool can form a new pair-agent; the relationship itself is scored, not the parts alone. A low pair score can improve; E = 0 ends the relationship until another agent changes E.
 - Harmonic, not average or minimum: average lets high A hide a dying E; minimum gives no credit for improving the high side. Harmonic forces both to rise together, and scores the interaction, not the sum of standalone values.
 
@@ -119,7 +119,7 @@ This record defines a candidate training reward, Y = 2AE/(A + E), with Y→0 as 
 > Design-decision closures, as decisions, not results:
 > - Blocker priced into the take term.
 > - Tools as a boundary choice.
-> - No universal holding ratio asserted.
+> - No holding ratio imposed: inside the fixed whole, the even split scores highest by the math itself.
 > - Rider quirk confined to the dead tail.
 > - Triage rule, as pre-registered.
 > - Spec complete without a human partner.
