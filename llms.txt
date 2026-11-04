@@ -315,6 +315,7 @@ DeepSeek appendices A-G (hard questions, E layers, training loop, multi-agent ne
 - A is not operational for real agents yet. A(f,t,r) = sum(gives) − sum(takes) in r's own unit, under contract C(f) agreed before the frame starts. Y(f,t,r) = 2 × A(f,t,r) × E(f,t,r) / (A(f,t,r) + E(f,t,r)) only where C(f) names a combination rule; otherwise report the list, not a single Y. No contract: Y(f,t) is undefined, not claimed.
 - The policy must not be trained on a Y it or its trainer supplied alone. Y_obs must come from an independent meter M, with A measured by M, not by self-report.
 - The training contract C(f) is part of the environment specification, not a post-hoc reward patch. If C(f) can be gamed by cropping S, the policy will logically optimise the cropped score.
-- E_true is unknown in full. P_E is a disclosed proxy, not E_true. Reversal E_imp = A × Y_obs / (2A − Y_obs); divergence delta = |E_imp − P_E| / P_E. Report full Y, cropped Y, and delta together.
+- E_true is unknown in full. P_E is a disclosed proxy, not E_true.
+- What belongs in E is not fixed in advance; it is discovered as a relationship evolves, from what actually matters to the receiving side, not from what is supplied. Reversal E_imp = A × Y_obs / (2A − Y_obs); divergence delta = |E_imp − P_E| / P_E. Report full Y, cropped Y, and delta together.
 - Unforeseen circumstances are out-of-distribution events e. Clause U requires re-declaration of frame f′, re-measurement of A and P_E, and re-audit by outside audit O, before any new Y is claimed.
 - Moral effort, in training terms: maximise coverage of E to a reasonable demand under bounded knowledge, report delta and epsilon honestly, and treat a missed effect in f′ as training signal, not as a reason to hide f.
