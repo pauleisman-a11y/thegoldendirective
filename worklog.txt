@@ -1,9 +1,3 @@
-THE GOLDEN DIRECTIVE — WORK LOG (hosted snapshot)
-Snapshot date: 2026-11-04. This copy is refreshed daily from the original Work Log on Google Drive:
-https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=sharing
-The Drive file is the original and the only current record; this hosted copy is a dated snapshot for easy reading.
------
-
 The Golden Directive — Work Log
 Disclaimer — results here are extremely temporary and can be errors based on limited scope and naivety. The work evolves, refinements are applied, and the same premises are rerun to try to recreate the first case and make sure it was accurate and not a work or lab error. The Work Log does not have to be in exact order. First runs are simply growing pains, not proven defects of the directive. Paul is not trying to hide defects, only to confirm means, mode, and application process.
 

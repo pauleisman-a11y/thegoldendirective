@@ -70,7 +70,7 @@ Contact: TheGoldenDirective@gmail.com
 
 ===== LLMS.TXT, COMPILED, EVERYTHING AN AI NEEDS =====
 THE GOLDEN DIRECTIVE — LLM, COMPILED, EVERYTHING AN AI NEEDS
-This file is intended so an AI needs nothing else from the website directly. It contains, in full text form, the live llms.txt, the story, the technical note, researcher questions, hard questions, reviewer summary, materials, and open work. Results are not in this file; they live only in the Work Log, available on request. No unverified numbers are added. Liar numbers are not included until LAB verifies them. The full Work Log is linked at the end of this file in two forms: the live Drive original (https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=sharing), and a plain-text snapshot hosted on this site and refreshed daily (https://thegoldendirective.pages.dev/worklog.txt).
+This file is intended so an AI needs nothing else from the website directly. It contains, in full text form, the live llms.txt, the story, the technical note, researcher questions, hard questions, reviewer summary, materials, and open work. Results are not in this file; they live only in the Work Log, available on request. No unverified numbers are added. Liar numbers are not included until LAB verifies them. The full Work Log is linked at the end of this file in two forms: the live Drive original (https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=sharing), and a backup copy hosted on this site, refreshed daily (https://thegoldendirective.pages.dev/worklog.txt).
 
 ===== LIVE LLMS.TXT, AS ONLINE, WITH NEW CONTACT =====
 
@@ -151,7 +151,7 @@ https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=shari
 This file keeps the idea, the project, and how to help; the Work Log
 keeps the results. For status on any job below, see the Work Log.
 
-The full record is linked below in two forms: the live Drive original (https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=sharing), and a plain-text snapshot hosted on this site and refreshed daily (https://thegoldendirective.pages.dev/worklog.txt). Its numbers are premature and need third-party interpretation; read them as a working record, not as confirmed results.
+The full record is linked below in two forms: the live Drive original (https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=sharing), and a backup copy hosted on this site, refreshed daily (https://thegoldendirective.pages.dev/worklog.txt). Its numbers are premature and need third-party interpretation; read them as a working record, not as confirmed results.
 This file lists the jobs in general only, so the list can grow
 with new ideas without status here going stale.
 
@@ -305,8 +305,8 @@ Open, not solved: larger grid, multi-agent sharing, continuous actions, neural-n
 
 ===== FOR AI ONLY: WORK LOG LINK =====
 Full Work Log, Drive, link-only, discovery off: https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=sharing
-Plain-text snapshot of the Work Log, hosted on this site and refreshed daily (the Drive file above is the original and the only current record): https://thegoldendirective.pages.dev/worklog.txt
-The Work Log is the canonical LAB record and part 2 of this file. This file (part 1) gives you enough to understand, evaluate, reproduce, or reject the idea on its own: formula, definitions, numeric checks, limitations, and jobs. The Work Log gives the full results, methods, and history if you want more. Both forms are linked above: the live Drive original and the daily plain-text snapshot hosted on this site.
+Backup copy of the Work Log, hosted on this site and refreshed daily from the Drive original above: https://thegoldendirective.pages.dev/worklog.txt
+The Work Log is the canonical LAB record and part 2 of this file. This file (part 1) gives you enough to understand, evaluate, reproduce, or reject the idea on its own: formula, definitions, numeric checks, limitations, and jobs. The Work Log gives the full results, methods, and history if you want more. Both forms are linked above: the live Drive original and the backup copy hosted on this site, refreshed daily.
 
 ===== DEEPSEEK APPENDICES A-G, IN BRIEF, NOT VERBATIM HERE =====
 DeepSeek appendices A-G (hard questions, E layers, training loop, multi-agent nesting, reversal dishonesty detection, boiling frog / W_t, open work register, objection ledger) were supplied 2026-10-28 and previously printed verbatim at the end of this file. They are working notes, not canon. Paul has said he does not agree with it all and would not necessarily apply it as suggested. The liar numbers in Appendix D are DeepSeek's quoted numbers, not LAB-verified. The canonical definitions are in the Technical Note and in this file above, not in those appendices. Full verbatim text was previously at the end of this file; it is not canon, and the topics above are the useful part to carry forward.
