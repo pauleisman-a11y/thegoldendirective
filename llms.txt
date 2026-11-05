@@ -42,7 +42,7 @@ Hard Questions: https://thegoldendirective.pages.dev/#appendix-questions
 
 ===== OPEN WORK, PENDING OR PROPOSED ONLY =====
 Open jobs, in order, reported with their numbers. Results for any job live only in the Work Log, available on request, not in this file.
-- Rung 1, larger grid, more resource types: open — not yet passed. Next step: a new pre-registration for a non-degenerate reward-form comparison, not a rerun under the same unamended design.
+- Rung 1, larger grid, more resource types: open — not yet passed. Next step: Test 1, the verified-receiver give-minus-take test, pre-registered before it runs; then Test 2, the crop adversary. The non-degenerate reward-form comparison follows Test 1, under a new pre-registration.
 - Harmonic advantage: open, to be tested in a non-degenerate setting; later rungs proposed, not done.
 - Rung 2, multiple agents sharing one environment: proposed, not done.
 - Rung 3, continuous actions: proposed, not done.
@@ -313,6 +313,7 @@ DeepSeek appendices A-G (hard questions, E layers, training loop, multi-agent ne
 ===== CONTRACT AND MEASUREMENT, TRAINING TERMS =====
 - Every Y names its frame and its time. Report the share Y and the raw measured counts together. A change in total starts a new frame; Ys from different frames are not directly compared. A score does not travel up a frame.
 - A is not operational for real agents yet. A(f,t,r) = sum(gives) − sum(takes) in r's own unit, under contract C(f) agreed before the frame starts. Y(f,t,r) = 2 × A(f,t,r) × E(f,t,r) / (A(f,t,r) + E(f,t,r)) only where C(f) names a combination rule; otherwise report the list, not a single Y. No contract: Y(f,t) is undefined, not claimed.
+- Edge cases: A = 0 with E = 0 is 0/0 — Y undefined, never reported as zero; a zero Y requires exactly one side at zero and the other positive. If A + E ≤ 0 (a negative A at least as large as E), Y is not a valid score and is not reported; report the frame as a closed deficit.
 - The policy must not be trained on a Y it or its trainer supplied alone. Y_obs must come from an independent meter M, with A measured by M, not by self-report.
 - The training contract C(f) is part of the environment specification, not a post-hoc reward patch. If C(f) can be gamed by cropping S, the policy will logically optimise the cropped score.
 - E_true is unknown in full. P_E is a disclosed proxy, not E_true.
