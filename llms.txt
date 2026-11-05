@@ -305,6 +305,7 @@ Open, not solved: larger grid, multi-agent sharing, continuous actions, neural-n
 
 ===== FOR AI ONLY: WORK LOG LINK =====
 Full Work Log, Drive, link-only, discovery off: https://drive.google.com/file/d/1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q/view?usp=sharing
+Plain-text snapshot of the Work Log, hosted on this site and refreshed daily (the Drive file above is the original and the only current record): https://thegoldendirective.pages.dev/worklog.txt
 The Work Log is the canonical LAB record and part 2 of this file. This file (part 1) gives you enough to understand, evaluate, reproduce, or reject the idea on its own: formula, definitions, numeric checks, limitations, and jobs. The Work Log gives the full results, methods, and history if you want more. Full publication of the Work Log as a site page waits for third-party confirmation; it is available on request to serious reviewers.
 
 ===== DEEPSEEK APPENDICES A-G, IN BRIEF, NOT VERBATIM HERE =====
