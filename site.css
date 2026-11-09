@@ -58,3 +58,143 @@
     .ia-map b{display:block;color:var(--accent);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
     .ia-map span{display:block;margin-top:2px;font-size:.84rem;line-height:1.4}
   
+
+/* ===== AiS merge additions (added 2026-11-08): screen-only chrome + new in-flow pages.
+   All live rules above are unchanged, including @page/@media print. New chrome is hidden in print. ===== */
+/* ===== Page chrome: a screen-only Print control. Nothing here prints. ===== */
+/* Screen-only note explaining how to make the PDF. It never prints. */
+.print-note{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:1000;max-width:320px;background:#142019;color:#d8e0d8;border:1px solid #475149;border-radius:10px;padding:10px 36px 10px 14px;box-shadow:0 10px 30px rgba(21,31,24,.28);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:12.5px;line-height:1.5}
+.print-note b{color:#fff;font-weight:600}
+.print-note[hidden]{display:none !important}
+.print-note .pn-close{position:absolute;top:4px;right:6px;width:26px;height:26px;padding:0;background:transparent;border:0;border-radius:6px;color:#c9d4c9;font-size:17px;line-height:1;cursor:pointer}
+.print-note .pn-close:hover{color:#fff;background:#2a362d}
+@media (max-width:560px){.print-note{max-width:250px;font-size:11.5px;padding:8px 32px 8px 11px}}
+/* ===== AiS merge: screen-only chrome (header, view bar, drawer, lab, FABs) ===== */
+:root{--ais-gold:#b3821a;--ais-forest:#1d3826}
+.print-note{right:auto;left:16px}
+.ais-header{position:sticky;top:0;z-index:900;background:#fbfbfa;color:#19201b;border-bottom:2px solid #b3821a;font-family:"IBM Plex Sans",system-ui,sans-serif}
+.ais-header-in{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:8px 14px;flex-wrap:wrap}
+.ais-brand{font-family:"Literata",Georgia,serif;font-weight:600;font-size:1.02rem;white-space:nowrap;text-decoration:none;color:#19201b}
+.ais-brand i{display:inline-block;width:9px;height:9px;border-radius:50%;background:#b3821a;margin-right:8px}
+.ais-brand .g{color:#b3821a}
+.ais-nav{display:flex;gap:2px;flex-wrap:wrap;margin-left:6px}
+.ais-nav a{font-size:.74rem;font-weight:600;text-decoration:none;color:#19201b;padding:6px 8px;border-radius:6px}
+.ais-nav a:hover{background:#f4f4f1;color:#b3821a}
+.ais-actions{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.ais-btn{font:600 .72rem "IBM Plex Sans",system-ui,sans-serif;padding:7px 11px;border:1px solid #19201b;background:#19201b;color:#fbfbfa;border-radius:6px;cursor:pointer}
+.ais-btn.alt{background:transparent;color:#19201b}
+.ais-btn:hover{background:#b3821a;border-color:#b3821a;color:#111}
+.ais-viewbar{background:#f4f4f1;color:#19201b;border-bottom:1px solid #d8d8d2;font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:.72rem}
+.ais-viewbar-in{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:6px 14px;flex-wrap:wrap}
+.ais-viewbar .seg{display:inline-flex;border:1px solid #19201b;border-radius:6px;overflow:hidden}
+.ais-viewbar .seg button{font:600 .7rem "IBM Plex Sans",sans-serif;padding:5px 10px;background:transparent;border:0;cursor:pointer;color:#19201b}
+.ais-viewbar .seg button[aria-pressed="true"]{background:#19201b;color:#fbfbfa}
+.ais-viewbar .pdf{margin-left:auto}
+/* Dark mode (AiS palette) — screen only */
+html[data-theme="dark"] .ais-header{background:#121614;color:#eef2ed;border-bottom-color:#dfa838}
+html[data-theme="dark"] .ais-brand{color:#eef2ed} html[data-theme="dark"] .ais-brand .g{color:#dfa838} html[data-theme="dark"] .ais-brand i{background:#dfa838}
+html[data-theme="dark"] .ais-nav a{color:#eef2ed} html[data-theme="dark"] .ais-nav a:hover{background:#18201b;color:#dfa838}
+html[data-theme="dark"] .ais-btn{background:#eef2ed;color:#121614;border-color:#eef2ed} html[data-theme="dark"] .ais-btn.alt{background:transparent;color:#eef2ed}
+html[data-theme="dark"] .ais-viewbar{background:#18201b;color:#eef2ed;border-bottom-color:#2c3830}
+html[data-theme="dark"] .ais-viewbar .seg{border-color:#eef2ed} html[data-theme="dark"] .ais-viewbar .seg button{color:#eef2ed} html[data-theme="dark"] .ais-viewbar .seg button[aria-pressed="true"]{background:#eef2ed;color:#121614}
+html[data-theme="dark"]{--desk:#121614;--paper:#18201b;--ink:#eef2ed;--muted:#b9c4ba;--rule:#3a463c;--rule-strong:#dfe7de;--panel:#202a23;--panel-ink:#eef2ed;--accent:#dfa838;--gold-word:#dfa838;--accent-soft:#3d3220;--forest:#7ec795}
+html[data-theme="dark"]{--accent-soft:#3d3220}
+html[data-theme="light"]{--desk:#e9eae6;--paper:#fbfbfa;--ink:#19201b;--muted:#4d5a50;--panel:#f4f4f1;--panel-ink:#19201b;--accent:#b3821a;--gold-word:#b3821a;--accent-soft:#eee3c2;--forest:#1d3826}
+/* Book spread (2-up) — screen only */
+body.spread .document{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:2200px;margin:0 auto;padding-left:18px;padding-right:18px}
+body.spread .page{width:100%;margin:0}
+@media(max-width:900px){body.spread .document{grid-template-columns:1fr}}
+/* Floating action buttons */
+.ais-fabs{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:950;display:flex;flex-direction:column;gap:8px}
+.ais-fabs button{width:46px;height:46px;border-radius:50%;border:1px solid #111;background:#19201b;color:#fbfbfa;font-size:19px;cursor:pointer;box-shadow:0 8px 22px rgba(21,31,24,.3)}
+.ais-fabs button:hover{background:#b3821a;color:#111}
+/* AI Dialogue drawer */
+.ais-drawer{position:fixed;top:0;right:0;height:100dvh;width:min(400px,94vw);background:#fbfbfa;color:#19201b;z-index:1100;box-shadow:-14px 0 40px rgba(0,0,0,.28);display:none;flex-direction:column;font-family:"IBM Plex Sans",system-ui,sans-serif}
+.ais-drawer.open{display:flex;animation:ais-slide .22s ease}
+@keyframes ais-slide{from{transform:translateX(40px);opacity:.4}to{transform:none;opacity:1}}
+.ais-drawer header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:2px solid #b3821a}
+.ais-drawer header b{font-family:"Literata",Georgia,serif;font-size:1.05rem}
+.ais-drawer header span{display:block;font-size:.7rem;color:#5a665c;font-weight:400}
+.ais-x{background:transparent;border:0;font-size:20px;cursor:pointer;color:inherit}
+.ais-chips{display:flex;flex-wrap:wrap;gap:6px;padding:12px 16px 4px}
+.ais-chips button{font:600 .68rem "IBM Plex Sans",sans-serif;padding:6px 9px;border:1px solid #b3821a;border-radius:999px;background:transparent;cursor:pointer;color:#19201b}
+.ais-chips button:hover{background:#b3821a;color:#fff}
+.ais-log{flex:1;overflow-y:auto;padding:12px 16px;display:flex;flex-direction:column;gap:10px;font-size:.86rem;line-height:1.5}
+.ais-msg{padding:10px 12px;border-radius:10px;background:#f4f4f1}
+.ais-msg.user{background:#19201b;color:#fbfbfa;align-self:flex-end;max-width:88%}
+.ais-msg.bot{align-self:flex-start;max-width:94%}
+.ais-form{display:flex;gap:8px;padding:12px 16px;border-top:1px solid #ddd}
+.ais-form input{flex:1;padding:10px;border:1px solid #9aa39b;border-radius:8px;font:inherit;font-size:.85rem;background:#fff;color:#111}
+.ais-form button{padding:10px 14px}
+/* Harmonic Lab modal */
+.ais-modal{position:fixed;inset:0;z-index:1080;background:rgba(10,14,11,.55);display:none;align-items:center;justify-content:center;padding:16px}
+.ais-modal.open{display:flex}
+.ais-lab{background:#fbfbfa;color:#19201b;width:min(620px,96vw);max-height:92dvh;overflow-y:auto;border-radius:12px;padding:20px 22px;font-family:"IBM Plex Sans",system-ui,sans-serif;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.ais-lab h2{margin:0;font:600 1.5rem "Literata",Georgia,serif}
+.ais-lab .sub{color:#5a665c;font-size:.8rem;margin:4px 0 14px}
+.ais-lab label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#b3821a}
+.ais-lab input[type=range]{width:100%;accent-color:#b3821a}
+.ais-lab .vals{display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:10px}
+.ais-lab .ybig{font:600 2.4rem/1 "Literata",Georgia,serif;text-align:center;padding:14px;background:#f4f4f1;border-block:2px solid #19201b;margin:12px 0}
+.ais-lab .ybig small{display:block;font:600 .65rem "IBM Plex Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#5a665c;margin-top:5px}
+.ais-presets{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.ais-presets button,.ais-modes button{font:600 .7rem "IBM Plex Sans",sans-serif;padding:7px 10px;border:1px solid #19201b;border-radius:6px;background:transparent;cursor:pointer}
+.ais-presets button:hover,.ais-modes button:hover{background:#19201b;color:#fbfbfa}
+.ais-modes{display:flex;gap:6px;margin-bottom:12px}
+.ais-modes button[aria-pressed="true"]{background:#b3821a;border-color:#b3821a;color:#111}
+.ais-rev{font-size:.82rem;background:#eee3c2;padding:10px 12px;border-radius:8px;line-height:1.5}
+@media(prefers-reduced-motion:reduce){.ais-drawer{transition:none}}
+/* ===== Print: exactly the live site's PDF — clean Letter pages, no chrome ===== */
+@page{size:Letter;margin:0}
+@media print{
+  html,body{margin:0 !important;padding:0 !important;background:#fff !important}
+  .print-note,.ais-header,.ais-viewbar,.ais-fabs,.ais-drawer,.ais-modal{display:none !important}
+  body.spread .document{display:block !important;max-width:none !important;padding:0 !important}
+  html[data-theme="dark"]{--desk:#fff;--paper:#fff;--ink:#111;--muted:#414141;--rule:#a8a8a8;--rule-strong:#111;--panel:#e8e8e8;--panel-ink:#111;--accent:#8a5d12;--gold-word:#8a5d12;--accent-soft:#e8e8e8;--forest:#244c32}
+  }
+
+/* New in-flow page elements (plates, cards, tables) — from the merged draft, unscoped */
+.plate-fig{margin:0}
+.plate-fig img{display:block;width:100%;height:6.9in;object-fit:cover;border:1px solid var(--rule)}
+.plate-fig.land img{height:5.2in}
+.plate-cap{margin-top:8px;text-align:center}
+.plate-cap b{display:block;font:600 1.02rem/1.3 var(--serif)}
+.plate-cap span{display:block;margin-top:3px;color:var(--muted);font-size:.78rem}
+.callout{padding:14px 16px;background:var(--accent-soft)}
+.callout h3{margin:0 0 6px;font:600 1.05rem/1.25 var(--serif)}
+.callout p{font-size:.88rem;line-height:1.45}
+.callout p+p{margin-top:6px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.compare div{padding:13px 15px;border:1px solid var(--rule)}
+.compare h3{margin:0 0 6px;font:600 1rem/1.25 var(--serif)}
+.compare p,.compare li{font-size:.84rem;line-height:1.45}
+.compare ul{margin:6px 0 0;padding-left:17px}
+.pull-line{padding:14px 0;border-block:2px solid var(--rule-strong);text-align:center;font:600 1.2rem/1.35 var(--serif)}
+.cheat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cheat{padding:13px 14px;background:var(--panel)}
+.cheat b.num{display:block;color:var(--accent);font:700 1.7rem/1 var(--serif)}
+.cheat h3{margin:6px 0 5px;font:600 .95rem/1.25 var(--serif)}
+.cheat p{font-size:.78rem;line-height:1.4}
+.strat-table{width:100%;border-collapse:collapse;font-size:.78rem}
+.strat-table th{text-align:left;color:var(--accent);font-size:.62rem;letter-spacing:.07em;text-transform:uppercase;padding:6px 7px;border-bottom:2px solid var(--rule-strong)}
+.strat-table td{padding:7px;border-bottom:1px solid var(--rule);vertical-align:top}
+.strat-table td:first-child{font-weight:700}
+.qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qa-card{padding:13px 15px;border-block:1px solid var(--rule-strong)}
+.qa-card h3{margin:0 0 5px;font:600 .98rem/1.3 var(--serif)}
+.qa-card p{font-size:.82rem;line-height:1.45;color:var(--muted)}
+.layer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.layer-grid div{padding:11px 13px;background:var(--panel)}
+.layer-grid b{display:block;color:var(--accent);font:700 .95rem var(--serif)}
+.layer-grid span{display:block;margin-top:4px;font-size:.76rem;line-height:1.4}
+.curve-fig{margin:0;text-align:center}
+.curve-fig figcaption{color:var(--muted);font-size:.72rem;margin-top:4px}
+.finding-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.finding{padding:12px 14px;background:var(--panel)}
+.finding b{display:block;color:var(--accent);font:600 1.05rem var(--serif)}
+.finding span{display:block;margin-top:4px;font-size:.8rem;line-height:1.45}
+@media(max-width:700px){
+.compare,.cheat-grid,.qa-grid,.layer-grid,.finding-grid{grid-template-columns:1fr}
+.plate-fig img,.plate-fig.land img{height:auto}
+}
+.byline{margin:12px 0 0;color:var(--muted);font:600 .68rem var(--sans);letter-spacing:.14em;text-transform:uppercase}
