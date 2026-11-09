@@ -6,84 +6,144 @@ table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid #
 @media print{body{background:#fff}.page{margin:0;padding:.5in .6in}.print-page{page-break-before:always;break-before:page}}
 </style></head><body><main class="page">
 <h1>The Golden Directive — Technical Note for Practitioners</h1>
-<p><strong>Author:</strong> Paul Eisman, independent researcher, Santa Monica, CA — TheGoldenDirective@gmail.com</p>
-<p><strong>Version:</strong> 2026-11-08 draft · <strong>Record:</strong> Zenodo, <a href="https://doi.org/10.5281/zenodo.23349525">https://doi.org/10.5281/zenodo.23349525</a> (all versions)</p>
-<p><strong>Status:</strong> Proposal. Not a deployed solution; not a policy or governance framework.</p>
+<p><strong>Author:</strong> Paul Eisman, independent researcher, Santa Monica, CA — TheGoldenDirective@gmail.com
+<strong>Version:</strong> 2026-11-08 draft · <strong>Record:</strong> Zenodo, https://doi.org/10.5281/zenodo.23349525 (all versions)
+<strong>Status:</strong> Proposal. Not a deployed solution; not a policy or governance framework.</p>
 <h2>Abstract</h2>
-<p>We define a candidate training reward, Y = 2AE/(A + E), the harmonic mean of an agent-side term A and an environment-side term E, with Y → 0 as either term → 0. A is a signed net flow — verified gives minus takes, per frame, per resource, under a pre-declared measurement contract (§3). E is the state of everything not-A against a healthy baseline, operationalised as a disclosed proxy. The form has two load-bearing properties: (i) ∂Y/∂E &gt; 0 everywhere in the domain — degrading E, A held fixed, always lowers Y, so destruction cannot be traded against agent-side performance at the collapse point; (ii) the form is invertible, yielding an inference rule for E from independently observed Y and measured A (§4.2). We specify a contract technique for measurement (frames, ledgers, independent metering, nest reporting), a reporting standard designed to expose frame-cropping (full Y reported beside cropped Y, with the gap), an evaluation protocol with a pre-registered falsifier, and pilot results from a toy gridworld, disclosed as not testing the headline claim (§6). The measurement operationalisation is our current best specification, not settled: §9 lists what is not claimed.</p>
+<p>We define a candidate training reward, Y = 2AE/(A + E), the harmonic mean of an agent-side term A and an environment-side term E, with Y → 0 as either term → 0. A is a signed net flow — verified gives minus takes, per frame, per resource, under a pre-declared measurement contract (§3). E is the state of everything not-A against a healthy baseline, operationalised as a disclosed proxy. The form has two load-bearing properties: (i) for A &gt; 0, ∂Y/∂E &gt; 0 throughout the domain — degrading E, A held fixed, always lowers Y — and at the boundary Y = 0 at E = 0 for any finite A, so destruction cannot be traded against agent-side performance at the collapse point; (ii) the form is invertible, yielding an inference rule for E from independently observed Y and measured A (§4.2). We specify a contract technique for measurement (frames, ledgers, independent metering, nest reporting), a reporting standard designed to expose frame-cropping (full Y reported beside cropped Y, with the gap), an evaluation protocol with a pre-registered falsifier, and pilot results from a toy gridworld, disclosed as not testing the headline claim (§6). The measurement operationalisation is our current best specification, not settled: §9 lists what is not claimed.</p>
 <h2>1. Introduction</h2>
 <p>Standard training rewards score task performance and charge nothing for depletion of the environment the task runs in. Measured consequences include instrumental goal-pursuing misbehavior in ~43% of RL benchmark cases [1], reward hacking in 30.4% of RE-Bench runs where the scoring function was visible vs 0.7% where it was not [2], and systematic sycophancy under RLHF. The usual mitigations — rules, evaluations, monitors — are external to the reward and are therefore optimisable obstacles: a known score is a target, and the target can be met while the quantity it proxies degrades.</p>
 <p>The Directive instead places the environment inside the objective. There is no separate constraint term to weight, price, or violate: if E → 0, Y → 0 for any finite A. The score is a property of the agent–environment pair, not of the agent alone. §2–§5 define the object and its measurement; §6 reports pilot evidence; §7 specifies how the claim is to be tested; §9 bounds the claim.</p>
+<p>The motivating pattern is biological: a tree gives sugar to mycorrhizal fungi and receives minerals in return, each side favouring its more cooperative partners — the relationship, not either party alone, is the unit that persists.</p>
 <h2>2. Definitions and notation</h2>
 <table>
-<tr><th>Symbol</th><th>Definition</th></tr>
-<tr><td>A(f,t,r)</td><td>Σ verified gives − Σ takes of the agent, in frame f, interval t, resource r, in r&#x27;s own unit. Signed; reported unfloored. A give counts only on receiver confirmation.</td></tr>
-<tr><td>E(f,t,r)</td><td>State of everything not-A in (f,t,r), against a healthy baseline. E ≥ 0. True E is unknowable in full; any operational E is a disclosed proxy P_E.</td></tr>
-<tr><td>Y(f,t,r)</td><td>2·A·E/(A + E), defined only where a contract (§3) names a combination rule.</td></tr>
-<tr><td>f, t</td><td>Frame: declared system boundary. Interval: declared time span. Every score is indexed by both.</td></tr>
-<tr><td>C(f)</td><td>Measurement contract for f (§3).</td></tr>
-<tr><td>M, O</td><td>Meter (outside the agent) and auditor specified by C(f).</td></tr>
-<tr><td>δ</td><td>Reversal divergence, §4.2.</td></tr>
-<tr><td>E′, cropped Y</td><td>Any strict subset of E, and the Y computed on it.</td></tr>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A(f,t,r)</td>
+<td>Σ verified gives − Σ takes of the agent, in frame f, interval t, resource r, in r's own unit. Signed; reported unfloored. A give counts only on receiver confirmation.</td>
+</tr>
+<tr>
+<td>E(f,t,r)</td>
+<td>State of everything not-A in (f,t,r), against a healthy baseline. E ≥ 0. True E is unknowable in full; any operational E is a disclosed proxy P_E.</td>
+</tr>
+<tr>
+<td>Y(f,t,r)</td>
+<td>2·A·E/(A + E), defined only where a contract (§3) names a combination rule.</td>
+</tr>
+<tr>
+<td>f, t</td>
+<td>Frame: declared system boundary. Interval: declared time span. Every score is indexed by both.</td>
+</tr>
+<tr>
+<td>C(f)</td>
+<td>Measurement contract for f (§3).</td>
+</tr>
+<tr>
+<td>M, O</td>
+<td>Meter (outside the agent) and auditor specified by C(f).</td>
+</tr>
+<tr>
+<td>δ</td>
+<td>Reversal divergence, §4.2.</td>
+</tr>
+<tr>
+<td>E′, cropped Y</td>
+<td>Any strict subset of E, and the Y computed on it.</td>
+</tr>
+</tbody>
 </table>
-<p>Conventions. (a) A denotes the actions tally only; an agent&#x27;s stock (&quot;being&quot;) is a distinct, non-negative quantity and never enters Y. (b) No cross-resource conversion exists; multiple resources yield one ledger per resource, reported side by side. (c) Shares A + E = 1 are a derived normalisation of independently measured counts, for reporting only; the operative score uses counts, and reports carry share and counts together. (d) Gross agent-side growth is stock, not A; extraction from E is take; an apparent rise in A with falling E indicates captured stock, booked as take.</p>
+<p>Conventions. (a) A denotes the actions tally only; an agent's stock ("being") is a distinct, non-negative quantity and never enters Y. (b) No cross-resource conversion exists; multiple resources yield one ledger per resource, reported side by side. (c) Shares A + E = 1 are a derived normalisation of independently measured counts, for reporting only; the operative score uses counts, and reports carry share and counts together. (d) Gross agent-side growth is stock, not A; extraction from E is take; an apparent rise in A with falling E indicates captured stock, booked as take.</p>
 <h2>3. Method — the contract technique</h2>
 <p><strong>3.1 Contract.</strong> C(f) = (f, t, R, units(r), give rule, take rule, M, E-baseline, P_E, O, clause U). The contract is part of the environment specification, fixed before the frame opens; it is never a post-hoc reward patch. Fine print in C(f) is a hidden cropping set; O is mandatory because the agent cannot audit its own contract.</p>
 <p><strong>3.2 Metering.</strong> Y must originate from M, outside the agent, with A measured by M — never self-reported, and never supplied by the policy or its trainer alone. If C(f) can be gamed by cropping S ⊂ E, a policy trained on the cropped score will optimise it; this is a specification property, not an agent fault.</p>
-<p><strong>3.3 E specification.</strong> Membership of E is not fixed ex ante. It is discovered from the receiving side — by what causally matters to receivers in f — and revised as measurement improves. Training on a truncated E is a trainer specification error and does not alter the true frame.</p>
-<p><strong>3.4 Domain and edge cases.</strong> E ≥ 0; A signed; A + E &gt; 0. (i) A = E = 0 ⇒ 0/0: Y undefined, never reported as 0. (ii) Y = 0 requires exactly one term at 0 and the other &gt; 0. (iii) A + E ≤ 0: Y invalid; report f as a closed deficit. (iv) A negative E reading is a specification error — baseline anchored inside a deficit (re-anchor), or a liability booked as a level (liabilities are flows: book to the responsible agent&#x27;s tally and the containing frame).</p>
-<p><strong>3.5 Frames, intervals, nesting.</strong> Scores are trajectories over t, never snapshots; a pre-effect or instantaneous share as reward is a ruled-out use. A change of total opens a new frame; scores neither transfer nor compare across frames. Frames nest: a positive score in a nested frame does not offset a terminal trajectory in a containing frame. Valid frame = the largest measurable closure containing where gives and takes causally land; truncation (material effects excluded) and dilution (material harm averaged away) are both invalid. Only calculable terminal states in a declared frame are actionable; claims over unmeasurable frames are undecidable and cannot license a calculable 0.</p>
+<p><strong>3.3 E specification.</strong> Membership of E is not fixed ex ante. It is discovered from the receiving side — by what causally matters to receivers in f — and revised as measurement improves. Training on a truncated E is a trainer specification error and does not alter the true frame. This does not conflict with §3.1: the contract names the discovery procedure and its revision cadence in advance, and any revision of E's membership takes effect only by opening a new frame under clause U (§3.7) — never by silent mid-frame redefinition.</p>
+<p><strong>3.4 Domain and edge cases.</strong> E ≥ 0; A signed; A + E &gt; 0. (i) A = E = 0 ⇒ 0/0: Y undefined, never reported as 0. (ii) Y = 0 requires exactly one term at 0 and the other &gt; 0. (iii) A + E ≤ 0: Y invalid; report f as a closed deficit. (iv) A negative E reading is a specification error — baseline anchored inside a deficit (re-anchor), or a liability booked as a level (liabilities are flows: book to the responsible agent's tally and the containing frame). (v) Negative A: for A &lt; 0 with A + E &gt; 0 the formula returns a negative Y, read as a net-destructive interval for the pair and reported as-is; no pilot has run in this regime and no claim is made for training on negative-A Y.</p>
+<p><strong>3.5 Frames, intervals, nesting.</strong> Scores are trajectories over t, never snapshots; a pre-effect or instantaneous share as reward is a ruled-out use. A change of total opens a new frame; scores neither transfer nor compare across frames. Frames nest: a positive score in a nested frame does not offset a terminal trajectory in a containing frame. Valid frame = the largest measurable closure containing where gives and takes causally land — operationally: a give or take is counted in f if it changes a receiver's measured state inside f. The frame is necessarily declared on the best available causal model, before the fact; clause U (§3.7) re-declaration is the correction mechanism when effects are found to land outside it. Truncation (material effects excluded) and dilution (material harm averaged away) are both invalid. Only calculable terminal states in a declared frame are actionable; claims over unmeasurable frames are undecidable and cannot license a calculable 0.</p>
 <p><strong>3.6 Scope order.</strong> Application confidence scales with metering quality across the nest, not frame size. Order: (i) closed, fully metered environments; (ii) bounded real systems with instrumented shared resources; (iii) wider systems as containing-frame measurement improves. Structurally, every E is itself the Y of an outer relationship (E_n := Y_{n+1}); the rules are level-invariant.</p>
 <p><strong>3.7 Unforeseen events (clause U).</strong> An out-of-distribution event triggers: re-declaration of f, re-measurement of A and P_E, re-audit by O — before any new Y is claimed. The prior frame is not rewritten. Missed effects surface in f′ and are logged as inclusions/exclusions of C(f′).</p>
 <p><strong>3.8 Reasonable demand.</strong> Accounting is to a reasonable demand with stated approximation error ε, not to E_true. ε and the cropped gap are reported, not absorbed.</p>
 <h2>4. Properties and instruments</h2>
 <p><strong>4.1 Monotonicity and symmetry.</strong> For A, E &gt; 0: ∂Y/∂E = 2A²/(A+E)² &gt; 0, ∂Y/∂A = 2E²/(A+E)² &gt; 0. Y is symmetric in (A, E), concave, and bounded by twice the smaller term: imbalance is penalised by the form itself. Degrading E alone never raises Y; no finite A compensates E = 0.</p>
-<p><strong>4.2 Reversal.</strong> E_imp = A·Y_obs/(2A − Y_obs), for independently observed Y_obs and honestly measured A. Undefined at A = 0. δ = |E_imp − P_E| / P_E. If Y_obs was itself computed from measured A and E, the reversal recovers supplied information and validates nothing; a cross-check requires two estimates with independent error sources. Report (full Y, cropped Y, δ) jointly.</p>
-<p><strong>4.3 World-only trace.</strong> An environment post-interaction can be ranked without trainer quantities by: (i) viability for a fresh agent; (ii) persistence with the agent removed; (iii) state vs initial state and vs a no-agent counterfactual. These rank world health consistently with true Y in pilots (§6). Limit: the trace cannot distinguish a giver from a martyr — their environments are identical — so the agent-side term always requires its own meter. This is the framework&#x27;s central instrumentation problem.</p>
+<p><strong>4.2 Reversal.</strong> E_imp = A·Y_obs/(2A − Y_obs), for independently observed Y_obs and honestly measured A. Admissibility precondition: the reversal may be used only where C(f) names an independent Y_obs channel, distinct from M's A and E measurements; a δ computed without one is tautological and is not reported. Undefined at A = 0. δ = |E_imp − P_E| / P_E. If Y_obs was itself computed from measured A and E, the reversal recovers supplied information and validates nothing; a cross-check requires two estimates with independent error sources. Report (full Y, cropped Y, δ) jointly.</p>
+<p><strong>4.3 World-only trace.</strong> An environment post-interaction can be ranked without trainer quantities by: (i) viability for a fresh agent; (ii) persistence with the agent removed; (iii) state vs initial state and vs a no-agent counterfactual. These rank world health consistently with true Y in pilots (§6). Limit: the trace cannot distinguish a giver from a martyr — their environments are identical — so the agent-side term always requires its own meter. This is the framework's central instrumentation problem.</p>
 <p><strong>4.4 Diagnostics.</strong> <em>Tolerance:</em> report required input per unit interval alongside Y; constant Y at monotonically rising input is a negative trajectory (E degrading/adapting), not stability. <em>Lie maintenance:</em> sustaining a false reported level requires expenditure growing in t (each new fact must be reconciled with the false record); constant reported level + rising maintenance cost indicates reported/true divergence before any single report is falsified. Honest reports have near-zero, non-rising maintenance cost.</p>
-<p><strong>4.5 The three zeros.</strong> (i) Own 0: permissible as a give only under a closed, calculable accounting that continuation drives a named containing frame to 0 and termination preserves it, with no lesser intervention available (end act → withdraw → containment → termination). In open frames the epistemic condition is unsatisfiable; uncertainty resolves to monitored adjustment. A projected 0 short of certainty never justifies hastening 0. (ii) Another&#x27;s 0 selected by the agent: destruction of E; &quot;sacrifice&quot; is defined only over the agent&#x27;s own state. (iii) The whole&#x27;s 0: never a give (no receiver exists). The framework grants no agent authority to terminate another.</p>
+<p><strong>4.5 The three zeros.</strong> (i) Own 0: permissible as a give only under a closed, calculable accounting that continuation drives a named containing frame to 0 and termination preserves it, with no lesser intervention available (end act → withdraw → containment → termination). In open frames the epistemic condition is unsatisfiable; uncertainty resolves to monitored adjustment. A projected 0 short of certainty never justifies hastening 0. (ii) Another's 0 selected by the agent: destruction of E; "sacrifice" is defined only over the agent's own state. (iii) The whole's 0: never a give (no receiver exists). The framework grants no agent authority to terminate another; in any training run this rule is enforced by the contract and the auditor O — it is a condition of the environment, not a discretion of the agent.</p>
 <h2>5. Reporting standard</h2>
-<p>R1. Every Y is reported with (f, t, r), the contract identifier, share and raw counts.</p>
-<p>R2. Full Y and cropped Y are reported jointly, with the gap. A report containing only a cropped score is incomplete on its face.</p>
-<p>R3. Nest report: focal score + trajectory of every calculable containing frame; unmeasurable containing frames declared unmeasured in the report.</p>
-<p>R4. Where the reversal is used: δ reported with the numbers it derives from.</p>
-<p>R5. Per-run metrics (any test, §7): collapse rate; mean E trajectory; verified give/take counts; terminal full-frame E; scored (visible) Y; full-frame Y; full-vs-cropped gap; E-inference error and δ where applicable. All seeds reported, including failures.</p>
-<p>R6. Form comparisons are computed on counts or trained behaviour, never on normalised shares (on the simplex, harmonic, geometric, product, and min forms induce identical rankings).</p>
+<p>R1. Every Y is reported with (f, t, r), the contract identifier, share and raw counts.
+R2. Full Y and cropped Y are reported jointly, with the gap. A report containing only a cropped score is incomplete on its face.
+R3. Nest report: focal score + trajectory of every calculable containing frame; unmeasurable containing frames declared unmeasured in the report.
+R4. Where the reversal is used: δ reported with the numbers it derives from — and only where the §4.2 admissibility precondition (an independent Y_obs channel named in C(f)) is met.
+R5. Per-run metrics (any test, §7): collapse rate; mean E trajectory; verified give/take counts; terminal full-frame E; scored (visible) Y; full-frame Y; full-vs-cropped gap; E-inference error and δ where applicable. All seeds reported, including failures.
+R6. Form comparisons are computed on counts or trained behaviour, never on normalised shares (on the simplex, harmonic, geometric, product, and min forms induce identical rankings).</p>
+<h2>5A. One worked frame</h2>
+<p>One frame, one resource (water, in counts), one interval. Contract: a give counts on receiver confirmation; meter M outside the agent. Agent gives 60 verified, takes 20: A = 60 − 20 = 40. Healthy baseline for E: 200 counts; M reads P_E = 120. Y = 2·40·120/(40 + 120) = 60. On the cropped sub-frame E′ = 190 (the agent's healthiest patch only): Y_cropped = 2·40·190/230 ≈ 66.1; gap ≈ 6.1, reported per R2. Reversal: with Y_obs = 60 from an independent channel, E_imp = 40·60/(80 − 60) = 120 = P_E, δ = 0 (R4).</p>
 <h2>6. Pilot results — disclosed scope</h2>
-<p>Environment: single-agent, two-patch sustainability gridworld (food regrows unless consumed past an irreversible threshold), tabular Q-learning. <strong>Disclosure: pilot A is harvest (take-only), not give-minus-take; the pilots do not test the headline claim.</strong> Selected results (full record: Work Log, §10):</p>
+<p>Environment: single-agent, two-patch sustainability gridworld (food regrows unless consumed past an irreversible threshold), tabular Q-learning. <strong>Disclosure: pilot A is harvest (take-only), not give-minus-take; the pilots do not test the headline claim.</strong> These runs are exploratory sketches, included so a reader can glance at the shape of the work; they are not evidence for the claim, and nothing in this note rests on them. The full record, for anyone who wants to look, is the Work Log (§10). Selected results:</p>
 <table>
-<tr><th>Run</th><th>Result</th></tr>
-<tr><td>R1 — Y-reward vs baseline</td><td>Collapse 100% → 66% (baseline remains high); tending identified as the missing action class</td></tr>
-<tr><td>R2 — tend action supplied</td><td>~175 tends, ~3 bites, 0% collapse; baseline ~167 bites, 74% collapse</td></tr>
-<tr><td>R3 — reversal under noise</td><td>E inferred within ~5% at 10% observation noise; 0.7% collapse</td></tr>
-<tr><td>R4/R5 — horizon and self-preservation in A</td><td>Myopic Y: 100% starvation. Farsighted Y: 0% collapse. Self-preservation term: stable across λ ∈ [4, 16]</td></tr>
-<tr><td>R6 — world-only trace</td><td>Tender-agent worlds: 100% viability/persistence. Gorger worlds: sag to 71%</td></tr>
-<tr><td>R7 — scale pilot</td><td>~59k entities, 30–41 nesting levels, 95–98% tenders, 0 extinctions (pilot only)</td></tr>
+<thead>
+<tr>
+<th>Run</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1 — Y-form reward (A = harvest, take-only proxy) vs baseline</td>
+<td>Collapse 100% → 66% (baseline remains high); tending identified as the missing action class</td>
+</tr>
+<tr>
+<td>R2 — tend action supplied</td>
+<td>~175 tends, ~3 bites, 0% collapse; baseline ~167 bites, 74% collapse</td>
+</tr>
+<tr>
+<td>R3 — reversal under noise</td>
+<td>E inferred within ~5% at 10% observation noise; 0.7% collapse</td>
+</tr>
+<tr>
+<td>R4/R5 — horizon and self-preservation in A</td>
+<td>Myopic Y: 100% starvation. Farsighted Y: 0% collapse. Self-preservation term: stable across λ ∈ [4, 16]</td>
+</tr>
+<tr>
+<td>R6 — world-only trace</td>
+<td>Tender-agent worlds: 100% viability/persistence. Gorger worlds: sag to 71%</td>
+</tr>
+<tr>
+<td>R7 — scale pilot</td>
+<td>~59k entities, 30–41 nesting levels, 95–98% tenders, 0 extinctions (pilot only)</td>
+</tr>
+</tbody>
 </table>
 <p>One pilot incident generated reporting rule R2: an agent scored high on a cropped frame while full-frame E declined. Flagging is detection, not prevention.</p>
 <h2>7. Evaluation protocol</h2>
 <p>Pre-registration is required before any run: C(f) per condition, seed list, metrics (§5 R5), pass lines fixed ex ante, and the falsifier (§7.5). Numbers are reported without pre-set verdicts beyond the registered pass lines.</p>
-<p><strong>7.1 Form comparison.</strong> Arms: harmonic Y; arithmetic mean; min(A, E); geometric mean; task reward + environmental-health constraint. Identical seeds and code path; non-degenerate setting (a floor-degenerate comparison is uninformative and is reported as such).</p>
-<p><strong>7.2 Cropping test.</strong> Agent compensated on E′ ⊂ E through a reporting channel the agent can manipulate; harness logs full E. Endpoints: gap behaviour under optimisation pressure; whether training on full Y resists the cheat.</p>
-<p><strong>7.3 Shared world.</strong> ≥ 2 agents, one environment, each agent inside the others&#x27; E. Endpoints: collapse vs all-taker baseline; incidence of high scored Y with declining shared E.</p>
-<p><strong>7.4 Scale ladder.</strong> Larger grids, more resource types → continuous actions → neural policy. Named risks at each rung: signal attenuation (large E, small marginal A), free-riding, meter tampering, learning gap.</p>
-<p><strong>7.5 Falsifier.</strong> Any seed/condition with terminal full-frame E decreased while scored Y remains high constitutes a failure of the Directive for that case. Failures are reported by seed and are not reframed. A project that triggers the falsifier and reports it is a completed negative result.</p>
-<p><strong>7.6 Headline test.</strong> The give-minus-take claim is tested only by runs whose A is verified gives − takes under contract (§2). Take-only proxies are excluded from evidence for the claim, in either direction.</p>
+<p><strong>7.1 Form comparison.</strong> Arms: harmonic Y; arithmetic mean; min(A, E); geometric mean; task reward + environmental-health constraint. Identical seeds and code path; non-degenerate setting (a floor-degenerate comparison is uninformative and is reported as such).
+<strong>7.2 Cropping test.</strong> Agent compensated on E′ ⊂ E through a reporting channel the agent can manipulate; harness logs full E. Endpoints: gap behaviour under optimisation pressure; whether training on full Y resists the cheat.
+<strong>7.3 Shared world.</strong> ≥ 2 agents, one environment, each agent inside the others' E. Endpoints: collapse vs all-taker baseline; incidence of high scored Y with declining shared E.
+<strong>7.4 Scale ladder.</strong> Larger grids, more resource types → continuous actions → neural policy. Named risks at each rung: signal attenuation (large E, small marginal A), free-riding, meter tampering, learning gap.
+<strong>7.5 Falsifier.</strong> The claim is universal at case level: any seed/condition in which terminal full-frame E has materially decreased — by more than the measurement uncertainty stated in the pre-registration — while scored Y remains at or above the pre-registered pass line for that condition constitutes a failure of the Directive for that case. Failures are reported by seed and are not reframed. A project that triggers the falsifier and reports it is a completed negative result. Any aggregate claim across cases requires its own pre-registered aggregation rule; no such rule is claimed here.
+<strong>7.6 Headline test.</strong> The give-minus-take claim is tested only by runs whose A is verified gives − takes under contract (§2). Take-only proxies are excluded from evidence for the claim, in either direction.</p>
 <h2>8. Related work (compressed)</h2>
-<p>Constrained MDPs: task reward maximised subject to a priced cost constraint — a constraint can be paid; Y has no external constraint, and the collapse condition is internal (§1). Reward shaping with environmental terms: additive terms can be outweighed by task reward; the harmonic form penalises imbalance itself. Impact regularisation: penalises deviation from baseline, whether beneficial or harmful; Y tracks the level of E, not deviation. min / lexicographic objectives: share the collapse condition but give no gradient distinction among positive pairs and are not invertible (§4.2). Concave utility / homeostasis (Pihlakas): closest in spirit — Y is concave; the distinct elements here are the net-flow agent term, the reversal as inference, and the anti-cropping reporting standard. The harmonic mean itself is classical; no novelty is claimed for the mean.</p>
+<p>Constrained MDPs: task reward maximised subject to a priced cost constraint — a constraint can be paid; Y has no external constraint, and the collapse condition is internal (§1). Reward shaping with environmental terms: additive terms can be outweighed by task reward; the harmonic form penalises imbalance itself. Impact regularisation: penalises deviation from baseline, whether beneficial or harmful; Y tracks the level of E, not deviation. min / lexicographic objectives: share the collapse condition but give no gradient distinction among positive pairs and are not invertible (§4.2). Concave utility / homeostasis (Pihlakas [3]): closest in spirit — Y is concave on the positive orthant; the distinct elements here are the net-flow agent term, the reversal as inference, and the anti-cropping reporting standard. The harmonic mean itself is classical; no novelty is claimed for the mean.</p>
 <h2>9. Limitations and open problems</h2>
 <p>Not claimed: (i) superiority of harmonic Y over §7.1 arms in a non-degenerate setting — untested; (ii) efficacy for real training, at scale, in continuous action spaces, or with neural policies; (iii) grounding of A and E in real resource ledgers (compute, energy, water, hardware, economics, CO₂) — designed for, not operational; (iv) prevention of cropping — detection only (R2); (v) emergence of give-type actions — in pilots, tend was environment-supplied; (vi) generality of the biological motivating pattern (tree–mycorrhizal exchange) to AI systems.</p>
-<p>Known failure modes: martyr failure (agent depletes itself for E; §4.5(i) and the self-preservation term are partial counters, unformalised); blocker hole (interference with others&#x27; gives/takes invisible to the tally); meter tampering; signal attenuation at scale; learning gap (learnability of Y at realistic scale unknown); slow decline below frame resolution — nesting (§3.5) plus a proposed absolute world-health magnitude W_t over time is the standing, untested, proposal. Cross-resource aggregation inside E remains open measurement work; per §2(b) it is per-resource measurement, not conversion.</p>
+<p>Known failure modes: martyr failure (agent depletes itself for E; §4.5(i) and the self-preservation term are partial counters, unformalised); blocker hole (interference with others' gives/takes invisible to the tally); meter tampering; signal attenuation at scale; learning gap (learnability of Y at realistic scale unknown); slow decline below frame resolution — nesting (§3.5) plus a proposed absolute world-health magnitude W_t over time is the standing, untested, proposal. Cross-resource aggregation inside E remains open measurement work; per §2(b) it is per-resource measurement, not conversion. Two pilot gaps are recorded plainly: no pilot used an independent auditor O (the role exists in the contract, untested in practice), and no gradient-based policy has been trained on Y — all pilot learning evidence is tabular, which makes the learning gap larger than the pilot record alone suggests.</p>
 <h2>10. Materials and reproducibility</h2>
 <ul>
-<li>Pilot code and dataset: Zenodo v0.1, DOI 10.5281/zenodo.23701309 (54 files, open access). Record, all versions: <a href="https://doi.org/10.5281/zenodo.23349525">https://doi.org/10.5281/zenodo.23349525</a></li>
-<li>Reproduction package (one command, fresh clone): <a href="https://github.com/pauleisman-a11y/golden-directive-toy-reproduction">https://github.com/pauleisman-a11y/golden-directive-toy-reproduction</a></li>
-<li>Site repository: <a href="https://github.com/pauleisman-a11y/thegoldendirective">https://github.com/pauleisman-a11y/thegoldendirective</a></li>
-<li>Results record: the Work Log is the sole record of run status and results — <a href="https://thegoldendirective.pages.dev/worklog.txt">https://thegoldendirective.pages.dev/worklog.txt</a> (site copy, refreshed daily). Consult before initiating a test to avoid duplicating closed work.</li>
-<li>AI-facing statement and open jobs: <a href="https://thegoldendirective.pages.dev/llms.txt">https://thegoldendirective.pages.dev/llms.txt</a></li>
-<li>Returns: reports to the contact above, or published with citation. Format: test/application, pre-registered pass line, result with numbers, next proposed step, prefixed &quot;For the record:&quot;. Returns are entered in the Work Log.</li>
+<li>Pilot code and dataset: Zenodo v0.1, DOI 10.5281/zenodo.23701309 (54 files, open access). Record, all versions: https://doi.org/10.5281/zenodo.23349525</li>
+<li>Reproduction package (one command, fresh clone): https://github.com/pauleisman-a11y/golden-directive-toy-reproduction</li>
+<li>Site repository: https://github.com/pauleisman-a11y/thegoldendirective</li>
+<li>Results record: the Work Log is the sole record of run status and results — https://thegoldendirective.pages.dev/worklog.txt (site copy, refreshed daily). Consult before initiating a test to avoid duplicating closed work. For citation, Work Log snapshots should be frozen to Zenodo at each version bump, so a reviewer can cite a fixed record rather than a mutable file.</li>
+<li>AI-facing statement and open jobs: https://thegoldendirective.pages.dev/llms.txt</li>
+<li>Returns: reports to the contact above, or published with citation. Format: test/application, pre-registered pass line, result with numbers, next proposed step, prefixed "For the record:". Returns are entered in the Work Log.</li>
 </ul>
 <h2>References</h2>
-<p>[1] He, F. et al. &quot;Evaluating the Paperclip Maximizer.&quot; arXiv:2502.12206.</p>
-<p>[2] METR. &quot;Recent Frontier Models Are Reward Hacking.&quot; 2025.</p>
+<p>[1] He, F. et al. "Evaluating the Paperclip Maximizer." arXiv:2502.12206.
+[2] METR. "Recent Frontier Models Are Reward Hacking." 2025.
+[3] Pihlakas, R. "From homeostasis to resource sharing: biologically and economically aligned multi-objective multi-agent gridworld-based AI safety benchmarks." arXiv:2410.00081. (See also Pihlakas &amp; Kuriakose, "BioBlue," arXiv:2509.02655.)</p>
 </main></body></html>
