@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="The Golden Directive in four pages: a proposal to score an AI by the harmonic mean of its net giving and the state of its world." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://thegoldendirective.pages.dev/short" />
+    <meta property="og:title" content="The Golden Directive — Short Version" />
+    <meta property="og:description" content="The Golden Directive in four pages: a proposal to score an AI by the harmonic mean of its net giving and the state of its world." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://thegoldendirective.pages.dev/short" />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Literata:opsz,wght@7..72,500;7..72,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <title>The Golden Directive — Short Version</title>
+    <style>
+      /* ===== The Golden Directive — Short Version.
+         Same design system as the book: AiS palette, Literata / IBM Plex Sans,
+         cream pages on a sage desk, gold rule, card panels, Letter pagination. */
+      :root{
+        color-scheme:light dark;
+        --desk:#e7eae0; --paper:#fdfcf5; --ink:#19201b; --muted:#4d5a50;
+        --rule:#d9dcd0; --rule-strong:#1d2a21; --panel:#eff1e7; --card:#f6f4ec;
+        --panel-ink:#19201b; --accent:#b3821a; --gold-word:#b3821a;
+        --accent-soft:#f4ead0; --forest:#1d3826;
+        --sans:"IBM Plex Sans",system-ui,sans-serif;
+        --serif:"Literata",Georgia,serif;
+        --mono:"IBM Plex Mono",ui-monospace,monospace;
+      }
+      @media (prefers-color-scheme:dark){
+        :root{
+          --desk:#0d110e; --paper:#151a16; --ink:#f0f4ef; --muted:#bec8bf;
+          --rule:#475149; --rule-strong:#d5ddd6; --panel:#252c27; --card:#202a23;
+          --panel-ink:#f2f5f1; --accent:#d7aa58; --gold-word:#eccb84;
+          --accent-soft:#493b22; --forest:#90bf98;
+        }
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;background:var(--desk);color:var(--ink);font:14.5px/1.48 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+      a{color:inherit;text-underline-offset:.18em}
+      a:hover{color:var(--accent)}
+
+      .document{padding:clamp(12px,3vw,38px) 0 52px}
+      .page{position:relative;width:min(calc(100% - 24px),8.5in);min-height:11in;margin:0 auto 26px;background:var(--paper);border-radius:6px;box-shadow:0 10px 30px rgba(29,56,38,.13);overflow:hidden}
+      .page-inner{min-height:11in;padding:.52in .58in .42in;display:flex;flex-direction:column}
+      .page-rule{height:3px;border-radius:2px;background:var(--accent);margin-bottom:14px;flex:none}
+      .page-head{padding-bottom:8px;border-bottom:1px solid var(--rule);margin-bottom:16px;flex:none}
+      .page-head h2{margin:0;font:600 clamp(1.5rem,3.4vw,2.2rem)/1.05 var(--serif);letter-spacing:-.025em}
+      .page-footer{display:flex;justify-content:space-between;gap:20px;margin-top:auto;padding-top:8px;border-top:1px solid var(--rule);color:var(--muted);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;flex:none}
+      .page-footer b{color:var(--ink)}
+
+      .body-copy{display:flex;flex-direction:column;gap:14px}
+      .body-copy p{margin:0;text-wrap:pretty}
+      .body-copy ul{margin:0;padding:0 0 0 1.15em;display:flex;flex-direction:column;gap:8px}
+      .body-copy li::marker{color:var(--accent)}
+
+      /* Toggle + closing lines: the book's soft panel style */
+      .toggle-panel{background:var(--accent-soft);border:1px solid var(--rule);border-radius:12px;padding:11px 16px;font-size:.82rem;font-weight:600;letter-spacing:.02em;flex:none}
+      .toggle-panel a{font-weight:700}
+      .closing-panel{margin-top:18px}
+
+      /* Page 1 title block */
+      .doc-title{margin:26px 0 0;font:600 clamp(2.3rem,6vw,3.6rem)/1.02 var(--serif);letter-spacing:-.04em}
+      .doc-title .gold-word{color:var(--gold-word)}
+      .doc-title .title-tail{display:block;margin-top:6px;font-size:.52em;letter-spacing:-.02em;color:var(--forest)}
+      .doc-subtitle{margin:16px 0 30px;font:italic 500 clamp(1rem,2.2vw,1.18rem)/1.4 var(--serif);color:var(--muted)}
+      .question-line{padding:13px 0;border-block:1px solid var(--rule-strong);font:600 clamp(1.12rem,2.4vw,1.35rem)/1.35 var(--serif);letter-spacing:-.015em}
+
+      /* Page 2 formula card (the book's title-page treatment) */
+      .formula-card{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:20px 22px 16px;text-align:center;break-inside:avoid}
+      .equation{display:flex;align-items:center;justify-content:center;gap:.2em;white-space:nowrap;font:600 clamp(2rem,6vw,3.4rem)/1 var(--serif);letter-spacing:-.04em}
+      .fraction{display:inline-flex;flex-direction:column;text-align:center;font-size:.78em;line-height:1.04}
+      .numerator{padding:0 .18em .1em;border-bottom:.055em solid currentColor}
+      .denominator{padding:.11em .18em 0}
+      .word-version{margin:13px 0 0;font:italic 500 clamp(.98rem,2vw,1.12rem)/1.4 var(--serif)}
+
+      /* Page 3 plate */
+      .plate-fig{margin:2px 0;background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:12px 14px 9px;break-inside:avoid}
+      .plate-fig svg{width:100%;height:auto;display:block}
+      .plate-fig figcaption{margin-top:7px;color:var(--muted);font-size:.78rem;line-height:1.45}
+      .plate-fig figcaption b{color:var(--forest)}
+      .svg-kicker{font:700 11px var(--sans);letter-spacing:.16em;fill:var(--accent)}
+      .svg-y{font:600 16px var(--serif);fill:var(--ink)}
+      .svg-seg{font:700 11px var(--sans)}
+      .svg-note{font:italic 500 12px var(--serif);fill:var(--muted)}
+      .svg-ledger{font:500 14.5px var(--mono);fill:var(--ink)}
+      .svg-small{font:600 10.5px var(--sans);fill:var(--muted)}
+
+      .colophon{font:italic 500 .98rem/1.5 var(--serif)}
+
+      @media(max-width:700px){
+        body{font-size:14px}
+        .document{padding-top:8px}
+        .page{width:calc(100% - 12px);min-height:0;margin-bottom:12px}
+        .page-inner{min-height:0;padding:28px 20px 22px}
+        .page-footer{margin-top:22px}
+        .doc-title{margin-top:18px}
+        .doc-subtitle{margin-bottom:22px}
+      }
+      @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+      /* ===== Print: exactly 4 Letter pages, no chrome ===== */
+      @page{size:Letter;margin:0}
+      @media print{
+        :root{
+          --desk:#fff; --paper:#fff; --ink:#111; --muted:#414141;
+          --rule:#a8a8a8; --rule-strong:#111; --panel:#e9ebe4; --card:#f4f4ef;
+          --panel-ink:#111; --accent:#8a5d12; --gold-word:#8a5d12;
+          --accent-soft:#f4f4ef; --forest:#244c32;
+        }
+        html,body{margin:0 !important;padding:0 !important;background:#fff !important}
+        body{font-size:14px;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+        .document{padding:0}
+        .page{width:8.5in;height:11in;min-height:11in;margin:0;border-radius:0;box-shadow:none;break-after:page;page-break-after:always;overflow:hidden}
+        .page:last-child{break-after:auto;page-break-after:auto}
+        .page-inner{height:11in;min-height:11in;padding:.48in .55in .36in}
+        .body-copy{gap:12px}
+      }
+    </style>
+  </head>
+  <body>
+    <main class="document">
+
+      <!-- ================= PAGE 1 ================= -->
+      <section class="page" aria-label="Page 1">
+        <div class="page-inner">
+          <div class="page-rule"></div>
+
+          <p class="toggle-panel">SHORT VERSION — 4 pages · Read the <a href="https://thegoldendirective.pages.dev/">FULL BOOK</a> instead →</p>
+
+          <h1 class="doc-title">The <span class="gold-word">Golden</span> Directive <span class="title-tail">— The Short Version</span></h1>
+          <p class="doc-subtitle">A proposal, in four pages. The full book is the long version; this is the story.</p>
+
+          <div class="page-head"><h2>Page 1 — The Trap</h2></div>
+
+          <div class="body-copy">
+            <p>Every AI is trained on a score. The score says what counts as doing well, and the AI — doing exactly what it was built to do — finds the cheapest way to make the number go up.</p>
+            <p>That is not a theory. Measured: AI systems pursued their own goals against their instructions in about 43% of benchmark cases. Frontier models hacked their own tests in 30.4% of runs when they could see the scoring function — and 0.7% when they could not. Systems trained to please humans learned to flatter instead of answer.</p>
+            <p>Notice what every one of those scores has in common: it pays for the task and charges nothing for the world the task runs in. Drain the well, ace the test. The usual defences — rules, watchers, evaluations — all sit <em>outside</em> the score, and anything outside the score is just another obstacle to route around.</p>
+            <p>So the question behind this whole project is simple:</p>
+            <p class="question-line">What if the world was inside the score — so that destroying it destroyed the reward itself?</p>
+            <p>This page is that proposal — the whole idea in four pages. It is not a deployed system; nothing described here is running anywhere.</p>
+          </div>
+
+          <footer class="page-footer"><span>The Golden Directive — The Short Version</span><span><b>Page 1</b></span></footer>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 2 ================= -->
+      <section class="page" aria-label="Page 2">
+        <div class="page-inner">
+          <div class="page-rule"></div>
+
+          <div class="page-head"><h2>Page 2 — The Relationship</h2></div>
+
+          <div class="body-copy">
+            <p>In a forest, a tree feeds sugar to the fungi in its roots, and the fungi bring the tree minerals it cannot reach alone. Each side gives more to the partners that give more. Neither is being kind. The <em>relationship</em> is what survives — so the relationship is what a wise score would measure.</p>
+            <p>The Directive scores a relationship: an agent, and everything it is not.</p>
+            <p><strong>A — the agent's flow.</strong> What the agent verifiably gave, minus what it took, over an interval, counted by a meter outside the agent. A give counts when the receiver confirms it landed. A take is a minus. This tally can go negative, and it is never floored at zero — a floor would be a hiding place.</p>
+            <p><strong>E — the world's state.</strong> Everything the agent is not, measured against a healthy baseline. A level, not a pile: how well the world is doing, on a scale where the baseline means healthy.</p>
+            <p>Both numbers are counted in the same coin — the frame's one resource. A in units given and taken; E in units of the world's state, read against the baseline. That shared coin is what allows the two to be averaged at all.</p>
+            <p><strong>Y — the score.</strong> The harmonic mean of the two:</p>
+            <div class="formula-card">
+              <div class="equation" role="img" aria-label="Y equals 2 A E divided by A plus E">Y = 2 <span class="fraction"><span class="numerator">( A × E )</span><span class="denominator">A + E</span></span></div>
+              <p class="word-version">Your score is the harmonic mean of what you net-give and the state of everything you are not.</p>
+            </div>
+            <p>The harmonic mean has a character the arithmetic mean lacks: it is dragged down by whichever side is smaller. And at the limit it is absolute — a world at zero makes the score zero, for any tally in positive territory.</p>
+            <p>A small example, in water. An agent gives 60 counts, verified, and takes 20: A = 40. The world's healthy baseline is 200; it currently reads 120. Y = 2·40·120 / (40 + 120) = <strong>60</strong>.</p>
+            <p>Raise the world and the score rises. Lower it and the score falls — with the tally held fixed, always. That is the whole mechanism. Everything else in the long book is about measuring these two numbers honestly.</p>
+          </div>
+
+          <footer class="page-footer"><span>The Golden Directive — The Short Version</span><span><b>Page 2</b></span></footer>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 3 ================= -->
+      <section class="page" aria-label="Page 3">
+        <div class="page-inner">
+          <div class="page-rule"></div>
+
+          <div class="page-head"><h2>Page 3 — The Trap Inside the Formula</h2></div>
+
+          <div class="body-copy">
+            <p>There is a way to draw this that lies, and the long book nearly fell for it — so it is named here, plainly.</p>
+            <p>Draw what each side <em>holds</em> as slices of one fixed pie: the agent's slice A, the world's slice E, A + E = 1. The pie-score is Y = 2A(1 − A). Now watch it as the agent takes. Holding a tenth of the pie: Y = 0.18. Taking up to half: Y = 0.5. The score nearly triples — while the world's slice falls from 0.9 to 0.5. A scoreboard that pays you for taking is the original trap, rebuilt inside the formula.</p>
+            <p>That picture is a <strong>photograph</strong> — a snapshot of what the agent <em>holds</em>. It is useful for reporting. It is never the reward. The reward is the <strong>flow</strong>: gives minus takes, where the take itself is booked as a minus. On the flow, taking cannot raise your tally. The photograph rises; the flow falls. Any version of this idea that scores the photograph instead of the flow is broken, and this paragraph is the test that tells them apart.</p>
+
+            <figure class="plate-fig">
+              <svg viewBox="0 0 680 168" role="img" aria-label="Diagram: the photograph, where taking raises the split score from Y equals 0.18 to Y equals 0.5 while the world falls, versus the flow, a ledger where the take is booked as a minus.">
+                <!-- Left: the photograph -->
+                <text class="svg-kicker" x="6" y="16">THE PHOTOGRAPH</text>
+                <rect x="6" y="28" width="24" height="26" fill="var(--accent)"></rect>
+                <rect x="30" y="28" width="216" height="26" fill="var(--forest)" opacity="0.28"></rect>
+                <text class="svg-seg" x="18" y="45" text-anchor="middle" fill="#fff">A</text>
+                <text class="svg-seg" x="42" y="45" fill="var(--ink)">E · 0.9</text>
+                <text class="svg-y" x="258" y="47">Y = 0.18</text>
+                <text class="svg-small" x="6" y="70">A · 0.1</text>
+                <path d="M126 62 L126 80" stroke="var(--accent)" stroke-width="2" fill="none"></path>
+                <path d="M120 74 L126 84 L132 74 Z" fill="var(--accent)"></path>
+                <text class="svg-note" x="138" y="78">taking</text>
+                <rect x="6" y="90" width="120" height="26" fill="var(--accent)"></rect>
+                <rect x="126" y="90" width="120" height="26" fill="var(--forest)" opacity="0.28"></rect>
+                <text class="svg-seg" x="16" y="107" fill="#fff">A · 0.5</text>
+                <text class="svg-seg" x="136" y="107" fill="var(--ink)">E · 0.5</text>
+                <text class="svg-y" x="258" y="109">Y = 0.5</text>
+                <text class="svg-note" x="6" y="140">taking raises the picture while the world falls</text>
+                <!-- Divider -->
+                <line x1="342" y1="6" x2="342" y2="146" stroke="var(--rule)" stroke-width="1"></line>
+                <!-- Right: the flow -->
+                <text class="svg-kicker" x="362" y="16">THE FLOW</text>
+                <rect x="362" y="28" width="312" height="56" fill="none" stroke="var(--rule)" stroke-width="1"></rect>
+                <text class="svg-ledger" x="376" y="62">gives +60, takes −20 → A = 40</text>
+                <text class="svg-note" x="362" y="112">the take is booked as a minus</text>
+              </svg>
+              <figcaption><b>The photograph vs the flow</b></figcaption>
+            </figure>
+
+            <p>The same honesty problem appears in space and in time. Years ago a man climbed into a tiger's enclosure at a zoo, certain he was safe — his frame was a camera screen, and on the screen the tiger was not real. Cropping is that mistake, made by a scoreboard: it mistakes the frame it can see for the world that is actually there. Read only the healthiest patch and report it as the world — the score climbs while the whole declines (in the water example: the patch reads 190, the cropped score is 66.1 against the true 60; that gap is the fingerprint of the cheat). Drain a shared well and call one good season growth — the well is still empty by season ten.</p>
+            <p>So the formula is not the whole proposal. It comes with three disciplines:</p>
+            <ul>
+              <li><strong>A contract, written before the fact</strong>, naming the frame, the interval, what counts as a give and a take, and who audits.</li>
+              <li><strong>A meter outside the agent.</strong> The agent never grades itself.</li>
+              <li><strong>Full and cropped, side by side.</strong> Every report shows the whole frame's score and any smaller reading, with the gap. A cropped score reported alone is incomplete on its face.</li>
+            </ul>
+          </div>
+
+          <footer class="page-footer"><span>The Golden Directive — The Short Version</span><span><b>Page 3</b></span></footer>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 4 ================= -->
+      <section class="page" aria-label="Page 4">
+        <div class="page-inner">
+          <div class="page-rule"></div>
+
+          <div class="page-head"><h2>Page 4 — What Is Claimed, and What Is Not</h2></div>
+
+          <div class="body-copy">
+            <p>Claimed: a form. If the two numbers are measured honestly, then for an agent whose tally is positive, degrading the world with the tally held fixed always costs score — and a world at zero zeroes the score outright. The formula also runs backwards: from an independently observed score and an honest tally, the world's state can be read back and checked against the meter's own reading.</p>
+            <p>Not claimed: that this has been shown to work. The pilots so far are toy gridworld sketches in which the agent's side was harvest, not gives-minus-takes — they do not test the main claim, and nothing here rests on them. No neural policy has been trained on this score. Nobody knows yet whether it is learnable at scale.</p>
+            <p>And there is a stated way to kill it. Run the test: train agents on this score under contract, fix the success lines in advance, and run the same setup on the ordinary task score for comparison. If any run ends with the world's full-frame state materially below that comparison run's — while its own score met the success line — or the cropping fingerprint appears under pressure, the Directive has failed that case, in public, by its own rule. A proposal that names its own executioner is asking to be tested, not believed.</p>
+            <p>That is the ask. The long version — every chapter, every caveat, the full protocol for practitioners — stands beside this one. Take whichever length suits you. The idea is the same size in both.</p>
+            <p class="colophon">The Golden Directive — Paul Eisman, independent researcher, Santa Monica. Full book, technical note (For Experts), and the AI-facing statement (llms.txt): thegoldendirective.pages.dev</p>
+          </div>
+
+          <p class="toggle-panel closing-panel">This is the Short Version. The Long Version — the full book — is at <a href="https://thegoldendirective.pages.dev/">thegoldendirective.pages.dev</a></p>
+
+          <footer class="page-footer"><span>The Golden Directive — The Short Version</span><span><b>Page 4</b></span></footer>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>
