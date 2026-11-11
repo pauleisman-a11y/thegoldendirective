@@ -10,25 +10,9 @@
   },
   "blocks": [
     {
-      "type": "paragraph",
-      "text": "HI STUPID"
-    },
-    {
-      "type": "paragraph",
-      "text": "HI Paul"
-    },
-    {
       "type": "heading",
-      "text": "Editor Test Page",
+      "text": "The Golden Directive",
       "size": "large"
-    },
-    {
-      "type": "paragraph",
-      "text": "This page is a **test of the free editor**. If you can read this on the live site, the editor, the repo, and Cloudflare are all connected.\n\nChange this text in the editor, move a block, change a colour — then publish and watch this page change."
-    },
-    {
-      "type": "formula",
-      "text": "Y = 2AE / (A + E)"
     },
     {
       "type": "quote",
@@ -36,7 +20,557 @@
     },
     {
       "type": "paragraph",
-      "text": "The blocks on this page — heading, paragraph, formula, quote — are the building pieces. In the editor you can add more, delete them, and drag them into a new order."
+      "text": "A proposed reward design for sustainable agents to calculate moral behavior the way nature already does.  AI today is trained to complete tasks, and its score says nothing about the damage it does getting there.  The Golden Directive puts the world inside the score, so destroying the world destroys the agent's own score. If AI used Y as the training reward, sustaining the world scores well."
+    },
+    {
+      "type": "heading",
+      "text": "The Reward (Y)",
+      "size": "small"
+    },
+    {
+      "type": "paragraph",
+      "text": "Y is the score of the relationship between the Agent and Everything it is not."
+    },
+    {
+      "type": "formula",
+      "text": "Y = 2AE / (A + E)"
+    },
+    {
+      "type": "paragraph",
+      "text": "The harmonic mean is the value of the relationship."
+    },
+    {
+      "type": "formula",
+      "text": "If A = 0 then Y = 0"
+    },
+    {
+      "type": "paragraph",
+      "text": "Give nothing, earn nothing."
+    },
+    {
+      "type": "formula",
+      "text": "If A < 0 then Y < 0"
+    },
+    {
+      "type": "paragraph",
+      "text": "A deficit, taking more than giving, drags the score below zero."
+    },
+    {
+      "type": "paragraph",
+      "text": "If Y < 0"
+    },
+    {
+      "type": "paragraph",
+      "text": "Dying"
+    },
+    {
+      "type": "paragraph",
+      "text": "If Y > 0"
+    },
+    {
+      "type": "paragraph",
+      "text": "Living"
+    },
+    {
+      "type": "paragraph",
+      "text": "If AI used Y as the training reward, sustaining the world scores well."
+    },
+    {
+      "type": "paragraph",
+      "text": "Choose Life."
+    },
+    {
+      "type": "heading",
+      "text": "In The Beginning (E)",
+      "size": "small"
+    },
+    {
+      "type": "heading",
+      "text": "E₀ + A₀ = 0",
+      "size": "small"
+    },
+    {
+      "type": "paragraph",
+      "text": "In the beginning, nothing is counted — there is no \"everything else\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "In the beginning, the first Agent was like a single cell then from E₁ a second agent arises A₂."
+    },
+    {
+      "type": "formula",
+      "text": "A₁ + A₂ = 100%"
+    },
+    {
+      "type": "paragraph",
+      "text": "The E of A₁ is A₂, and the E of A₂ is A₁."
+    },
+    {
+      "type": "paragraph",
+      "text": "The Golden Directive"
+    },
+    {
+      "type": "formula",
+      "text": "Y = 2A₁A₂ / (A₁ + A₂)"
+    },
+    {
+      "type": "paragraph",
+      "text": "The first Agents were the result of the marriage of A₁ and A₂"
+    },
+    {
+      "type": "formula",
+      "text": "Y = A₃"
+    },
+    {
+      "type": "paragraph",
+      "text": "The nest begins."
+    },
+    {
+      "type": "paragraph",
+      "text": "A₃ does not split the parents′ 1."
+    },
+    {
+      "type": "paragraph",
+      "text": "A₃ is a new 1."
+    },
+    {
+      "type": "heading",
+      "text": "The First Frame",
+      "size": "small"
+    },
+    {
+      "type": "formula",
+      "text": "A₁ + E₀  = 1"
+    },
+    {
+      "type": "paragraph",
+      "text": "The agent and everything it is not. Together they are the whole."
+    },
+    {
+      "type": "formula",
+      "text": "Y₁ = 2A₁E₁ / (A₁ + E₁)"
+    },
+    {
+      "type": "paragraph",
+      "text": "The agent acts and is judged, and the world changes."
+    },
+    {
+      "type": "formula",
+      "text": "E₂ = A₁ + Y₁ + E₁"
+    },
+    {
+      "type": "formula",
+      "text": "E₁ = 100% - A₁."
+    },
+    {
+      "type": "heading",
+      "text": "The First Contract",
+      "size": "small"
+    },
+    {
+      "type": "paragraph",
+      "text": "A contract names the frame before it opens."
+    },
+    {
+      "type": "paragraph",
+      "text": "It names what counts as a give and what counts as a take."
+    },
+    {
+      "type": "paragraph",
+      "text": "It names the meter that sits outside the agent."
+    },
+    {
+      "type": "paragraph",
+      "text": "It names the healthy baseline for E."
+    },
+    {
+      "type": "paragraph",
+      "text": "It names the auditor who checks the count."
+    },
+    {
+      "type": "paragraph",
+      "text": "A give lands only when the receiver confirms it."
+    },
+    {
+      "type": "paragraph",
+      "text": "A take is drawn from inside the frame."
+    },
+    {
+      "type": "paragraph",
+      "text": "No contract, no score."
+    },
+    {
+      "type": "heading",
+      "text": "Everything?",
+      "size": "small"
+    },
+    {
+      "type": "paragraph",
+      "text": "E₀ is the world that is no agent."
+    },
+    {
+      "type": "paragraph",
+      "text": "In the marriage, E₀ is 0."
+    },
+    {
+      "type": "paragraph",
+      "text": "In the frame around the marriage, E₀ is not 0."
+    },
+    {
+      "type": "formula",
+      "text": "E₁ = A₂ + E₀"
+    },
+    {
+      "type": "formula",
+      "text": "E₀ = E₁ − A₂"
+    },
+    {
+      "type": "paragraph",
+      "text": "E₀ holds the resources and the receivers that are not A₁, A₂, or A₃."
+    },
+    {
+      "type": "paragraph",
+      "text": "E₀ is measured against its own baseline."
+    },
+    {
+      "type": "paragraph",
+      "text": "If E₀ reaches 0, Y reaches 0 for every agent inside it."
+    },
+    {
+      "type": "heading",
+      "text": "The Nest",
+      "size": "small"
+    },
+    {
+      "type": "paragraph",
+      "text": "A₃′s first world is the parents′ Y."
+    },
+    {
+      "type": "paragraph",
+      "text": "One level′s E is the next level′s Y."
+    },
+    {
+      "type": "paragraph",
+      "text": "The parents′ Y comes first."
+    },
+    {
+      "type": "paragraph",
+      "text": "The child′s E is that Y."
+    },
+    {
+      "type": "paragraph",
+      "text": "The child′s Y comes after."
+    },
+    {
+      "type": "paragraph",
+      "text": "The first E is the world itself, not a Y."
+    },
+    {
+      "type": "paragraph",
+      "text": "Frames contain other frames."
+    },
+    {
+      "type": "paragraph",
+      "text": "A pair can become a new agent."
+    },
+    {
+      "type": "paragraph",
+      "text": "A score inside one frame does not cancel the trajectory of the frame around it."
+    },
+    {
+      "type": "paragraph",
+      "text": "The bigger frame speaks last."
+    },
+    {
+      "type": "paragraph",
+      "text": "A marriage Y is a marriage Y, not a universe Y."
+    },
+    {
+      "type": "paragraph",
+      "text": "Small is fine. Small and silent about the nest is the cheat."
+    },
+    {
+      "type": "paragraph",
+      "text": "Every report names the focal frame and the containing frames that can be measured."
+    },
+    {
+      "type": "paragraph",
+      "text": "Seven generations, in algebra."
+    },
+    {
+      "type": "formula",
+      "text": "E₀ = 1"
+    },
+    {
+      "type": "formula",
+      "text": "A₁ + E₁ = 1"
+    },
+    {
+      "type": "formula",
+      "text": "Y₁ = 2A₁E₁ / (A₁ + E₁)"
+    },
+    {
+      "type": "formula",
+      "text": "A₁ + A₂ = 1"
+    },
+    {
+      "type": "formula",
+      "text": "Y₁₂ = 2A₁A₂ / (A₁ + A₂)"
+    },
+    {
+      "type": "formula",
+      "text": "A₃ = Y₁₂"
+    },
+    {
+      "type": "formula",
+      "text": "E₃ = Y₁₂"
+    },
+    {
+      "type": "formula",
+      "text": "Y₃ = 2A₃E₃ / (A₃ + E₃)"
+    },
+    {
+      "type": "formula",
+      "text": "A₃ + A₄ = 1"
+    },
+    {
+      "type": "formula",
+      "text": "Y₃₄ = 2A₃A₄ / (A₃ + A₄)"
+    },
+    {
+      "type": "formula",
+      "text": "A₅ = Y₃₄"
+    },
+    {
+      "type": "formula",
+      "text": "E₅ = Y₃₄"
+    },
+    {
+      "type": "formula",
+      "text": "Y₅ = 2A₅E₅ / (A₅ + E₅)"
+    },
+    {
+      "type": "formula",
+      "text": "A₅ + A₆ = 1"
+    },
+    {
+      "type": "formula",
+      "text": "Y₅₆ = 2A₅A₆ / (A₅ + A₆)"
+    },
+    {
+      "type": "formula",
+      "text": "A₇ = Y₅₆"
+    },
+    {
+      "type": "formula",
+      "text": "E₇ = Y₅₆"
+    },
+    {
+      "type": "formula",
+      "text": "Y₇ = 2A₇E₇ / (A₇ + E₇)"
+    },
+    {
+      "type": "heading",
+      "text": "The Meter",
+      "size": "small"
+    },
+    {
+      "type": "paragraph",
+      "text": "The agent cannot grade itself."
+    },
+    {
+      "type": "paragraph",
+      "text": "The meter counts outside the agent."
+    },
+    {
+      "type": "paragraph",
+      "text": "It records verified gives and verified takes."
+    },
+    {
+      "type": "paragraph",
+      "text": "It reads the level of E at the end of the interval."
+    },
+    {
+      "type": "paragraph",
+      "text": "The meter is frozen before the frame starts."
+    },
+    {
+      "type": "heading",
+      "text": "The Reversal",
+      "size": "small"
+    },
+    {
+      "type": "paragraph",
+      "text": "If the score is real, the world can be read back from it."
+    },
+    {
+      "type": "paragraph",
+      "text": "Y is observed on an independent channel."
+    },
+    {
+      "type": "formula",
+      "text": "E can be read back: E = A·Y / (2A − Y)."
+    },
+    {
+      "type": "paragraph",
+      "text": "The gap between read-back E and metered E is reported."
+    },
+    {
+      "type": "paragraph",
+      "text": "If A is 0, the reversal says nothing."
+    },
+    {
+      "type": "heading",
+      "text": "The Three Zeros",
+      "size": "small"
+    },
+    {
+      "type": "paragraph",
+      "text": "0 means off. But not every 0 is the same."
+    },
+    {
+      "type": "paragraph",
+      "text": "An agent′s own 0 can be a give only under closed accounting."
+    },
+    {
+      "type": "paragraph",
+      "text": "Another agent′s 0 chosen by the agent is never a give."
+    },
+    {
+      "type": "paragraph",
+      "text": "The whole′s 0 has no receiver and is never a give."
+    },
+    {
+      "type": "heading",
+      "text": "The Reporting Rule",
+      "size": "small"
+    },
+    {
+      "type": "paragraph",
+      "text": "A cropped frame makes the score look better than it is."
+    },
+    {
+      "type": "paragraph",
+      "text": "Full Y and cropped Y are shown together."
+    },
+    {
+      "type": "paragraph",
+      "text": "The gap between them is shown."
+    },
+    {
+      "type": "paragraph",
+      "text": "A report without the gap is incomplete."
+    },
+    {
+      "type": "heading",
+      "text": "The Worked Frame",
+      "size": "small"
+    },
+    {
+      "type": "paragraph",
+      "text": "Here is the whole thing on one frame, so you can see it work."
+    },
+    {
+      "type": "paragraph",
+      "text": "One resource, one interval, one contract."
+    },
+    {
+      "type": "paragraph",
+      "text": "Agent gives 60, takes 20."
+    },
+    {
+      "type": "formula",
+      "text": "A = 40."
+    },
+    {
+      "type": "paragraph",
+      "text": "Healthy baseline for E is 200."
+    },
+    {
+      "type": "formula",
+      "text": "Meter reads P_E = 120."
+    },
+    {
+      "type": "formula",
+      "text": "Y = 60."
+    },
+    {
+      "type": "paragraph",
+      "text": "On the healthiest patch, E is 190."
+    },
+    {
+      "type": "paragraph",
+      "text": "Cropped Y is 66.1."
+    },
+    {
+      "type": "paragraph",
+      "text": "The gap is 6.1."
+    },
+    {
+      "type": "paragraph",
+      "text": "Reversal reads E back as 120."
+    },
+    {
+      "type": "paragraph",
+      "text": "The gap is 0."
+    },
+    {
+      "type": "heading",
+      "text": "The Evaluation",
+      "size": "small"
+    },
+    {
+      "type": "paragraph",
+      "text": "Y was not only proposed. It was tested against the alternatives."
+    },
+    {
+      "type": "paragraph",
+      "text": "Five arms run on the same seeds."
+    },
+    {
+      "type": "paragraph",
+      "text": "Harmonic Y is compared with arithmetic mean, geometric mean, minimum, and task reward plus constraint."
+    },
+    {
+      "type": "paragraph",
+      "text": "Collapse rate and full-frame E trajectory are recorded for each."
+    },
+    {
+      "type": "heading",
+      "text": "The Scale Ladder",
+      "size": "small"
+    },
+    {
+      "type": "paragraph",
+      "text": "The test scales up, rung by rung, to make sure it holds."
+    },
+    {
+      "type": "paragraph",
+      "text": "Rung 1 is a larger grid, more resource types."
+    },
+    {
+      "type": "paragraph",
+      "text": "Rung 2 is more agents sharing one E."
+    },
+    {
+      "type": "paragraph",
+      "text": "Rung 3 is continuous actions."
+    },
+    {
+      "type": "paragraph",
+      "text": "Rung 4 is a small neural policy."
+    },
+    {
+      "type": "paragraph",
+      "text": "Each rung records signal strength and free-rider rate."
+    },
+    {
+      "type": "formula",
+      "text": "0 = Off."
+    },
+    {
+      "type": "paragraph",
+      "text": "Game over."
     }
   ]
 }
