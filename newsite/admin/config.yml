@@ -1,0 +1,84 @@
+# Sveltia CMS — editor test for The Golden Directive
+# Edits ONE content file: newsite/test.json
+# The test page (newsite/test.html) draws itself from that file.
+backend:
+  name: github
+  repo: pauleisman-a11y/thegoldendirective
+  branch: main
+
+site_url: https://thegoldendirective.pages.dev
+display_url: https://thegoldendirective.pages.dev/newsite/test.html
+
+media_folder: newsite/uploads
+public_folder: /newsite/uploads
+
+collections:
+  - name: editor_test
+    label: Editor Test
+    icon: edit
+    files:
+      - name: test_page
+        label: Test Page
+        file: newsite/test.json
+        format: json
+        editor:
+          preview: false
+        fields:
+          - label: Page Style
+            name: style
+            widget: object
+            collapsed: false
+            fields:
+              - { label: Background Colour, name: background, widget: color }
+              - { label: Text Colour, name: text_color, widget: color }
+              - { label: Heading Colour, name: heading_color, widget: color }
+              - { label: Accent Colour (formula + quote bar), name: accent, widget: color }
+              - label: Text Size
+                name: text_size
+                widget: select
+                options:
+                  - { label: Small, value: small }
+                  - { label: Normal, value: normal }
+                  - { label: Large, value: large }
+              - label: Alignment
+                name: alignment
+                widget: select
+                options:
+                  - { label: Left, value: left }
+                  - { label: Center, value: center }
+              - label: Font
+                name: font
+                widget: select
+                options:
+                  - { label: Serif (book), value: serif }
+                  - { label: Sans (clean), value: sans }
+          - label: Blocks
+            name: blocks
+            widget: list
+            types:
+              - label: Heading
+                name: heading
+                widget: object
+                fields:
+                  - { label: Text, name: text, widget: string }
+                  - label: Size
+                    name: size
+                    widget: select
+                    options:
+                      - { label: Large, value: large }
+                      - { label: Small, value: small }
+              - label: Paragraph
+                name: paragraph
+                widget: object
+                fields:
+                  - { label: Text, name: text, widget: markdown }
+              - label: Formula
+                name: formula
+                widget: object
+                fields:
+                  - { label: Formula, name: text, widget: string }
+              - label: Quote
+                name: quote
+                widget: object
+                fields:
+                  - { label: Quote, name: text, widget: text }

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editor Test — The Golden Directive</title>
+<meta name="description" content="Test page for the free Sveltia editor. Content and style come from test.json, edited in the browser, stored in the GitHub repo.">
+<meta name="robots" content="noindex">
+<style>
+  body { margin: 0; padding: 3rem 1.25rem 5rem; }
+  main { max-width: 44rem; margin: 0 auto; }
+  h1, h2 { line-height: 1.2; }
+  .formula { font-size: 1.6em; text-align: center; padding: 1.2em 0; font-weight: 600; }
+  blockquote { margin: 1.5em 0; padding: 0.2em 0 0.2em 1em; font-style: italic; font-size: 1.15em; }
+  p { line-height: 1.65; margin: 1em 0; }
+  .note { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid currentColor; opacity: .65; font-size: .85em; }
+</style>
+</head>
+<body>
+<main id="page"><p>Loading…</p></main>
+<script>
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function md(s){
+  return esc(s)
+    .replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>")
+    .replace(/\*([^*]+)\*/g,"<em>$1</em>")
+    .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'<a href="$2">$1</a>')
+    .split(/\n{2,}/).map(function(p){return "<p>"+p.replace(/\n/g,"<br>")+"</p>";}).join("");
+}
+fetch("test.json",{cache:"no-store"}).then(function(r){return r.json();}).then(function(d){
+  var s=d.style||{}, sizes={small:"1rem",normal:"1.15rem",large:"1.3rem"};
+  document.body.style.background=s.background||"#fdfcf8";
+  document.body.style.color=s.text_color||"#1c1a15";
+  document.body.style.fontFamily=(s.font==="sans")?"system-ui, sans-serif":"Georgia, 'Times New Roman', serif";
+  document.body.style.fontSize=sizes[s.text_size]||sizes.normal;
+  document.body.style.textAlign=s.alignment||"left";
+  var html="";
+  (d.blocks||[]).forEach(function(b){
+    if(b.type==="heading"){
+      var tag=(b.size==="small")?"h2":"h1";
+      html+="<"+tag+" style=\"color:"+(s.heading_color||"inherit")+"\">"+esc(b.text||"")+"</"+tag+">";
+    }else if(b.type==="paragraph"){
+      html+=md(b.text||"");
+    }else if(b.type==="formula"){
+      html+="<div class=\"formula\" style=\"color:"+(s.accent||"inherit")+"\">"+esc(b.text||"")+"</div>";
+    }else if(b.type==="quote"){
+      html+="<blockquote style=\"border-left:4px solid "+(s.accent||"#999")+"\">"+esc(b.text||"")+"</blockquote>";
+    }
+  });
+  html+="<p class=\"note\">Editor test page. This page is drawn from a content file the free editor edits — no code was touched to change it.</p>";
+  document.getElementById("page").innerHTML=html;
+}).catch(function(e){
+  document.getElementById("page").innerHTML="<p>Could not load the content file.</p>";
+});
+</script>
+</body>
+</html>
