@@ -30,7 +30,7 @@ function md(s){
     .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'<a href="$2">$1</a>')
     .split(/\n{2,}/).map(function(p){return "<p>"+p.replace(/\n/g,"<br>")+"</p>";}).join("");
 }
-fetch("test.json",{cache:"no-store"}).then(function(r){return r.json();}).then(function(d){
+fetch("/newsite/test.json",{cache:"no-store"}).then(function(r){return r.json();}).then(function(d){
   var s=d.style||{}, sizes={small:"1rem",normal:"1.15rem",large:"1.3rem"};
   document.body.style.background=s.background||"#fdfcf8";
   document.body.style.color=s.text_color||"#1c1a15";
