@@ -20,7 +20,7 @@
     },
     {
       "type": "paragraph",
-      "text": "A proposed reward design for sustainable agents to calculate moral behavior the way nature already does.  AI today is trained to complete tasks, and its score says nothing about the damage it does getting there.  The Golden Directive puts the world inside the score, so destroying the world destroys the agent's own score. If AI used Y as the training reward, sustaining the world scores well."
+      "text": "A proposed reward design for sustainable agents to calculate moral behavior the way nature already does.  AI today is trained to complete tasks, and its score says nothing about the damage it does getting there.  The Golden Directive puts the world inside the score, so destroying the world destroys the agent's own score."
     },
     {
       "type": "heading",
@@ -74,10 +74,6 @@
     {
       "type": "paragraph",
       "text": "If AI used Y as the training reward, sustaining the world scores well."
-    },
-    {
-      "type": "paragraph",
-      "text": "Choose Life."
     },
     {
       "type": "heading",
@@ -148,11 +144,15 @@
     },
     {
       "type": "formula",
-      "text": "Y₁ = 2A₁E₁ / (A₁ + E₁)"
+      "text": "E₀ → E₁"
     },
     {
       "type": "paragraph",
       "text": "The agent acts and is judged, and the world changes."
+    },
+    {
+      "type": "formula",
+      "text": "Y₁ = 2A₁E₁ / (A₁ + E₁)"
     },
     {
       "type": "formula",
