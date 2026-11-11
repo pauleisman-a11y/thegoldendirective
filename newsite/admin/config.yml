@@ -5,6 +5,7 @@ backend:
   name: github
   repo: pauleisman-a11y/thegoldendirective
   branch: main
+  base_url: https://sveltia-cms-auth.pauleisman.workers.dev
 
 site_url: https://thegoldendirective.pages.dev
 display_url: https://thegoldendirective.pages.dev/newsite/test.html
