@@ -14,9 +14,12 @@
   blockquote { margin: 1.5em 0; padding: 0.2em 0 0.2em 1em; font-style: italic; font-size: 1.15em; }
   p { line-height: 1.65; margin: 1em 0; }
   .note { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid currentColor; opacity: .65; font-size: .85em; }
+  .edit-link { position: fixed; top: 0; right: 0; width: 48px; height: 48px; z-index: 99; display: flex; align-items: center; justify-content: center; text-decoration: none; color: inherit; font-size: 18px; opacity: .07; }
+  .edit-link:hover { opacity: .75; }
 </style>
 </head>
 <body>
+<a class="edit-link" href="/newsite/admin/" title="Open the editor" aria-label="Open the editor">&#9998;</a>
 <main id="page"><p>Loading…</p></main>
 <script>
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
