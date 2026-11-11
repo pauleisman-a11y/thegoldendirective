@@ -1,1 +1,38 @@
-{"blocks":[{"size":"large","text":"Editor Test Page","type":"heading"},{"text":"This page is a **test of the free editor**. If you can read this on the live site, the editor, the repo, and Cloudflare are all connected.\n\nChange this text in the editor, move a block, change a colour — then publish and watch this page change.","type":"paragraph"},{"text":"Y = 2AE / (A + E)","type":"formula"},{"text":"You cannot survive what you destroy.","type":"quote"},{"text":"The blocks on this page — heading, paragraph, formula, quote — are the building pieces. In the editor you can add more, delete them, and drag them into a new order.","type":"paragraph"}],"style":{"accent":"#b98a1c","alignment":"left","background":"#fdfcf8","font":"serif","heading_color":"#7a5c14","text_color":"#1c1a15","text_size":"normal"}}
+{
+  "style": {
+    "background": "#fdfcf8",
+    "text_color": "#1c1a15",
+    "heading_color": "#7a5c14",
+    "accent": "#b98a1c",
+    "text_size": "normal",
+    "alignment": "left",
+    "font": "serif"
+  },
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "HI STUPID"
+    },
+    {
+      "type": "heading",
+      "text": "Editor Test Page",
+      "size": "large"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is a **test of the free editor**. If you can read this on the live site, the editor, the repo, and Cloudflare are all connected.\n\nChange this text in the editor, move a block, change a colour — then publish and watch this page change."
+    },
+    {
+      "type": "formula",
+      "text": "Y = 2AE / (A + E)"
+    },
+    {
+      "type": "quote",
+      "text": "You cannot survive what you destroy."
+    },
+    {
+      "type": "paragraph",
+      "text": "The blocks on this page — heading, paragraph, formula, quote — are the building pieces. In the editor you can add more, delete them, and drag them into a new order."
+    }
+  ]
+}
