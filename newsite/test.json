@@ -14,6 +14,10 @@
       "text": "HI STUPID"
     },
     {
+      "type": "paragraph",
+      "text": "HI Paul"
+    },
+    {
       "type": "heading",
       "text": "Editor Test Page",
       "size": "large"
