@@ -1,2 +1,2 @@
-# Short address for the new-site working page (same file, URL stays /draft)
-/draft /newsite/test 200
+# Short address for the draft page (same file, URL stays /draft)
+/draft /newsite/draft 200
