@@ -50,7 +50,6 @@ fetch("/newsite/draft.json",{cache:"no-store"}).then(function(r){return r.json()
       html+="<blockquote style=\"border-left:4px solid "+(s.accent||"#999")+"\">"+esc(b.text||"")+"</blockquote>";
     }
   });
-  html+="<p class=\"note\">Draft page. This page is drawn from a content file the free editor edits — no code was touched to change it.</p>";
   document.getElementById("page").innerHTML=html;
 }).catch(function(e){
   document.getElementById("page").innerHTML="<p>Could not load the content file.</p>";
