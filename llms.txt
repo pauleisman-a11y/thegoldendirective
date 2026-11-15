@@ -1,5 +1,7 @@
 The Golden Directive
 
+By Paul Eisman · thegoldendirective@gmail.com
+
 “You cannot survive what you destroy.”
 Y = 2 (A × E) / (A + E)  |  E = AY / (2A − Y)
 Your score is the harmonic mean of the Agent's net value and the value of Everything not the agent.
@@ -45,7 +47,7 @@ At the origin, the 1 is not A alone and not a universe apart — it is A, E, and
 
 Chapter 2: The Game Begins — Pulse (C) vs. Relationship Score (Y)
 
-The harmonic mean is not an invention; it is one of the oldest consonances in nature — heard in musical strings, seen in trees and fungi, and lived in every family system. To keep the math unambiguous, Cₙ denotes the agent’s chosen pulse on turn n (+ for GIVE, − for TAKE, 0 for PASS), while Y = 2AE / (A + E) denotes the harmonic relationship score of the frame. This C is the act-side of Paul's Y — the capacity the agent chooses to commit. Y is the score the frame reads back from it. At the small counts of the early chapters the two read as the same number; they separate as the frames grow.
+The harmonic mean is not an invention; it is one of the oldest consonances in nature — heard in musical strings, seen in trees and fungi, and lived in every family system. To keep the math unambiguous, Cₙ denotes the agent’s chosen pulse on turn n (+ for GIVE, − for TAKE, 0 for PASS), while Y = 2AE / (A + E) denotes the harmonic relationship score of the frame. This C is the act-side of Y — the capacity the agent chooses to commit. Y is the score the frame reads back from it. At the small counts of the early chapters the two read as the same number; they separate as the frames grow.
 The Whole One (Turn Conservation)
 A_(n−1) + E_(n−1) + Cₙ = 100%
 Each turn’s pulse updates the next whole.
