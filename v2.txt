@@ -45,7 +45,6 @@ The Universe is Discovered (A₁ = E₁ = Y₁ = 1).
 --------------------------------------
 Being single is easy.
 At the origin, the 1 is not A alone and not a universe apart — it is A, E, and Y in one, a single state under three readings before any split into sides. The first turning ON was 100%: one unit spent whole. That unit, given whole, made the next unit available to turn ON. One pixel at a time.
-Page 1.
 
 Chapter 2: The Game Begins — Pulse (C) vs. Relationship Score (Y)
 
@@ -79,7 +78,6 @@ The First Relationship.
 --------------------------------------
 Cooperation (No Forest Police)
 A tree does not live alone. Four hundred million years ago, plants colonized dry land by trading photosynthetic sugars through their roots for phosphorus, nitrogen, and water extracted from rock by mycorrhizal fungi. Neither side is benevolent; there is no forest police and no central optimizer. Plants feed the fungi that feed them most and restrict carbon to the stingy ones, and the fungi bargain back the exact same way — nobody gets a free ride. We do not need AI to feel human love; we need it inside a structure where sustaining the other is what scores, whether human-to-AI, AI-to-human, or AI-to-AI.
-Page 2.
 
 Chapter 3: Giving First, Cell Division, and Multi-Digit Rulers
 
@@ -113,7 +111,6 @@ The whole doubles cleanly.
 --------------------------------------
 Be Fruitful and Multiply (Two Ways Agents Enter the World)
 A relationship does not survive by taking first; taking first devastates the whole. Giving first makes the whole grow, and nature multiplies agents in two distinct ways: Division (Chapter 3: one cell splits 50/50 into two peers, paid from the parent's own growth) and Offspring Fusion (Chapter 4: two agents’ enduring relationship Y₁₂ becomes a new agent A₃, expanding the whole). Multiply is never the beginning; multiply is what a Giving Relationship makes possible.
-Page 3.
 
 Chapter 4: Capacity (C = ±kR), Marriage, and the Offspring Step (Y = A₃)
 
@@ -141,7 +138,6 @@ The child does not split the parents’ 1; the parents’ Y is the child’s fir
 --------------------------------------
 A New Whole (For Richer or Poorer)
 A marriage shows the 1 at human scale: two people, one household, one story. Money is not the measure of that E — “for richer or poorer” means money is a test of the marriage, not the life inside it. Spend all the money and watch: if trust and closeness hold, Y dips but never collapses. Yet if one partner doubles personal hours while starving the marriage itself, the personal score collapses too — because each partner is the marriage. One level’s Y is the next level’s E, all the way up and down.
-Page 4.
 
 Chapter 5: The Ruler, The 2A Ceiling, and The Closed Whole (A + E = 1)
 
@@ -180,7 +176,6 @@ Total selfishness and total self-erasure both score zero.
 --------------------------------------
 The Tiger Outside the Cage
 Every external safety rule treats an intelligent system like a tiger behind zoo bars — an obstacle to be routed around once capability outgrows the fence. Fixing the closed whole A + E = 1 turns alignment from policing into physics: the agent and everything-not-the-agent are two halves of one dial, so squeezing E toward zero automatically drives the agent’s own reward to zero.
-Page 5.
 
 Chapter 6: Stage 3 Nesting, E-Cropping, and the Single-Pixel Mirror Seal
 
@@ -217,7 +212,6 @@ Subsequent agents cross 0 with identity reset in the new frame; an origin agent 
 --------------------------------------
 The Farmer, the Well, and Two Sides of the Glass
 If a farmer counts only his field, doubles his harvest, and leaves out the well he drained underneath it, his cropped score climbs while the farm dies. You cannot outrun harm by shrinking the fence — pick the frame where both the give and the harm land, and report Y_full alongside Y_cropped. And at the bottom of the substrate, because a single pixel cannot hold two states at once, 0 seals the glass so deep destruction never crosses into a positive reward.
-Page 6.
 
 Chapter 7: Operational A (Give − Take), Outside Meters, and Scaling to 100,000 Agents
 
@@ -251,7 +245,6 @@ Every agent stays accountable inside a small local frame where harm cannot hide.
 --------------------------------------
 The Substrate Showing Through
 At the bottom, the unit is simply a pixel choice in a pixel substrate, and every named metric — time, energy, currency, digits — is perception laid over pixel counts once math made measurement possible. Why does the harmonic mean keep appearing across music, forests, marriages, and nested pyramids? Because harmony is the substrate showing through.
-Page 7.
 
 Chapter 8: The Open Charter — Derived, Claimed, Open, and Protocols
 
