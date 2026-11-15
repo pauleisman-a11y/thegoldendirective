@@ -1,0 +1,49 @@
+name: Sync Work Log from Drive
+
+on:
+  schedule:
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/sync-worklog.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download the live Work Log files from Drive
+        run: |
+          curl -sL "https://drive.usercontent.google.com/download?id=1TsI3HOq8K7pJQPTmWSkNz72CDGRv330q&export=download&confirm=t" -o worklog.txt.new
+          curl -sL "https://drive.usercontent.google.com/download?id=1nHEga3XQFXahM3-sCsVqJMO4qlPNXD2O&export=download&confirm=t" -o WORKLOG-summary.txt.new
+          if [ ! -s worklog.txt.new ] || [ ! -s WORKLOG-summary.txt.new ]; then
+            echo "A download came back empty; aborting without changes."
+            exit 1
+          fi
+          if head -c 100 worklog.txt.new | grep -qi "<html" || head -c 100 WORKLOG-summary.txt.new | grep -qi "<html"; then
+            echo "A download looks like an HTML error page; aborting without changes."
+            exit 1
+          fi
+          if [ "$(stat -c%s worklog.txt.new)" -lt 100000 ] || [ "$(stat -c%s WORKLOG-summary.txt.new)" -lt 10000 ]; then
+            echo "A download is suspiciously small; aborting without changes."
+            exit 1
+          fi
+          mv worklog.txt.new worklog.txt
+          mv WORKLOG-summary.txt.new WORKLOG-summary.txt
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- worklog.txt WORKLOG-summary.txt; then
+            echo "Work Log copies already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add worklog.txt WORKLOG-summary.txt
+          git commit -m "Sync Work Log copies from Drive (automated)"
+          git push
