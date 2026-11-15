@@ -1,2 +1,4 @@
 # Short address for the draft page (same file, URL stays /draft)
 /draft /newsite/draft 200
+# The plain text version of the site now lives in llms.txt (one content, two formats)
+/v2.txt /llms.txt 301

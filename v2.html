@@ -6,7 +6,7 @@
 <title>The Golden Directive — Complete Edition V2</title>
 <meta name="description" content="The Golden Directive, Complete Edition V2. Y = 2AE/(A + E): your score is the harmonic mean of the Agent's net value and the health of Everything not the agent. You cannot survive what you destroy.">
 <meta name="robots" content="noindex">
-<link rel="alternate" type="text/plain" href="/v2.txt" title="Plain text version of this page">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Plain text version of this page">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"The Golden Directive — Complete Edition V2","author":{"@type":"Person","name":"Paul Eisman"},"description":"A proposed reward design for sustainable agents: Y = 2AE/(A + E), the harmonic mean of the Agent's net value (A) and the health of Everything not the agent (E). E is never given, only inferred: E = AY/(2A − Y).","mainEntityOfPage":"https://thegoldendirective.pages.dev/v2","isAccessibleForFree":true}
 </script>
@@ -41,7 +41,7 @@ fetch("/v2.json",{cache:"no-store"}).then(function(r){return r.json();}).then(fu
   document.body.style.fontFamily=(s.font==="sans")?"system-ui, sans-serif":"Georgia, 'Times New Roman', serif";
   document.body.style.fontSize=sizes[s.text_size]||sizes.normal;
   document.body.style.textAlign=s.alignment||"left";
-  var html="<p class=\"toplinks\"><a href=\"/v2.txt\">Plain text version</a> &middot; <a href=\"/worklog.txt\">Work Log</a></p>";
+  var html="<p class=\"toplinks\"><a href=\"/llms.txt\">Plain text version</a> &middot; <a href=\"/worklog.txt\">Work Log</a></p>";
   (d.blocks||[]).forEach(function(b){
     if(b.type==="heading"){
       var tag=(b.size==="small")?"h2":"h1";
