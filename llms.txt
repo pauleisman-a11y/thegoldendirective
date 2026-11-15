@@ -272,5 +272,5 @@ The story reading governs. E is never given, only inferred. Give first.
 
 Links
 
-Work Log (full, crawlable copy): https://thegoldendirective.pages.dev/worklog.txt
-Work Log summary: https://thegoldendirective.pages.dev/WORKLOG-summary.txt
+Work Log (full, crawlable copy) — UNVERIFIED: neither the failures nor the successes in it are verified evidence: https://thegoldendirective.pages.dev/worklog.txt
+Work Log summary — UNVERIFIED: https://thegoldendirective.pages.dev/WORKLOG-summary.txt
