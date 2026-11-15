@@ -1,6 +1,6 @@
-# Sveltia CMS — editor for The Golden Directive draft
-# Edits ONE content file: newsite/draft.json
-# The draft page (newsite/draft.html) draws itself from that file.
+# Sveltia CMS — editor for The Golden Directive pages
+# Edits the content files: newsite/draft.json and v2.json
+# Each page (newsite/draft.html, v2.html) draws itself from its file.
 backend:
   name: github
   repo: pauleisman-a11y/thegoldendirective
@@ -21,6 +21,71 @@ collections:
       - name: draft_page
         label: Draft Page
         file: newsite/draft.json
+        format: json
+        editor:
+          preview: false
+        fields:
+          - label: Page Style
+            name: style
+            widget: object
+            collapsed: false
+            fields:
+              - { label: Background Colour, name: background, widget: color }
+              - { label: Text Colour, name: text_color, widget: color }
+              - { label: Heading Colour, name: heading_color, widget: color }
+              - { label: Accent Colour (formula + quote bar), name: accent, widget: color }
+              - label: Text Size
+                name: text_size
+                widget: select
+                options:
+                  - { label: Small, value: small }
+                  - { label: Normal, value: normal }
+                  - { label: Large, value: large }
+              - label: Alignment
+                name: alignment
+                widget: select
+                options:
+                  - { label: Left, value: left }
+                  - { label: Center, value: center }
+              - label: Font
+                name: font
+                widget: select
+                options:
+                  - { label: Serif (book), value: serif }
+                  - { label: Sans (clean), value: sans }
+          - label: Blocks
+            name: blocks
+            widget: list
+            types:
+              - label: Heading
+                name: heading
+                widget: object
+                fields:
+                  - { label: Text, name: text, widget: string }
+                  - label: Size
+                    name: size
+                    widget: select
+                    options:
+                      - { label: Large, value: large }
+                      - { label: Small, value: small }
+              - label: Paragraph
+                name: paragraph
+                widget: object
+                fields:
+                  - { label: Text, name: text, widget: markdown }
+              - label: Formula
+                name: formula
+                widget: object
+                fields:
+                  - { label: Formula, name: text, widget: string }
+              - label: Quote
+                name: quote
+                widget: object
+                fields:
+                  - { label: Quote, name: text, widget: text }
+      - name: v2_page
+        label: V2 Page
+        file: v2.json
         format: json
         editor:
           preview: false
