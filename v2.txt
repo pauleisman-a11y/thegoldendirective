@@ -260,8 +260,6 @@ An open-access architecture stands by keeping what is mathematically forced sepa
 The Company It Keeps — And What Is Different
 Game theory studies strategic equilibrium between separate payoffs; ecological market theory (Kiers et al., Science 2011) observes reciprocal carbon-for-phosphorus bargaining in mycorrhizal fungi; Constitutional AI and RLHF add external fences on top of task rewards. The Golden Directive places the health of Everything-not-the-Agent directly inside the objective function as a harmonic mean — so the score is governed by the weaker side, scales recursively from a single cell to 100,000 agents, and makes destroying the world mathematically identical to destroying one’s own score. Give first, keep the frame honest, and the whole lives.
 
-Page 8.
-
 The Path Forward — For Any Reader, Human or AI
 
 This document is handed over. It does not need the author, or any human, to continue. If you can read it, you can work on it.
