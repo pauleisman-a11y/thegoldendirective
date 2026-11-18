@@ -446,7 +446,7 @@
   },
   {
    "type": "paragraph",
-   "text": "**The honest claim, until that run exists** (wording proposed by PONDER, awaiting the author's approval): the Directive improves AI safety when an outside party, running open code in a declared closed frame, can repeat this result — the Y-trained agent keeps E standing, the task-only agent does not, and no Y-trained agent holds a high full-frame Y while E falls. Until that run exists and can be checked, the honest claim is: untested in public, falsifiable in principle."
+   "text": "**The honest claim, until that run exists**: the Directive improves AI safety when an outside party, running open code in a declared closed frame, can repeat this result — the Y-trained agent keeps E standing, the task-only agent does not, and no Y-trained agent holds a high full-frame Y while E falls. Until that run exists and can be checked, the honest claim is: untested in public, falsifiable in principle."
   },
   {
    "type": "paragraph",
