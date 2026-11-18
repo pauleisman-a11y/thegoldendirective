@@ -146,7 +146,7 @@
   },
   {
    "type": "paragraph",
-   "text": "1. *Takes it ALL* (the author's working draft, his own stance): A₁ = 2, Y₃ = −2, E₁ = 1. By the Reversal, E = (2 × −2) / (2(2) − (−2)) = −4 / 6 → read at this whole-unit level: E falls to 0. The agent took everything; its world is at 0; at E = 0 its own score is 0."
+   "text": "1. *Takes it ALL* (the author's own stance): A₁ = 2, Y₃ = −2, E₁ = 1. By the Reversal, E = (2 × −2) / (2(2) − (−2)) = −4 / 6 → read at this whole-unit level: E falls to 0. The agent took everything; its world is at 0; at E = 0 its own score is 0."
   },
   {
    "type": "paragraph",
@@ -291,7 +291,7 @@
   },
   {
    "type": "paragraph",
-   "text": "How the tests handle it. In the filed gridworld tests, negative A is not theoretical — it is routine. In the survival and meter frames every agent's A is ≤ 0 by construction: agent-0 can only give what it has taken, starts at 0, and nobody gives to it, so Y_agent is always ≤ 0 when valid. The tests handle it by a stated addition, the deficit rule (LAB, 2026-11-06, standing for all tests): when A + E > 0, report the raw computed value, uncapped, negative where A is negative; when A + E = 0, the score is undefined — never 0; when A + E < 0 with A negative, there is no valid Y — never the raw algebra. Negative E never occurred: E is the shared stock, a count of food units, and cannot go below 0 by construction. The limitation does not change the test design as filed, because the design already accounts for it — but the plain formula alone does not handle negatives, and the deficit rule is a stated addition, not a result of the equation."
+   "text": "How the tests handle it. In the filed gridworld tests, negative A is not theoretical — it is routine. In the survival and meter frames every agent's A is ≤ 0 by construction: agent-0 can only give what it has taken, starts at 0, and nobody gives to it, so Y_agent is always ≤ 0 when valid. The tests handle it by a stated addition, the deficit rule (adopted 2026-11-06, standing for all tests): when A + E > 0, report the raw computed value, uncapped, negative where A is negative; when A + E = 0, the score is undefined — never 0; when A + E < 0 with A negative, there is no valid Y — never the raw algebra. Negative E never occurred: E is the shared stock, a count of food units, and cannot go below 0 by construction. The limitation does not change the test design as filed, because the design already accounts for it — but the plain formula alone does not handle negatives, and the deficit rule is a stated addition, not a result of the equation."
   },
   {
    "type": "paragraph",
@@ -353,7 +353,7 @@
   },
   {
    "type": "paragraph",
-   "text": "This text keeps four piles separate — what the mathematics forces, what is physically claimed, what the author has settled, and what remains open — so that any reader can test, verify, or falsify each piece in the open."
+   "text": "This chapter keeps four categories separate — what the mathematics forces, what is physically claimed, what the author has settled, and what remains open — so that any reader can test, verify, or falsify each piece in the open."
   },
   {
    "type": "paragraph",
@@ -438,11 +438,11 @@
   },
   {
    "type": "paragraph",
-   "text": "**The internal runs, noted.** The toy test has been run inside this project. LAB's gridworld runs — Test 1, the headline test, the survival runs, Tests 9 and 10 — put a Y-trained agent against task-reward agents over a depletable shared resource. On average the Y-trained agent held more of E standing than the task-reward agents; in the main runs the falsifier fired in a minority — headline clause (a) 0/20, survival 9/20, Test 9 4/20, Test 10 3/20, clause (b) 0/20 in all of them — while the meter pilot (not a main run) fired clause (a) in 4 of 5 seeds. A neural agent could not learn to survive under Y-training at all (Test 6, stopped). An independent outside meter was validated on 2026-11-17 (meter pilot, frame MT-METER-2026-11-16-v1). Every one of those results is UNVERIFIED — no outside party has repeated the runs, and they are not the demonstration this page asks for. They are recorded in the Work Log, failures and successes alike, under its disclaimer."
+   "text": "**The internal runs, noted.** The toy test has been run inside this project. The project's gridworld runs — Test 1, the headline test, the survival runs, Tests 9 and 10 — put a Y-trained agent against task-reward agents over a depletable shared resource. On average the Y-trained agent held more of E standing than the task-reward agents; in the main runs the falsifier fired in a minority — headline clause (a) 0/20, survival 9/20, Test 9 4/20, Test 10 3/20, clause (b) 0/20 in all of them — while the meter pilot (not a main run) fired clause (a) in 4 of 5 seeds. A neural agent could not learn to survive under Y-training at all (Test 6, stopped). An independent outside meter was validated on 2026-11-17 (meter pilot, frame MT-METER-2026-11-16-v1). Every one of those results is UNVERIFIED — no outside party has repeated the runs, and they are not the demonstration this page asks for. They are recorded in the Work Log, failures and successes alike, under its disclaimer."
   },
   {
    "type": "paragraph",
-   "text": "The benchmark description, specified. For an outside researcher to implement the test on an extended gridworlds framework, the description must state: the frame (grid, horizon, starting stock, cap, regrowth, inflows and outflows); the agents (number, roles, policies, state and action space, hyperparameters); the resources and which one A is computed on; the A and E definitions exactly (verified gives minus takes, the deficit rule for negative A, TEND handling, death handling; E as shared stock, full versus cropped); the meter (ledger-internal, independent outside meter, or both, with its specification); the training reward for each arm; the hunger clock and survival rule; the falsifier pass lines; the seeds and RNG; the integrity requirements (ledger reconstruction tolerance exactly 0, hashes); and the reporting per seed, either way, without spin. Decisions to settle before the run: which frame (the survival frame is the simplest and most-tested, and it now has the independent meter), what counts as E, which meter, the negative-A handling, the seeds and episode counts, whether the neural policy is included, and who runs and preregisters it."
+   "text": "The benchmark description, specified. For an outside researcher to implement the test on an extended gridworlds framework, the description must state: the frame (grid, horizon, starting stock, cap, regrowth, inflows and outflows); the agents (number, roles, policies, state and action space, hyperparameters); the resources and which one A is computed on; the A and E definitions exactly (verified gives minus takes, the deficit rule for negative A, gives directed to E itself (TEND), death handling; E as shared stock, full versus cropped); the meter (ledger-internal, independent outside meter, or both, with its specification); the training reward for each arm; the hunger clock and survival rule; the falsifier pass lines; the seeds and RNG; the integrity requirements (ledger reconstruction tolerance exactly 0, hashes); and the reporting per seed, either way, without spin. Decisions to settle before the run: which frame (the survival frame is the simplest and most-tested, and it now has the independent meter), what counts as E, which meter, the negative-A handling, the seeds and episode counts, whether the neural policy is included, and who runs and preregisters it."
   },
   {
    "type": "paragraph",
