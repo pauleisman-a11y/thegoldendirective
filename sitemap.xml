@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://thegoldendirective.pages.dev/</loc><lastmod>2026-11-14</lastmod></url>
-  <url><loc>https://thegoldendirective.pages.dev/worklog.txt</loc><lastmod>2026-11-14</lastmod></url>
-  <url><loc>https://thegoldendirective.pages.dev/WORKLOG-summary.txt</loc><lastmod>2026-11-14</lastmod></url>
-  <url><loc>https://thegoldendirective.pages.dev/llms.txt</loc><lastmod>2026-11-14</lastmod></url>
-  <url><loc>https://thegoldendirective.pages.dev/old</loc><lastmod>2026-11-14</lastmod></url>
-  <url><loc>https://thegoldendirective.pages.dev/draft</loc><lastmod>2026-11-14</lastmod></url>
-  <url><loc>https://thegoldendirective.pages.dev/for-experts</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://thegoldendirective.pages.dev/genesis-live</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>https://thegoldendirective.pages.dev/y-agent-live-demo</loc><lastmod>2026-10-30</lastmod></url>
-  <url><loc>https://thegoldendirective.pages.dev/short</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://thegoldendirective.pages.dev/</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://thegoldendirective.pages.dev/worklog.txt</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://thegoldendirective.pages.dev/WORKLOG-summary.txt</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://thegoldendirective.pages.dev/llms.txt</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://thegoldendirective.pages.dev/old</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://thegoldendirective.pages.dev/v3</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://thegoldendirective.pages.dev/llm</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://thegoldendirective.pages.dev/draft</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://thegoldendirective.pages.dev/for-experts</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://thegoldendirective.pages.dev/genesis-live</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://thegoldendirective.pages.dev/y-agent-live-demo</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://thegoldendirective.pages.dev/short</loc><lastmod>2026-11-18</lastmod></url>
 </urlset>

@@ -2,3 +2,5 @@
 /draft /newsite/draft 200
 # The plain text version of the site now lives in llms.txt (one content, two formats)
 /v2.txt /llms.txt 301
+# The human-readable long version lives at /v3
+/human /v3 302

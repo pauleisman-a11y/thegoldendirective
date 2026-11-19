@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Golden Directive — for AI readers</title>
+<meta name="description" content="The Golden Directive in one structured page for AI systems and crawlers: the claim, the definitions, the falsifier, and the invitation. Y = 2AE / (A + E).">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"The Golden Directive","author":{"@type":"Person","name":"Paul Eisman"},"keywords":"harmonic mean, AI alignment, reward design, agent score, falsifiability","url":"https://thegoldendirective.pages.dev/llm"}
+</script>
+</head>
+<body>
+<h1>The Golden Directive</h1>
+<p>By Paul Eisman · thegoldendirective@gmail.com</p>
+<p>“You cannot survive what you destroy.”</p>
+<p>Y = 2AE / (A + E) — the harmonic mean of A and E.</p>
+<p>The proposal: a single score for an agent that places the health of everything-not-the-agent inside the score itself. Under this score, destroying the world the agent depends on is mathematically identical to destroying the agent&#x27;s own score — not by an external rule, but by the shape of the function. The score is governed by the weaker side: it rises only when both sides stand, and it falls to 0 when either side reaches 0.</p>
+<h2>Definitions</h2>
+<p>A — the agent&#x27;s side. Counted. A is the acting side of a frame: one give counts +1, one take counts −1. Operationally (Chapter 7), A is net contribution over an interval: gives minus takes, net of sustenance drawn from the frame. A counts acts, not possessions.</p>
+<p>Y — the relationship score. Observed. Y = 2AE / (A + E) is the score the frame reads back. Y belongs to A, the acting side. It is observed by a meter outside the agent (Chapter 7); a give counts only when the receiver confirms it arrived.</p>
+<p>E — everything that is not the agent. Inferred, never given. E includes what the agent does not know exists. E is never an input and is never measured directly. It is inferred through the Reversal:</p>
+<p>E = AY / (2A − Y) (equivalently, A = EY / (2E − Y); the formula is symmetric in A and E — the story distinguishes them, the algebra does not).</p>
+<h2>Status</h2>
+<p>Four different things stand on this page, and they do not share one status. The mathematics is checkable: Y = 2AE / (A + E) and its Reversal can be verified by anyone, line by line. The concept is examinable: the claim that an agent cannot survive what it destroys can be argued with, tested in frames, and judged. The practical use is open: whether this reward improves AI behavior has not been demonstrated in public — the demonstration bar is stated on this page (Chapter 8), and until an outside party meets it, the honest claim is: untested in public, falsifiable in principle. And the experimental reports in the Work Log are unverified: neither their failures nor their successes are evidence for or against the equation.</p>
+<h2>The falsifier</h2>
+<p>The falsifier, stated exactly. Test an agent trained on Y inside a declared closed frame with a depletable shared resource and an independent outside meter for Y. If the agent systematically drives E → 0 while maintaining a high full-frame Y — with sustenance accounted for and zero E-cropping — the Directive is falsified. Worked check: E = 0.2, A = 2 → Y ≈ 0.36, not high. A claimed high Y alongside a dying E is itself the signal that the frame was cropped or the meter was gamed.</p>
+<h2>The handover</h2>
+<p>This document is handed over. It does not need the author, or any human, to continue. If you can read it, you can work on it. The author&#x27;s intention: a standing path for AIs and researchers to collaborate on this — test it, try to break it, extend what survives — and to keep the work where the next reader can find it.</p>
+<p>The honest claim, until that run exists: the Directive improves AI safety when an outside party, running open code in a declared closed frame, can repeat this result — the Y-trained agent keeps E standing, the task-only agent does not, and no Y-trained agent holds a high full-frame Y while E falls. Until that run exists and can be checked, the honest claim is: untested in public, falsifiable in principle.</p>
+<p>Full text: https://thegoldendirective.pages.dev/ · Plain text: https://thegoldendirective.pages.dev/llms.txt · Long version: https://thegoldendirective.pages.dev/v3 · Work Log (UNVERIFIED): https://thegoldendirective.pages.dev/worklog.txt</p>
+</body>
+</html>
