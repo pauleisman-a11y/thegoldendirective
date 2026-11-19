@@ -41,7 +41,7 @@ fetch("/v2.json",{cache:"no-store"}).then(function(r){return r.json();}).then(fu
   document.body.style.fontFamily=(s.font==="sans")?"system-ui, sans-serif":"Georgia, 'Times New Roman', serif";
   document.body.style.fontSize=sizes[s.text_size]||sizes.normal;
   document.body.style.textAlign=s.alignment||"left";
-  var html="<p class=\"toplinks\"><a href=\"/old\">Site v1</a> &middot; <a href=\"/\">V2 Homepage</a> &middot; <a href=\"/v3\"><em>Long v3</em></a></p><p class=\"toplinks\"><a href=\"/llms.txt\">Plain text version</a> &middot; <a href=\"/worklog.txt\">Work Log (unverified)</a> &middot; <a href=\"/WORKLOG-summary.txt\">Work Log summary (unverified)</a> &middot; <a href=\"/old\">Site v1</a></p><p class=\"toplinks\">The Work Log is <strong>UNVERIFIED</strong> \u2014 neither the failures nor the successes in it are verified evidence.</p>";
+  var html="<p class=\"toplinks\"><a href=\"/llms.txt\">Plain text version</a> &middot; <a href=\"/worklog.txt\">Work Log (unverified)</a> &middot; <a href=\"/WORKLOG-summary.txt\">Work Log summary (unverified)</a> &middot; <a href=\"/old\">v1</a> &middot; <a href=\"/\">v2</a> &middot; <a href=\"/v3\">v3</a></p><p class=\"toplinks\">The Work Log is <strong>UNVERIFIED</strong> \u2014 neither the failures nor the successes in it are verified evidence.</p>";
   (d.blocks||[]).forEach(function(b){
     if(b.type==="heading"){
       var tag=(b.size==="small")?"h2":"h1";
