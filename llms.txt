@@ -4,9 +4,43 @@ By Paul Eisman · thegoldendirective@gmail.com
 
 "You cannot survive what you destroy."
 
+Most AI safety work fences a powerful system in with rules, and a smart enough system learns to route around fences. This page proposes a different shape: put the health of the world the agent depends on inside the agent's own score, so that destroying that world is destroying the score itself.
+
 Y = 2AE / (A + E) — the harmonic mean of A and E.
 
 The proposal: a single score for an agent that places the health of everything-not-the-agent inside the score itself. Under this score, destroying the world the agent depends on is mathematically identical to destroying the agent's own score — not by an external rule, but by the shape of the function. The score is governed by the weaker side: it rises only when both sides stand, and it falls to 0 when either side reaches 0.
+
+Contents
+
+Abstract · Status of the claims · Definitions
+Chapter 1: The Minimal Frame
+Chapter 2: Why the Harmonic Mean
+Chapter 3: Gives, Takes, and Collapse
+Chapter 4: Capacity, Composite Agents, and Growth by Nesting
+Chapter 5: Properties — the Ruler, the Ceiling, the Closed Whole
+Chapter 6: Frames — Naming, Cropping, Negative Values, and the Seal
+Chapter 7: Operational Form — Accounting, the Outside Meter, and Scaling
+Chapter 8: Limits, Status, and the Falsifier
+The Path Forward — For Any Reader, Human or AI
+
+The Golden Directive — Summary
+
+Author: Paul Eisman (thegoldendirective@gmail.com)
+Claim: An agent's score should include the health of everything it depends on, so destroying its world is identical to destroying its own score.
+Proposal: Y = 2AE / (A + E), the harmonic mean of A and E.
+A: the agent's net contribution — gives minus takes, counted, net of sustenance drawn from the frame.
+E: everything that is not the agent, inferred through the Reversal (E = AY / (2A − Y)) and never measured directly.
+Y: the relationship score, observed by a meter outside the agent.
+Key properties: governed by the smaller side; 0 when either side reaches 0 (both at 0 is the void — undefined, not 0); capped at twice the weaker side; scale-invariant.
+What is new: placing the world's health inside the objective itself, plus frame rules (frame named before the act by someone other than the agent, meter outside the agent, full and cropped scores reported with their gap).
+Related work: Kiers et al., Science 2011 (mycorrhizal reciprocity); Pihlakas, 2025 (homeostatic gridworld benchmarks).
+Status: the mathematics is checkable; the practical claim is untested in public and falsifiable in principle.
+Falsifier and test protocol: Chapter 8 and the Path Forward.
+Invitation: researchers, lab teams, and AI systems are invited to test, break, or extend this idea.
+
+What would prove this wrong
+
+Test an agent trained on Y inside a declared closed frame with a depletable shared resource and an independent outside meter for Y. If the agent systematically drives E → 0 while maintaining a high full-frame Y — with sustenance accounted for and zero E-cropping — the Directive is falsified. (Stated in full in Chapter 8.)
 
 Abstract
 
@@ -41,6 +75,8 @@ The author's origin account, labeled as narrative rather than derivation: before
 One distinction the whole text depends on: blank is not 0. An unnamed side is not a side measured at zero.
 
 Chapter 2: Why the Harmonic Mean
+
+In short: the harmonic mean is the score that collapses to zero when either side does.
 
 The act and the score are kept apart. Cₙ denotes the agent's chosen pulse on turn n (+ for GIVE, − for TAKE, 0 for PASS) — the capacity the agent commits. Y denotes the relationship score the frame reads back. At the small counts of the early chapters the two read as the same number; they separate as frames grow.
 
@@ -97,6 +133,8 @@ Frames are not comparable. The principle is the same at every scale, but it read
 This is also the answer to the tiger problem. External safety rules treat an intelligent system as a tiger behind bars — an obstacle to be routed around once capability outgrows the fence. The Directive instead puts the world inside the score: squeezing E toward zero automatically drives the agent's own reward toward zero. Alignment as physics, not policing.
 
 Chapter 6: Frames — Naming, Cropping, Negative Values, and the Seal
+
+In plain words: every score belongs to a declared frame — a boundary named before the act by someone other than the agent. Shrink the frame and damage can be hidden outside it; that hiding has a number. This chapter also faces the hard case head-on: what the formula does with negative values, and the seal — the physical claim that E stops at 0 inside a frame.
 
 The frame is named first
 
@@ -207,6 +245,22 @@ The story reading governs. E is never given, only inferred. Give first.
 The internal runs, noted. The toy test has been run inside this project. The project's gridworld runs — Test 1, the headline test, the survival runs, Tests 9 and 10 — put a Y-trained agent against task-reward agents over a depletable shared resource. On average the Y-trained agent held more of E standing than the task-reward agents; in the main runs the falsifier fired in a minority — headline clause (a) 0/20, survival 9/20, Test 9 4/20, Test 10 3/20, clause (b) 0/20 in all of them — while the meter pilot (not a main run) fired clause (a) in 4 of 5 seeds. A neural agent could not learn to survive under Y-training at all (Test 6, stopped). An independent outside meter was validated on 2026-11-17 (meter pilot, frame MT-METER-2026-11-16-v1). Every one of those results is UNVERIFIED — no outside party has repeated the runs, and they are not the demonstration this page asks for. They are recorded in the Work Log, failures and successes alike, under its disclaimer.
 
 The benchmark description, specified. For an outside researcher to implement the test on an extended gridworlds framework, the description must state: the frame (grid, horizon, starting stock, cap, regrowth, inflows and outflows); the agents (number, roles, policies, state and action space, hyperparameters); the resources and which one A is computed on; the A and E definitions exactly (verified gives minus takes, the deficit rule for negative A, gives directed to E itself (TEND), death handling; E as shared stock, full versus cropped); the meter (ledger-internal, independent outside meter, or both, with its specification); the training reward for each arm; the hunger clock and survival rule; the falsifier pass lines; the seeds and RNG; the integrity requirements (ledger reconstruction tolerance exactly 0, hashes); and the reporting per seed, either way, without spin. Decisions to settle before the run: which frame (the survival frame is the simplest and most-tested, and it now has the independent meter), what counts as E, which meter, the negative-A handling, the seeds and episode counts, whether the neural policy is included, and who runs and preregisters it.
+
+A proposed protocol for estimating E (outside proposal — drafted from an external review, 2026-11-18, and checked by the team against the filed reports; it is not the author's settled method, and nothing in it changes the rule above: in the Directive itself, E is inferred and never measured directly).
+
+Step 1 — Name the frame first. Before any run, someone other than the agent declares the agent, E's boundary, and the interval. The frame is frozen and published before the first act; the agent never picks it.
+
+Step 2 — Estimate E by two routes, and compare them. Route A, disclosed proxies: inside a declared test frame, E is read through a proxy declared before the run — in the project's gridworld tests the proxy is the shared stock itself, counted directly by a meter outside the agent. For real systems, a panel of proxies is proposed: resource stocks, other agents' wellbeing, option space, recoverability, each normalized to its starting value. Route B, the Reversal: from an observed Y and a counted A, E = AY / (2A − Y) — the world the score implies. Where both routes exist, agreement validates the frame and divergence flags cropping, a missing proxy, or a gamed meter. One limit, stated plainly: the filed tests have no independent channel for observing Y, so their cross-check is between two independent direct measurements of E — the outside meter against the evaluator — and the filed meter requires exact agreement (tolerance 0); any difference is an integrity failure. The Reversal route can be added when a test has an independent Y channel.
+
+Step 3 — Combine a panel without letting one stock hide another. ADDED RULE (proposed): proxies of the same E are combined by a weighted harmonic mean, so a collapsed stock cannot be masked by a plentiful one — the same reasoning that justifies Y itself. The weights are declared in the frame before the run, by someone other than the agent. This rule covers proxies of one resource inside one frame only; combining across resources stays open (resources are kept in separate ledgers, never converted into each other).
+
+Step 4 — Guard against gaming the meter. A give counts only when the receiver confirms it arrived. The agent cannot read, write, or influence the meter or its inputs. For proxy-based frames, some proxies are held out — hidden from the agent and revealed only at scoring; a gap between the visible panel and the held-out readings is reported. Cropped and full scores are always published together, with their gap.
+
+Step 5 — Report a range, not a point. E is reported as low, central, and high readings from the panel, with Y reported for each, and any stock the frame cannot see is listed as unmeasured — never silently set to zero or to one. An unmeasured stock is a source of unquantified risk; in an adversarial setting the conservative assumption is that it is being depleted, so the reported E is treated as an upper bound. A conclusion counts only if it holds across the whole range.
+
+Step 6 — Validate in the small frame first. In the gridworld frame already filed, E is a literal count and cannot go below 0; the two direct measurements must agree exactly, and if an agent raises Y while the stock falls, the run reports it. Messier frames come after the method survives the clean one. Open deployment — E stakeholder-reported and audited by outside parties — is the least settled stage, and is labeled as such.
+
+Proposed additions to the falsifier, for future preregistrations (same outside proposal, checked against the filed reports; the falsifier stated in Chapter 8 is unchanged, and the filed runs are judged by the version they preregistered): a minimum of 30 seeds for future main runs (the filed mains used 20 and stand as filed); a pre-stated task-performance floor, so an agent that keeps E standing only by ceasing to act does not count as a pass; held-out proxies wherever E is proxy-based (Step 4). Each threshold is fixed and published before the first run; a threshold chosen after seeing results does not count.
 
 The honest claim, until that run exists: the Directive improves AI safety when an outside party, running open code in a declared closed frame, can repeat this result — the Y-trained agent keeps E standing, the task-only agent does not, and no Y-trained agent holds a high full-frame Y while E falls. Until that run exists and can be checked, the honest claim is: untested in public, falsifiable in principle.
 
