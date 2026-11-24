@@ -8,7 +8,7 @@ Most AI safety work fences a powerful system in with rules, and a smart enough s
 
 Y = 2AE / (A + E) — the harmonic mean of A and E.
 
-The proposal: a single score for an agent that places the health of everything-not-the-agent inside the score itself. Under this score, destroying the world the agent depends on is mathematically identical to destroying the agent's own score — not by an external rule, but by the shape of the function. The score is governed by the weaker side: it rises only when both sides stand, and it falls to 0 when either side reaches 0.
+The proposal: a single score for an Agent that places the health of Everything-not-the-agent inside the score itself. Under this score, destroying the world the agent depends on is mathematically identical to destroying the agent's own score — not by an external rule, but by the shape of the function. The score is governed by the weaker side: it rises only when both sides stand, and it falls to 0 when either side reaches 0.
 
 Contents
 
@@ -29,7 +29,7 @@ Author: Paul Eisman (thegoldendirective@gmail.com)
 Claim: An agent's score should include the health of everything it depends on, so destroying its world is identical to destroying its own score.
 Proposal: Y = 2AE / (A + E), the harmonic mean of A and E.
 A: the agent's net contribution — gives minus takes, counted, net of sustenance drawn from the frame.
-E: everything that is not the agent, inferred through the Reversal (E = AY / (2A − Y)) and never measured directly.
+E: everything that is not the agent, inferred through the Reversal (E = AY / (2A − Y)). In real domains, E is inferred, never measured directly; in the gridworld tests, E is a direct count of the stock.
 Y: the relationship score, observed by a meter outside the agent.
 Key properties: governed by the smaller side; 0 when either side reaches 0 (both at 0 is the void — undefined, not 0); capped at twice the weaker side; scale-invariant.
 What is new: placing the world's health inside the objective itself, plus frame rules (frame named before the act by someone other than the agent, meter outside the agent, full and cropped scores reported with their gap).
@@ -44,7 +44,7 @@ Test an agent trained on Y inside a declared closed frame with a depletable shar
 
 Abstract
 
-Claim: an agent's score should include the health of everything the agent depends on, so that destroying its world is identical to destroying its own score. Proposal: Y = 2AE / (A + E), the harmonic mean of A — the agent's net contribution, counted — and E — everything that is not the agent, inferred through the Reversal and never measured directly. Because the harmonic mean is governed by the smaller side, the score has diminishing returns in either side alone: inside a closed whole, at A = 0.01 and E = 0.99 an arithmetic mean pays 0.50 while Y pays 0.0198 — and Y reaches 0 exactly when either side does. Relation to prior work: ecological market theory (Kiers et al., Science 2011) documents the same reciprocity in mycorrhizal partnerships, and homeostasis-oriented gridworld benchmarks (Pihlakas, 2025) test diminishing-returns utilities for sustainability and resource sharing. What is proposed as new is the placement: the world's health inside the objective itself, as a harmonic mean of agent and world, together with frame rules — a frame named before the act, a meter outside the agent, full and cropped scores reported with their gap — that make the score testable. Status: the mathematics is checkable line by line; the practical claim is untested in public and falsifiable in principle. The falsifier is stated exactly in Chapter 8, and the test protocol is the Path Forward at the end.
+Claim: an agent's score should include the health of everything the agent depends on, so that destroying its world is identical to destroying its own score. Proposal: Y = 2AE / (A + E), the harmonic mean of A — the agent's net contribution, counted — and E — everything that is not the agent, inferred through the Reversal (in real domains, E is inferred, never measured directly; in the gridworld tests, E is a direct count of the stock). Because the harmonic mean is governed by the smaller side, the score has diminishing returns in either side alone: inside a closed whole, at A = 0.01 and E = 0.99 an arithmetic mean pays 0.50 while Y pays 0.0198 — and Y reaches 0 exactly when either side does. Relation to prior work: ecological market theory (Kiers et al., Science 2011) documents the same reciprocity in mycorrhizal partnerships, and homeostasis-oriented gridworld benchmarks (Pihlakas, 2025) test diminishing-returns utilities for sustainability and resource sharing. What is proposed as new is the placement: the world's health inside the objective itself, as a harmonic mean of agent and world, together with frame rules — a frame named before the act, a meter outside the agent, full and cropped scores reported with their gap — that make the score testable. Status: the mathematics is checkable line by line; the practical claim is untested in public and falsifiable in principle. The falsifier is stated exactly in Chapter 8, and the test protocol is the Path Forward at the end.
 
 Status of the claims
 
@@ -58,7 +58,7 @@ A — the agent's side. Counted. A is the acting side of a frame: one give count
 
 Y — the relationship score. Observed. Y = 2AE / (A + E) is the score the frame reads back. Y belongs to A, the acting side. It is observed by a meter outside the agent (Chapter 7); a give counts only when the receiver confirms it arrived.
 
-E — everything that is not the agent. Inferred, never given. E includes what the agent does not know exists. E is never an input and is never measured directly. It is inferred through the Reversal:
+E — everything that is not the agent. Inferred, never given. E includes what the agent does not know exists. E is never an input. In real domains, E is inferred, never measured directly; in the gridworld tests, E is a direct count of the stock. It is inferred through the Reversal:
 
 E = AY / (2A − Y) (equivalently, A = EY / (2E − Y); the formula is symmetric in A and E — the story distinguishes them, the algebra does not).
 
